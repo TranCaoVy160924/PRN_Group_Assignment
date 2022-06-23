@@ -14,7 +14,7 @@ namespace MyStoreWinApp
 {
     public partial class frmMemberManagement : Form
     {
-        MemberRepository memberRepository = new MemberRepository();
+        IMemberRepository MemberRepository = new MemberRepository();
         //Create a data source
         BindingSource source;
         public frmMemberManagement()
@@ -24,19 +24,39 @@ namespace MyStoreWinApp
 
         private void frmMemberManagement_Load(object sender, EventArgs e)
         {
-            LoadCarList();
+            LoadMemberList();
+            btnRemove.Enabled = false;
+            //Register this event to open the from that performs updating
+            dgvMemberList.CellDoubleClick += dgvMemberList_CellDoubleClick;
         }
 
-        public void LoadCarList()
+        //-----------------------------------------------
+        
+
+        public void LoadMemberList()
         {
-            var members = memberRepository.GetMembers();
+            var members = MemberRepository.GetMembers();
             try
             {
                 source = new BindingSource();
                 source.DataSource = members;
 
+                txtID.DataBindings.Clear();
+                txtName.DataBindings.Clear();
+                txtEmail.DataBindings.Clear();
+                txtPassword.DataBindings.Clear();
+                txtCountry.DataBindings.Clear();
+                txtCity.DataBindings.Clear();
+
+                txtID.DataBindings.Add("Text", source, "MemberID");
+                txtName.DataBindings.Add("Text", source, "MemberName");
+                txtEmail.DataBindings.Add("Text", source, "MemberEmail");
+                txtPassword.DataBindings.Add("Text", source, "Password");
+                txtCountry.DataBindings.Add("Text", source, "MemberCountry");
+                txtCity.DataBindings.Add("Text", source, "MemberCity");
+
                 dgvMemberList.DataSource = null;
-                dgvMemberList.DataSource = members;                
+                dgvMemberList.DataSource = source;                
             }
             catch (Exception ex)
             {
@@ -75,5 +95,43 @@ namespace MyStoreWinApp
 
         }
 
+        private void dgvMemberList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            frmMemberDetails frmMemberDetails = new frmMemberDetails
+            {
+                Text = "Update Member",
+                InsertOrUpdate = true,
+                MemberInfo = GetMemberObject(),
+                MemberRepository = this.MemberRepository
+            };
+            if (frmMemberDetails.ShowDialog() == DialogResult.OK)
+            {
+                LoadMemberList();
+                //set focus member update
+                source.Position = source.Count - 1;
+            }
+        }
+
+        private MemberDTO GetMemberObject()
+        {
+            MemberDTO member = null;
+            try
+            {
+                member = new MemberDTO
+                {
+                    MemberID = int.Parse(txtID.Text),
+                    MemberName = txtName.Text,
+                    Password = txtPassword.Text,
+                    MemberEmail = txtEmail.Text,
+                    MemberCity = txtCity.Text,
+                    MemberCountry = txtCountry.Text
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get Member");
+            }
+            return member;
+        }// end get member
     }
 }

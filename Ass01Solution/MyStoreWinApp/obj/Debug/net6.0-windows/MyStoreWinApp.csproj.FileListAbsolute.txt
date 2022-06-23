@@ -102,3 +102,4 @@ D:\GitHub_Project\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net
 D:\GitHub_Project\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.pdb
 D:\GitHub_Project\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.genruntimeconfig.cache
 D:\GitHub_Project\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\ref\MyStoreWinApp.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.frmMemberDetails.resources

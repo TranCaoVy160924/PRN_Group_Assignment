@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\MyStoreWinApp\\MyStoreWinApp.csproj": {}
+    "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\MyStoreWinApp\\MyStoreWinApp.csproj": {}
   },
   "projects": {
-    "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {
+    "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\Dao Khac Nhien\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\obj\\",
+        "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\vende\\.nuget\\packages\\",
+        "outputPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dao Khac Nhien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vende\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -58,24 +58,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj": {
+    "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Dao Khac Nhien\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\obj\\",
+        "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\vende\\.nuget\\packages\\",
+        "outputPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dao Khac Nhien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vende\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -90,8 +90,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj"
+              "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj"
               }
             }
           }
@@ -134,24 +134,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\MyStoreWinApp\\MyStoreWinApp.csproj": {
+    "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\MyStoreWinApp\\MyStoreWinApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\MyStoreWinApp\\MyStoreWinApp.csproj",
+        "projectUniqueName": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\MyStoreWinApp\\MyStoreWinApp.csproj",
         "projectName": "MyStoreWinApp",
-        "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\MyStoreWinApp\\MyStoreWinApp.csproj",
-        "packagesPath": "C:\\Users\\Dao Khac Nhien\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\MyStoreWinApp\\obj\\",
+        "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\MyStoreWinApp\\MyStoreWinApp.csproj",
+        "packagesPath": "C:\\Users\\vende\\.nuget\\packages\\",
+        "outputPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\MyStoreWinApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Dao Khac Nhien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\vende\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -166,11 +166,11 @@
           "net6.0-windows7.0": {
             "targetAlias": "net6.0-windows",
             "projectReferences": {
-              "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj"
+              "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj"
               },
-              "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj": {
-                "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj"
+              "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj": {
+                "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Ass01Solution\\DataAccess\\DataAccess.csproj"
               }
             }
           }
@@ -202,7 +202,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }

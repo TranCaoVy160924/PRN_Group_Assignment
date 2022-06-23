@@ -4,7 +4,7 @@ USE ASS1_DB;
 go
 
 CREATE TABLE FStore (
-    MemberID INT,
+    MemberID INT IDENTITY(1,1),
 	MemberName VARCHAR(50) NOT NULL,
 	Email VARCHAR(100) NOT NULL, 
 	Password VARCHAR(30) NOT NULL,
@@ -15,12 +15,13 @@ CREATE TABLE FStore (
 )
 go
 
-INSERT INTO FStore values
-(1, 'Dao Khac Nhien', 'dknhien@gmail.com', '12345678', 'HCM', 'Viet Nam'),
-(2, 'Tran Cao Vy', 'tcvy@gmail.com', '12345678', 'HCM', 'Viet Nam'),
-(3, 'Luong Minh Nhat', 'lmnhat@gmail.com', '12345678', 'HCM', 'Viet Nam'),
-(4, 'To Ly Huu Nhan', 'tlhnhan@gmail.com', '12345678', 'HCM', 'Viet Nam'),
-(5, 'Dao Dang Tung', 'ddtung@gmail.com', '12345678', 'HCM', 'Viet Nam'),
-(6, 'Tran Van Dat', 'tvdat@gmail.com', '12345678', 'HCM', 'Viet Nam'),
-(7, 'Le Ngoc Quang', 'lnquang@gmail.com', '12345678', 'HCM', 'Viet Nam')
+INSERT INTO FStore (MemberName, Email, Password, City, Country)
+values
+('Dao Khac Nhien', 'dknhien@gmail.com', '12345678', 'HCM', 'Viet Nam'),
+('Tran Cao Vy', 'tcvy@gmail.com', '12345678', 'HCM', 'Viet Nam'),
+('Luong Minh Nhat', 'lmnhat@gmail.com', '12345678', 'HCM', 'Viet Nam'),
+('To Ly Huu Nhan', 'tlhnhan@gmail.com', '12345678', 'HCM', 'Viet Nam'),
+('Dao Dang Tung', 'ddtung@gmail.com', '12345678', 'HCM', 'Viet Nam'),
+('Tran Van Dat', 'tvdat@gmail.com', '12345678', 'HCM', 'Viet Nam'),
+('Le Ngoc Quang', 'lnquang@gmail.com', '12345678', 'HCM', 'Viet Nam')
 go

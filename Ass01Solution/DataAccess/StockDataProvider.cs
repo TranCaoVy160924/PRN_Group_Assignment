@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
+﻿using System.Data;
 using Microsoft.Data.SqlClient;
 
 namespace Ass1.DataAccess
@@ -83,7 +78,7 @@ namespace Ass1.DataAccess
             }
             catch (Exception ex)
             {
-                throw new Exception("Data Provider: Delete Method", ex.InnerException);
+                throw new Exception(ex.Message, ex.InnerException);
             }
         }
         ////---------------------------------------------
