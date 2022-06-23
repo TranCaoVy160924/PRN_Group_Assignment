@@ -19,14 +19,15 @@ namespace Ass1.DataAccess
             string name, int size, object value, DbType dbType,
             ParameterDirection direction = ParameterDirection.Input)
         {
-            return new SqlParameter
+            SqlParameter parameter = new SqlParameter
             {
                 DbType = dbType,
                 ParameterName = name,
                 Size = size,
                 Direction = direction,
-                Value = value,
+                Value = value
             };
+            return parameter;
         }
         //---------------------------------------------
         //Execute query
@@ -71,7 +72,7 @@ namespace Ass1.DataAccess
                 {
                     foreach (var parameter in parameters)
                     {
-                        command.Parameters.Add(parameters);
+                        command.Parameters.Add(parameter);
                     }
                 }
                 command.ExecuteNonQuery();
