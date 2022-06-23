@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace MyStoreWinApp
 {
-    public partial class frmLogin : Form
+    public partial class frmAdd : Form
     {
-        public frmLogin()
+        public frmAdd()
         {
             InitializeComponent();
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
+        private void frmAdd_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
 
         }
@@ -31,5 +31,6 @@ namespace MyStoreWinApp
         {
 
         }
+
     }
 }
