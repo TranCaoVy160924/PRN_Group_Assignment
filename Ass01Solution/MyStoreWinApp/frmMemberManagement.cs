@@ -87,12 +87,31 @@ namespace MyStoreWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            frmMemberDetails frmMemberDetails = new frmMemberDetails()
+            {
+                Text = "Add member",
+                InsertOrUpdate = false,
+                MemberRepository = MemberRepository,
+            };
+            if (frmMemberDetails.ShowDialog() == DialogResult.OK)
+            {
+                LoadMemberList();
+                source.Position = source.Count - 1;
+            }
         }
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var member = GetMemberObject();
+                MemberRepository.DeleteMember(member.MemberID);
+                LoadMemberList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete a member");
+            }
         }
 
         private void dgvMemberList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
