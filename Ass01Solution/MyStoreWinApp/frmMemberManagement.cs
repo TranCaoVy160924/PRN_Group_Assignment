@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Ass1.BusinessObject;
 using Ass1.DataAccess;
+using System.Collections.Generic;
 
 namespace MyStoreWinApp
 {
@@ -24,10 +25,10 @@ namespace MyStoreWinApp
 
         private void frmMemberManagement_Load(object sender, EventArgs e)
         {
-            LoadMemberList();
             btnRemove.Enabled = false;
+            LoadMemberList();
             //Register this event to open the from that performs updating
-            dgvMemberList.CellDoubleClick += dgvMemberList_CellDoubleClick;
+            //dgvMemberList.CellDoubleClick += dgvMemberList_CellDoubleClick;
         }
 
         //-----------------------------------------------
@@ -55,12 +56,44 @@ namespace MyStoreWinApp
                 txtCountry.DataBindings.Add("Text", source, "MemberCountry");
                 txtCity.DataBindings.Add("Text", source, "MemberCity");
 
-                dgvMemberList.DataSource = null;
-                dgvMemberList.DataSource = source;                
+                //dgvMemberList.DataSource = null;
+                dgvMemberList.DataSource = source;
+                GetCountryChoice((List<MemberDTO>) members);
+                GetCityChoice((List<MemberDTO>) members);
+                
+                if (members.Count() == 0)
+                {
+                    ClearText();
+                    btnRemove.Enabled = false;
+                }
+                else
+                {
+                    btnRemove.Enabled = true;
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Load car list");
+                MessageBox.Show(ex.Message, "Load Member list");
+            }
+        }
+
+        private void GetCountryChoice(List<MemberDTO> members)
+        {
+            var distinctCountry = 
+                members.Select(member => member.MemberCountry).Distinct();
+            foreach (var country in distinctCountry)
+            {
+                cbxCountryChoice.Items.Add(country);
+            }
+        }
+
+        private void GetCityChoice(List<MemberDTO> members)
+        {
+            var distinctCity =
+                members.Select(member => member.MemberCity).Distinct();
+            foreach (var city in distinctCity)
+            {
+                cbxCityChoice.Items.Add(city);
             }
         }
 
@@ -87,29 +120,40 @@ namespace MyStoreWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            frmMemberDetails frmCarDEtails =
+                new frmMemberDetails
+                {
+                    Text = "Add Member",
+                    InsertOrUpdate = false,
+                    MemberRepository = MemberRepository,
+                };
+            if (frmCarDEtails.ShowDialog() == DialogResult.OK)
+            {
+                //Set focus car inserted 
+                source.Position = source.Count - 1;
+            }
+            LoadMemberList();
         }
+        
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var member = GetMemberObject();
+                MemberRepository.DeleteMember(member.MemberID);
+                LoadMemberList();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Delete a car");
+            }
         }
 
-        private void dgvMemberList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        void Form_Closed(object sender, FormClosedEventArgs e)
         {
-            frmMemberDetails frmMemberDetails = new frmMemberDetails
-            {
-                Text = "Update Member",
-                InsertOrUpdate = true,
-                MemberInfo = GetMemberObject(),
-                MemberRepository = this.MemberRepository
-            };
-            if (frmMemberDetails.ShowDialog() == DialogResult.OK)
-            {
-                LoadMemberList();
-                //set focus member update
-                source.Position = source.Count - 1;
-            }
+            frmMemberDetails frmMemberDetails = (frmMemberDetails)sender;
+            LoadMemberList();
         }
 
         private MemberDTO GetMemberObject()
@@ -133,5 +177,45 @@ namespace MyStoreWinApp
             }
             return member;
         }// end get member
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            //dgvMemberList = new DataGridView();
+            LoadMemberList();
+            //dgvMemberList.Refresh();
+        }
+
+        private void ClearText()
+        {
+            txtID.Text = String.Empty;
+            txtName.Text = String.Empty;
+            txtEmail.Text = String.Empty;
+            txtPassword.Text = String.Empty;
+            txtCountry.Text = String.Empty;
+            txtCity.Text = String.Empty;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            frmMemberDetails frmMemberDetails =
+                new frmMemberDetails
+                {
+                    Text = "Update Member",
+                    InsertOrUpdate = true,
+                    MemberInfo = GetMemberObject(),
+                    MemberRepository = this.MemberRepository
+                };
+            if (frmMemberDetails.ShowDialog() == DialogResult.OK)
+            {
+                LoadMemberList();
+                //set focus member update
+                source.Position = source.Count - 1;
+            }
+        }
+
+        private void btnSort_Click(object sender, EventArgs e)
+        {
+            this.dgvMemberList.Sort(this.dgvMemberList.Columns["MemberName"], ListSortDirection.Ascending);
+        }
     }
 }

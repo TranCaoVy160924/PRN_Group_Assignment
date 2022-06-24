@@ -25,6 +25,7 @@ namespace MyStoreWinApp
 
         private void frmMemberDetails_Load(object sender, EventArgs e)
         {
+            txtID.Enabled = false;
             if (InsertOrUpdate == true) //update mode
             {
                 //Show current information
@@ -43,7 +44,6 @@ namespace MyStoreWinApp
             {
                 var member = new MemberDTO
                 {
-                    MemberID = int.Parse(txtID.Text),
                     MemberName = txtName.Text,
                     Password = txtPassword.Text,
                     MemberEmail = txtEmail.Text,
@@ -56,16 +56,30 @@ namespace MyStoreWinApp
                 }
                 else
                 {
+                    member.MemberID = int.Parse(txtID.Text);
                     MemberRepository.UpdateMember(member);
+                    
                 }
+                this.Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            }
+                MessageBox.Show(ex.Message, "Insert");
+            } 
         }//end button
         
         private void btnClose_Click(object sender, EventArgs e)
-            => Close();
+        {
+            try
+            {
+
+                this.Close();
+            } 
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message, "Close form");
+            }
+        }
+            
     }
 }

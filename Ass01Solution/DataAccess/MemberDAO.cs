@@ -125,12 +125,12 @@ namespace Ass1.DataAccess
                 MemberDTO newMember = GetMemberByID(member.MemberID);
                 if (newMember == null)
                 {
-                    string SQLInsert = "Insert FStore values(" +
-                        "@MemberID, @MemberName, @Email, @Password " +
+                    string SQLInsert = "Insert FStore (MemberName, Email, " +
+                        "Password, City, Country " +
+                        ") values ( " +
+                        "@MemberName, @Email, @Password, " +
                         "@City, @Country)";
                     var parameters = new List<SqlParameter>();
-                    parameters.Add(dataProvider.CreateParameter(
-                        "@MemberID", 4, member.MemberID, DbType.Int32));
                     parameters.Add(dataProvider.CreateParameter(
                         "@MemberName", 50, member.MemberName, DbType.String));
                     parameters.Add(dataProvider.CreateParameter(
