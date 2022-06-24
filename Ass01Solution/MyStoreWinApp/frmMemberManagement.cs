@@ -144,9 +144,9 @@ namespace MyStoreWinApp
                 MemberRepository.DeleteMember(member.MemberID);
                 LoadMemberList();
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-                MessageBox.Show(ex.Message, "Delete a car");
+                MessageBox.Show(ex.Message, "Delete a member");
             }
         }
 
