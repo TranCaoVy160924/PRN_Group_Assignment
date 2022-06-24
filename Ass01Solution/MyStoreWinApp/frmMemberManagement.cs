@@ -17,7 +17,7 @@ namespace MyStoreWinApp
     {
         IMemberRepository MemberRepository = new MemberRepository();
         //Create a data source
-        BindingSource source;
+        SortableBindingList<MemberDTO> source;
         public frmMemberManagement()
         {
             InitializeComponent();
@@ -39,8 +39,11 @@ namespace MyStoreWinApp
             var members = MemberRepository.GetMembers();
             try
             {
-                source = new BindingSource();
-                source.DataSource = members;
+                source = new SortableBindingList<MemberDTO>();
+                foreach (var member in members)
+                {
+                    source.Add(member);
+                }
 
                 txtID.DataBindings.Clear();
                 txtName.DataBindings.Clear();
@@ -130,7 +133,7 @@ namespace MyStoreWinApp
             if (frmCarDEtails.ShowDialog() == DialogResult.OK)
             {
                 //Set focus car inserted 
-                source.Position = source.Count - 1;
+                //source.Position = source.Count - 1;
             }
             LoadMemberList();
         }
@@ -209,7 +212,7 @@ namespace MyStoreWinApp
             {
                 LoadMemberList();
                 //set focus member update
-                source.Position = source.Count - 1;
+                //source.Position = source.Count - 1;
             }
         }
 
