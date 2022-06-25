@@ -22,10 +22,9 @@ namespace Ass2.DataAccess.Repository
 
         }
 
-        public void DeleteMember(int memberID)
-        {
-
-        }
+        public void DeleteMember(int memberID) 
+           => MemberDAO.Instance.Delete(memberID);
+        
         public void UpdateMember(Member member)
         {
 

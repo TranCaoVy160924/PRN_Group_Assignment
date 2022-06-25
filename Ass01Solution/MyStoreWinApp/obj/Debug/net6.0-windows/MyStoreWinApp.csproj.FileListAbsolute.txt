@@ -103,6 +103,12 @@ D:\GitHub_Project\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net
 D:\GitHub_Project\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.genruntimeconfig.cache
 D:\GitHub_Project\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\ref\MyStoreWinApp.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.frmMemberDetails.resources
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+D:\GitHub_Project\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.frmMemberDetails.resources
+=======
+>>>>>>> Stashed changes
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\bin\Debug\net6.0-windows\MyStoreWinApp.exe
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\bin\Debug\net6.0-windows\appsettings.json
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\bin\Debug\net6.0-windows\MyStoreWinApp.deps.json
@@ -156,3 +162,7 @@ C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Ass01Solution\
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.pdb
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\MyStoreWinApp.genruntimeconfig.cache
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Ass01Solution\MyStoreWinApp\obj\Debug\net6.0-windows\ref\MyStoreWinApp.dll
+<<<<<<< Updated upstream
+=======
+>>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
+>>>>>>> Stashed changes

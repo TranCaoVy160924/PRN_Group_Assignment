@@ -2608,6 +2608,7 @@
     },
     "System.Text.Encoding/4.3.0": {
       "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
+<<<<<<< Updated upstream
       "type": "package",
       "path": "system.text.encoding/4.3.0",
       "files": [
@@ -2681,6 +2682,81 @@
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+=======
+      "type": "package",
+      "path": "system.text.encoding/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ThirdPartyNotices.txt",
+        "dotnet_library_license.txt",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/System.Text.Encoding.dll",
+        "ref/netcore50/System.Text.Encoding.xml",
+        "ref/netcore50/de/System.Text.Encoding.xml",
+        "ref/netcore50/es/System.Text.Encoding.xml",
+        "ref/netcore50/fr/System.Text.Encoding.xml",
+        "ref/netcore50/it/System.Text.Encoding.xml",
+        "ref/netcore50/ja/System.Text.Encoding.xml",
+        "ref/netcore50/ko/System.Text.Encoding.xml",
+        "ref/netcore50/ru/System.Text.Encoding.xml",
+        "ref/netcore50/zh-hans/System.Text.Encoding.xml",
+        "ref/netcore50/zh-hant/System.Text.Encoding.xml",
+        "ref/netstandard1.0/System.Text.Encoding.dll",
+        "ref/netstandard1.0/System.Text.Encoding.xml",
+        "ref/netstandard1.0/de/System.Text.Encoding.xml",
+        "ref/netstandard1.0/es/System.Text.Encoding.xml",
+        "ref/netstandard1.0/fr/System.Text.Encoding.xml",
+        "ref/netstandard1.0/it/System.Text.Encoding.xml",
+        "ref/netstandard1.0/ja/System.Text.Encoding.xml",
+        "ref/netstandard1.0/ko/System.Text.Encoding.xml",
+        "ref/netstandard1.0/ru/System.Text.Encoding.xml",
+        "ref/netstandard1.0/zh-hans/System.Text.Encoding.xml",
+        "ref/netstandard1.0/zh-hant/System.Text.Encoding.xml",
+        "ref/netstandard1.3/System.Text.Encoding.dll",
+        "ref/netstandard1.3/System.Text.Encoding.xml",
+        "ref/netstandard1.3/de/System.Text.Encoding.xml",
+        "ref/netstandard1.3/es/System.Text.Encoding.xml",
+        "ref/netstandard1.3/fr/System.Text.Encoding.xml",
+        "ref/netstandard1.3/it/System.Text.Encoding.xml",
+        "ref/netstandard1.3/ja/System.Text.Encoding.xml",
+        "ref/netstandard1.3/ko/System.Text.Encoding.xml",
+        "ref/netstandard1.3/ru/System.Text.Encoding.xml",
+        "ref/netstandard1.3/zh-hans/System.Text.Encoding.xml",
+        "ref/netstandard1.3/zh-hant/System.Text.Encoding.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.text.encoding.4.3.0.nupkg.sha512",
+        "system.text.encoding.nuspec"
+      ]
+    },
+    "System.Text.Encoding.CodePages/5.0.0": {
+      "sha512": "NyscU59xX6Uo91qvhOs2Ccho3AR2TnZPomo1Z0K6YpyztBPM/A5VbkzOO19sy3A3i1TtEnTxA7bCe3Us+r5MWg==",
+      "type": "package",
+      "path": "system.text.encoding.codepages/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+>>>>>>> Stashed changes
         "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
@@ -2717,6 +2793,7 @@
     },
     "System.Text.Encodings.Web/4.7.2": {
       "sha512": "iTUgB/WtrZ1sWZs84F2hwyQhiRH6QNjQv2DkwrH+WP6RoFga2Q1m3f9/Q7FG8cck8AdHitQkmkXSY8qylcDmuA==",
+<<<<<<< Updated upstream
       "type": "package",
       "path": "system.text.encodings.web/4.7.2",
       "files": [
@@ -2767,6 +2844,58 @@
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+=======
+      "type": "package",
+      "path": "system.text.encodings.web/4.7.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Encodings.Web.dll",
+        "lib/net461/System.Text.Encodings.Web.xml",
+        "lib/netstandard1.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard1.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.1/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.1/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.4.7.2.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Text.Json/4.6.0": {
+      "sha512": "4F8Xe+JIkVoDJ8hDAZ7HqLkjctN/6WItJIzQaifBwClC7wmoLSda/Sv2i6i1kycqDb3hWF4JCVbpAweyOKHEUA==",
+      "type": "package",
+      "path": "system.text.json/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Json.dll",
+        "lib/net461/System.Text.Json.xml",
+        "lib/netcoreapp3.0/System.Text.Json.dll",
+        "lib/netcoreapp3.0/System.Text.Json.xml",
+        "lib/netstandard2.0/System.Text.Json.dll",
+        "lib/netstandard2.0/System.Text.Json.xml",
+        "system.text.json.4.6.0.nupkg.sha512",
+        "system.text.json.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Threading.Tasks/4.3.0": {
+      "sha512": "LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
+      "type": "package",
+      "path": "system.threading.tasks/4.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+>>>>>>> Stashed changes
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2897,23 +3026,53 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\vende\\.nuget\\packages\\": {},
+<<<<<<< Updated upstream
+    "C:\\Users\\nhatm\\.nuget\\packages\\": {},
+=======
+<<<<<<< HEAD
+    "C:\\Users\\Dao Khac Nhien\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\nhatm\\.nuget\\packages\\": {},
+>>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
+>>>>>>> Stashed changes
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj",
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      "projectUniqueName": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj",
       "projectName": "DataAccess",
-      "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj",
-      "packagesPath": "C:\\Users\\vende\\.nuget\\packages\\",
-      "outputPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\obj\\",
+      "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\Dao Khac Nhien\\.nuget\\packages\\",
+      "outputPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\obj\\",
+=======
+>>>>>>> Stashed changes
+      "projectUniqueName": "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj",
+      "projectName": "DataAccess",
+      "projectPath": "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj",
+      "packagesPath": "C:\\Users\\nhatm\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\obj\\",
+<<<<<<< Updated upstream
+=======
+>>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
+>>>>>>> Stashed changes
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\vende\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< Updated upstream
+        "C:\\Users\\nhatm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+<<<<<<< HEAD
+        "C:\\Users\\Dao Khac Nhien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\nhatm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
+>>>>>>> Stashed changes
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2928,8 +3087,18 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {
-              "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj"
+<<<<<<< Updated upstream
+            "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj"
+=======
+<<<<<<< HEAD
+            "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj"
+=======
+            "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {
+              "projectPath": "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj"
+>>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
+>>>>>>> Stashed changes
             }
           }
         }
@@ -2958,7 +3127,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
