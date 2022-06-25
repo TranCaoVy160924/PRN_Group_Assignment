@@ -32,7 +32,7 @@ values
 GO
 
 /*ORDER*/
-CREATE TABLE [Order] (
+CREATE TABLE UserOrder (
     OrderId INT IDENTITY(1,1),
 	MemberId INT NOT NULL, 
 	OrderDate DATETIME NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE OrderDetail (
 	UnitPrice money NOT NULL,
 	Quantity int NOT NULL,
 	Discount float NOT NULL,
-	CONSTRAINT FK_OrderId FOREIGN KEY (OrderId) REFERENCES [Order](OrderId),
+	CONSTRAINT FK_OrderId FOREIGN KEY (OrderId) REFERENCES UserOrder(OrderId),
 	CONSTRAINT FK_ProductId FOREIGN KEY (ProductId) REFERENCES Product(ProductId),
     CONSTRAINT PK_OrderDetail PRIMARY KEY NONCLUSTERED (OrderId, ProductId)
 )
