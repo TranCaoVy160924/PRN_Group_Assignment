@@ -69,22 +69,22 @@ namespace SalesWinApp
 
                 dataTable.Columns["Role"].ReadOnly = true;
 
-                //load on textbox
-                txtID.DataBindings.Clear();
-                txtEmail.DataBindings.Clear();
-                txtCompany.DataBindings.Clear();
-                txtCity.DataBindings.Clear();
-                txtCountry.DataBindings.Clear();
-                txtPassword.DataBindings.Clear();
-                chkAdmin.DataBindings.Clear();
+                ////load on textbox
+                //txtID.DataBindings.Clear();
+                //txtEmail.DataBindings.Clear();
+                //txtCompany.DataBindings.Clear();
+                //txtCity.DataBindings.Clear();
+                //txtCountry.DataBindings.Clear();
+                //txtPassword.DataBindings.Clear();
+                //chkAdmin.DataBindings.Clear();
 
-                txtID.DataBindings.Add("Text", source, "MemberId");
-                txtEmail.DataBindings.Add("Text", source, "Email");
-                txtCompany.DataBindings.Add("Text", source, "CompanyName");
-                txtCity.DataBindings.Add("Text", source, "City");
-                txtCountry.DataBindings.Add("Text", source, "Country");
-                txtPassword.DataBindings.Add("Text", source, "Password");
-                chkAdmin.DataBindings.Add("Checked", source, "IsAdmin");
+                //txtID.DataBindings.Add("Int", dataTable, "MemberId");
+                //txtEmail.DataBindings.Add("Text", dataTable, "Email");
+                //txtCompany.DataBindings.Add("Text", dataTable, "CompanyName");
+                //txtCity.DataBindings.Add("Text", dataTable, "City");
+                //txtCountry.DataBindings.Add("Text", dataTable, "Country");
+                //txtPassword.DataBindings.Add("Text", dataTable, "Password");
+                //chkAdmin.DataBindings.Add("Text", dataTable, "IsAdmin");
 
                 foreach (var member in members)
                 {
@@ -163,11 +163,22 @@ namespace SalesWinApp
             {
                 var member = GetMemberObject();
                 MemberRepository.DeleteMember(member.MemberId);
+                var members = MemberRepository.GetMembers();
+                LoadMemberList(members);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }//end btnDelete
+
+        private void dgvMemberList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                DataGridViewRow dgvRow = dgvMemberList.Rows[e.RowIndex];
+                txtID.Text = dgvRow.Cells[0].Value.ToString();
+            }
+        }
     }
 }

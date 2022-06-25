@@ -46,7 +46,7 @@ CREATE TABLE UserOrder (
     CONSTRAINT PK_Order PRIMARY KEY (OrderId)
 )
 GO
-
+/*
 INSERT INTO UserOrder (MemberId, OrderDate, RequiredDate, ShippedDate, Freight)
 values
 (1, '2022-06-25 10:30:30', '2022-07-25 10:30:30', '2022-07-10 10:30:30', 100),
@@ -60,6 +60,7 @@ values
 (9, '2022-07-03 10:30:30', '2022-08-02 10:30:30', '2022-07-14 18:30:30', 900),
 (10, '2022-07-04 10:30:30', '2022-08-03 10:30:30', '2022-07-19 10:30:30', 1000)
 GO
+*/
 
 /*PRODUCT*/
 CREATE TABLE Product (
@@ -73,6 +74,7 @@ CREATE TABLE Product (
 )
 GO
 
+/*
 INSERT INTO Product (Category, ProductName, Weight, UnitPrice, UnitsInStock)
 values
 (1, 'Laptop TUF ASUS', '5 KG', 30000, 100),
@@ -86,6 +88,7 @@ values
 (4, 'Laptop HP', '4 KG', 20000, 400),
 (5, 'Laptop Dell', '3 KG', 50000, 500)
 GO
+*/
 
 /*ORDER DETAIL*/
 CREATE TABLE OrderDetail (
@@ -100,6 +103,7 @@ CREATE TABLE OrderDetail (
 )
 GO
 
+/*
 INSERT INTO OrderDetail (OrderId, ProductId, UnitPrice, Quantity, Discount)
 values
 (1, 1, 30000, 1, 30),
@@ -113,3 +117,4 @@ values
 (9, 9, 90000, 4, 0),
 (10, 10, 10000, 10, 20)
 GO
+*/

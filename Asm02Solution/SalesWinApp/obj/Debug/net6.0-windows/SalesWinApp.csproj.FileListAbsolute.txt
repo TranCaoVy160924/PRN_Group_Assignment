@@ -1,30 +1,11 @@
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.exe
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.deps.json
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.runtimeconfig.json
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.pdb
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.AssemblyReference.cache
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmLogin.resources
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMain.resources
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMembers.resources
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmOrders.resources
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProducts.resources
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.Properties.Resources.resources
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.GenerateResource.cache
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.AssemblyInfoInputs.cache
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.AssemblyInfo.cs
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.CoreCompileInputs.cache
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\refint\SalesWinApp.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.pdb
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.genruntimeconfig.cache
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\ref\SalesWinApp.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.exe
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.deps.json
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.runtimeconfig.json
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.pdb
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Azure.Core.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Azure.Identity.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -32,14 +13,21 @@ D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
@@ -76,118 +64,3 @@ D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.pdb
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.genruntimeconfig.cache
 D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\ref\SalesWinApp.dll
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.exe
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.deps.json
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.runtimeconfig.json
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\SalesWinApp.pdb
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\BusinessObject.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\DataAccess.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\BusinessObject.pdb
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\DataAccess.pdb
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.AssemblyReference.cache
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmLogin.resources
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMain.resources
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmMembers.resources
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmOrders.resources
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.frmProducts.resources
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.Properties.Resources.resources
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.GenerateResource.cache
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.GeneratedMSBuildEditorConfig.editorconfig
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.AssemblyInfoInputs.cache
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.AssemblyInfo.cs
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.CoreCompileInputs.cache
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.CopyComplete
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\refint\SalesWinApp.dll
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.pdb
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.genruntimeconfig.cache
-D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\ref\SalesWinApp.dll
->>>>>>> Stashed changes
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Azure.Core.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Azure.Identity.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Data.SqlClient.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Caching.Memory.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Options.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Primitives.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Logging.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.IdentityModel.Tokens.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\System.Runtime.Caching.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Data.SqlClient.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\BusinessObject.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\DataAccess.dll
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\BusinessObject.pdb
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\DataAccess.pdb
-C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.CopyComplete
->>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
-D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Azure.Core.dll
-D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Azure.Identity.dll
-D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
-D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
-D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
-D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
-D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
-D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
-D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
-D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
