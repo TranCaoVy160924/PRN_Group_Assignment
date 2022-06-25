@@ -31,7 +31,6 @@ D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\DataAccess\obj\Debug\net6.0
 D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
 D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
-=======
 >>>>>>> Stashed changes
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\DataAccess\bin\Debug\net6.0\DataAccess.deps.json
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\DataAccess\bin\Debug\net6.0\DataAccess.dll
@@ -48,7 +47,4 @@ C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\DataAccess\obj\Debug\net6.0\refint\DataAccess.dll
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\DataAccess\obj\Debug\net6.0\DataAccess.pdb
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\DataAccess\obj\Debug\net6.0\ref\DataAccess.dll
-<<<<<<< Updated upstream
-=======
 >>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
->>>>>>> Stashed changes

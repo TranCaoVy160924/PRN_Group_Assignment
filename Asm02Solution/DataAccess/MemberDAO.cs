@@ -36,7 +36,6 @@ namespace Ass2.DataAccess
 
         public Member GetMemberByID(int MemberID)
         {
-<<<<<<< Updated upstream
             IEnumerable<Member> members = dBContext.Members.Where(mem => mem.MemberId == MemberID);
             Member member = members.FirstOrDefault();
             return member;
@@ -45,20 +44,6 @@ namespace Ass2.DataAccess
         public Member GetMemberByMailAndPassword(string Email, String Password)
         {
             Member member = dBContext.Members.Where(mem =>mem.Email == Email && mem.Password == Password).FirstOrDefault();
-=======
-<<<<<<< HEAD
-            Member member = dBContext.Members.Where(mem => mem.MemberId == MemberID).FirstOrDefault();
-=======
-            IEnumerable<Member> members = dBContext.Members.Where(mem => mem.MemberId == MemberID);
-            Member member = members.FirstOrDefault();
->>>>>>> Stashed changes
-            return member;
-        }
-
-        public Member GetMemberByMailAndPassword(string Email, String Password)
-        {
-            Member member = dBContext.Members.Where(mem =>mem.Email == Email && mem.Password == Password).FirstOrDefault();
->>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
             return member;
         }
 

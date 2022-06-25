@@ -135,7 +135,6 @@ D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.
 D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.pdb
 D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.genruntimeconfig.cache
 D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\ref\SalesWinApp.dll
-=======
 >>>>>>> Stashed changes
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Azure.Core.dll
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Azure.Identity.dll
@@ -181,7 +180,14 @@ C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\BusinessObject.pdb
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\DataAccess.pdb
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\SalesWinApp\obj\Debug\net6.0-windows\SalesWinApp.csproj.CopyComplete
-<<<<<<< Updated upstream
-=======
 >>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
->>>>>>> Stashed changes
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Azure.Core.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Azure.Identity.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.Configuration.Json.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Z_Project\PRN_Group_Assignment\PRN_Group_Assignment\Asm02Solution\SalesWinApp\bin\Debug\net6.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll

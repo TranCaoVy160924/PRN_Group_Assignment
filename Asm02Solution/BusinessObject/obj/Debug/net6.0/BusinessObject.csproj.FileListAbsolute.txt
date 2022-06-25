@@ -29,7 +29,6 @@ D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\BusinessObject\obj\Debug\ne
 D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
 D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\BusinessObject\obj\Debug\net6.0\BusinessObject.genruntimeconfig.cache
 D:\GitHub_Project\PRN_Group_Assignment\Asm02Solution\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll
-=======
 >>>>>>> Stashed changes
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\BusinessObject\bin\Debug\net6.0\BusinessObject.deps.json
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\BusinessObject\bin\Debug\net6.0\BusinessObject.runtimeconfig.json
@@ -45,7 +44,4 @@ C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\BusinessObject\obj\Debug\net6.0\BusinessObject.pdb
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\BusinessObject\obj\Debug\net6.0\BusinessObject.genruntimeconfig.cache
 C:\Users\nhatm\OneDrive\Tài liệu\GitHub\PRN_Group_Assignment\Asm02Solution\BusinessObject\obj\Debug\net6.0\ref\BusinessObject.dll
-<<<<<<< Updated upstream
-=======
 >>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
->>>>>>> Stashed changes
