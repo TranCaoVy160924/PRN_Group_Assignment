@@ -28,20 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.dhvMemberList = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dhvMemberList)).BeginInit();
             this.SuspendLayout();
             // 
-            // Form1
+            // dhvMemberList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.dhvMemberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dhvMemberList.Location = new System.Drawing.Point(112, 133);
+            this.dhvMemberList.Name = "dhvMemberList";
+            this.dhvMemberList.RowHeadersWidth = 51;
+            this.dhvMemberList.RowTemplate.Height = 29;
+            this.dhvMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dhvMemberList.Size = new System.Drawing.Size(300, 188);
+            this.dhvMemberList.TabIndex = 0;
+            // 
+            // frmMembers
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(640, 360);
+            this.Controls.Add(this.dhvMemberList);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Name = "frmMembers";
+            this.Text = "Manage members";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dhvMemberList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private DataGridView dhvMemberList;
     }
 }

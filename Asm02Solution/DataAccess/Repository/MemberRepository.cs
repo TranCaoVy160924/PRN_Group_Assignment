@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ass2.BusinessObject;
 
-namespace DataAccess.Repository
+namespace Ass2.DataAccess.Repository
 {
-    internal class MemberRepository
+    public class MemberRepository
     {
+        public IEnumerable<Member> GetMembers()
+            => MemberDAO.Instance.GetMemberList();
     }
 }
