@@ -40,6 +40,12 @@ namespace Ass2.DataAccess
             Member member = members.FirstOrDefault();
             return member;
         }
+
+        public Member GetMemberByMailAndPassword(string Email, String Password)
+        {
+            Member member = dBContext.Members.Where(mem =>mem.Email == Email && mem.Password == Password).FirstOrDefault();
+            return member;
+        }
         //--------------------------------------------
         //public void AddMember(MemberDTO member)
         //{

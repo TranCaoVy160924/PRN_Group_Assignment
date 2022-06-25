@@ -1,3 +1,16 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
+using Ass2.BusinessObject;
+
 namespace SalesWinApp
 {
     public partial class frmLogin : Form
@@ -6,6 +19,8 @@ namespace SalesWinApp
         {
             InitializeComponent();
         }
+
+        
 
         private void Emailtb_TextChanged(object sender, EventArgs e)
         {
@@ -44,17 +59,24 @@ namespace SalesWinApp
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            frmLogin frmLogin = new frmLogin();
-            this.Close();
+            Application.Exit();
         }
 
         private void labelEmail_Click_1(object sender, EventArgs e)
         {
-
+                 
         }
 
         private void buttonLogin_Click_1(object sender, EventArgs e)
         {
+            frmMain f = new frmMain();
+            f.Show();
+            this.Hide();
+            string Email, password;
+            Email = textBoxEmail.Text;
+            password = textBoxPassword.Text;
+
+          
 
         }
 

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {}
+    "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {}
   },
   "projects": {
-    "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {
+    "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\vende\\.nuget\\packages\\",
-        "outputPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\obj\\",
+        "projectPath": "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\nhatm\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vende\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nhatm\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,6 +44,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -70,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
