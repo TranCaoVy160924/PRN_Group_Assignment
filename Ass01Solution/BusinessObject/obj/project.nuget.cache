@@ -1,8 +1,20 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "ctKOh7fgAGTwAdJlXlb32wqDSLfA1RbLOnYU2cokD/EHsHT+pRd2ybDtkUqBOdgyBsMbtJdfW8GfCQ8lMdSDQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
+=======
+<<<<<<< HEAD
+  "dgSpecHash": "bhQI+7m1ua/xdAcoejHJRqlKUBABBWTZs0q+tj9EgUtXCyUODJb6jE2NlK2ah00fKhwsC1bun/QxJfpZ77u0tA==",
+  "success": true,
+  "projectFilePath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
+=======
+  "dgSpecHash": "ctKOh7fgAGTwAdJlXlb32wqDSLfA1RbLOnYU2cokD/EHsHT+pRd2ybDtkUqBOdgyBsMbtJdfW8GfCQ8lMdSDQA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\nhatm\\OneDrive\\Tài liệu\\GitHub\\PRN_Group_Assignment\\Ass01Solution\\BusinessObject\\BusinessObject.csproj",
+>>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
+>>>>>>> Stashed changes
   "expectedPackageFiles": [],
   "logs": []
 }

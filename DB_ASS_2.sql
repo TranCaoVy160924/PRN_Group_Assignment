@@ -28,7 +28,10 @@ values
 ('lnquang@gmail.com', 'PHP', 'Phu Yen', 'Viet Nam', '12345678', 1),
 ('vdhoa@gmail.com', 'High Land', 'Nha Trang', 'Viet Nam', '12345678', 1),
 ('dnbchau@gmail.com', 'Duy Tan', 'Binh Dinh', 'Viet Nam', '12345678', 0),
-('cdquan@gmail.com', 'HUTECH', 'HCM', 'Viet Nam', '12345678', 0)
+('cdquan@gmail.com', 'HUTECH', 'HCM', 'Viet Nam', '12345678', 0),
+('ntbngoc@gmail.com', 'HUTECH', 'HCM', 'Viet Nam', '12345678', 0),
+('pqanh@gmail.com', 'HUTECH', 'HCM', 'Viet Nam', '12345678', 0)
+
 GO
 
 /*ORDER*/

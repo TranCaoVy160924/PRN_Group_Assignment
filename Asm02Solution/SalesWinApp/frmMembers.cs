@@ -64,15 +64,33 @@ namespace SalesWinApp
                 dataTable.Columns.Add("CompanyName", typeof(string));
                 dataTable.Columns.Add("City", typeof(string));
                 dataTable.Columns.Add("Country", typeof(string));
+                dataTable.Columns.Add("Password", typeof(string));
                 dataTable.Columns.Add("Role", typeof(bool));
 
                 dataTable.Columns["Role"].ReadOnly = true;
+
+                //load on textbox
+                txtID.DataBindings.Clear();
+                txtEmail.DataBindings.Clear();
+                txtCompany.DataBindings.Clear();
+                txtCity.DataBindings.Clear();
+                txtCountry.DataBindings.Clear();
+                txtPassword.DataBindings.Clear();
+                chkAdmin.DataBindings.Clear();
+
+                txtID.DataBindings.Add("Text", source, "MemberId");
+                txtEmail.DataBindings.Add("Text", source, "Email");
+                txtCompany.DataBindings.Add("Text", source, "CompanyName");
+                txtCity.DataBindings.Add("Text", source, "City");
+                txtCountry.DataBindings.Add("Text", source, "Country");
+                txtPassword.DataBindings.Add("Text", source, "Password");
+                chkAdmin.DataBindings.Add("Checked", source, "IsAdmin");
 
                 foreach (var member in members)
                 {
                     dataTable.Rows.Add(member.MemberId, member.Email,
                         member.CompanyName, member.City, member.Country,
-                        member.IsAdmin);
+                        member.Password,member.IsAdmin);
                 }
 
                 dgvMemberList.DataSource = dataTable;
@@ -115,5 +133,41 @@ namespace SalesWinApp
                 dgvMemberList.Columns[i].Width = colw;
             }
         }
+        //Get member list
+        private Member GetMemberObject()
+        {
+            Member member = null;
+            try
+            {
+                member = new Member
+                {
+                    MemberId = int.Parse(txtID.Text),
+                    Email = txtEmail.Text,
+                    CompanyName = txtCompany.Text,
+                    City = txtCity.Text,
+                    Country = txtCountry.Text,
+                    IsAdmin = chkAdmin.Checked
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get member");
+            }
+            return member;
+        }//end get member
+
+        //btn Detle
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var member = GetMemberObject();
+                MemberRepository.DeleteMember(member.MemberId);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }//end btnDelete
     }
 }

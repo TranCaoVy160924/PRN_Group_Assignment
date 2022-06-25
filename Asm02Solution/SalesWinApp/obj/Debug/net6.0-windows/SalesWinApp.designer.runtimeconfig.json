@@ -12,8 +12,18 @@
       }
     ],
     "additionalProbingPaths": [
+<<<<<<< Updated upstream
       "C:\\Users\\nhatm\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\nhatm\\.nuget\\packages",
+=======
+<<<<<<< HEAD
+      "C:\\Users\\Dao Khac Nhien\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Dao Khac Nhien\\.nuget\\packages",
+=======
+      "C:\\Users\\nhatm\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\nhatm\\.nuget\\packages",
+>>>>>>> 839117a665427bc6e57c683bc949283ffb035b2c
+>>>>>>> Stashed changes
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
