@@ -11,6 +11,7 @@ CREATE TABLE Member (
 	City VARCHAR(15) NOT NULL,
 	Country VARCHAR(15) NOT NULL,
 	Password VARCHAR(30) NOT NULL,
+	isAdmin BIT NOT NULL,
     CONSTRAINT PK_Member PRIMARY KEY (MemberId)
 )
 GO
