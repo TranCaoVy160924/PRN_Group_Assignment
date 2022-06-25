@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj": {}
+    "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj": {}
   },
   "projects": {
-    "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {
+    "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj",
+        "projectUniqueName": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj",
         "projectName": "BusinessObject",
-        "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\vende\\.nuget\\packages\\",
-        "outputPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\obj\\",
+        "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\Dao Khac Nhien\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vende\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dao Khac Nhien\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -74,24 +74,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj": {
+    "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj",
+        "projectUniqueName": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj",
         "projectName": "DataAccess",
-        "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj",
-        "packagesPath": "C:\\Users\\vende\\.nuget\\packages\\",
-        "outputPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\obj\\",
+        "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Dao Khac Nhien\\.nuget\\packages\\",
+        "outputPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\vende\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dao Khac Nhien\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -106,8 +106,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {
-                "projectPath": "D:\\Z_Project\\PRN_Group_Assignment\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj"
+              "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj": {
+                "projectPath": "D:\\GitHub_Project\\PRN_Group_Assignment\\Asm02Solution\\BusinessObject\\BusinessObject.csproj"
               }
             }
           }
@@ -142,7 +142,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }
