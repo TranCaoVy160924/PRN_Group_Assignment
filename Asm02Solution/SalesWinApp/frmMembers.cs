@@ -55,7 +55,7 @@ namespace SalesWinApp
                 //txtCity.DataBindings.Add("Text", source, "MemberCity");
 
                 //dgvMemberList.DataSource = null;
-                dhvMemberList.DataSource = source;
+                dgvMemberList.DataSource = source;
                 //GetCountryChoice((List<MemberDTO>)members);
                 //GetCityChoice((List<MemberDTO>)members);
 
@@ -72,6 +72,27 @@ namespace SalesWinApp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Load Member list");
+            }
+        }
+
+        private void dgvMemberList_DataSourceChanged(object sender, EventArgs e)
+        {
+            // Set your desired AutoSize Mode:
+            dgvMemberList.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvMemberList.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dgvMemberList.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
+            // Now that DataGridView has calculated it's Widths; we can now store each column Width values.
+            for (int i = 0; i <= dgvMemberList.Columns.Count - 1; i++)
+            {
+                // Store Auto Sized Widths:
+                int colw = dgvMemberList.Columns[i].Width;
+
+                // Remove AutoSizing:
+                dgvMemberList.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.None;
+
+                // Set Width to calculated AutoSize value:
+                dgvMemberList.Columns[i].Width = colw;
             }
         }
     }

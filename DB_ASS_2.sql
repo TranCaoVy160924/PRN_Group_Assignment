@@ -39,7 +39,7 @@ CREATE TABLE UserOrder (
 )
 GO
 
-INSERT INTO [Order] (MemberId, OrderDate, RequiredDate, ShippedDate, Freight)
+INSERT INTO UserOrder (MemberId, OrderDate, RequiredDate, ShippedDate, Freight)
 values
 (1, '2022-06-25 10:30:30', '2022-07-25 10:30:30', '2022-07-10 10:30:30', 100),
 (2, '2022-06-26 10:30:30', '2022-07-26 10:30:30', '2022-07-11 10:30:30', 200),

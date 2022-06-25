@@ -28,38 +28,39 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dhvMemberList = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dhvMemberList)).BeginInit();
+            this.dgvMemberList = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMemberList)).BeginInit();
             this.SuspendLayout();
             // 
-            // dhvMemberList
+            // dgvMemberList
             // 
-            this.dhvMemberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dhvMemberList.Location = new System.Drawing.Point(112, 133);
-            this.dhvMemberList.Name = "dhvMemberList";
-            this.dhvMemberList.RowHeadersWidth = 51;
-            this.dhvMemberList.RowTemplate.Height = 29;
-            this.dhvMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dhvMemberList.Size = new System.Drawing.Size(300, 188);
-            this.dhvMemberList.TabIndex = 0;
+            this.dgvMemberList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMemberList.Location = new System.Drawing.Point(12, 160);
+            this.dgvMemberList.Name = "dgvMemberList";
+            this.dgvMemberList.RowHeadersWidth = 51;
+            this.dgvMemberList.RowTemplate.Height = 29;
+            this.dgvMemberList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMemberList.Size = new System.Drawing.Size(1316, 188);
+            this.dgvMemberList.TabIndex = 0;
+            this.dgvMemberList.DataSourceChanged += new System.EventHandler(this.dgvMemberList_DataSourceChanged);
             // 
             // frmMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 360);
-            this.Controls.Add(this.dhvMemberList);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClientSize = new System.Drawing.Size(1340, 360);
+            this.Controls.Add(this.dgvMemberList);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmMembers";
             this.Text = "Manage members";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dhvMemberList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMemberList)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DataGridView dhvMemberList;
+        private DataGridView dgvMemberList;
     }
 }
