@@ -36,7 +36,8 @@ namespace Ass2.DataAccess
 
         public Member GetMemberByID(int MemberID)
         {
-            Member member = (Member)dBContext.Members.Where(mem => mem.MemberId == MemberID);
+            IEnumerable<Member> members = dBContext.Members.Where(mem => mem.MemberId == MemberID);
+            Member member = members.FirstOrDefault();
             return member;
         }
         //--------------------------------------------

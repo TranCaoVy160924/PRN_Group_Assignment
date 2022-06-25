@@ -28,6 +28,10 @@ namespace SalesWinApp
         {
             var members = MemberRepository.GetMembers();
             LoadMemberList(members);
+            foreach (var member in members)
+            {
+                Member blabla = MemberRepository.GetMemberByID(member.MemberId);
+            }
         }
 
         public void LoadMemberList(IEnumerable<Member> members)
