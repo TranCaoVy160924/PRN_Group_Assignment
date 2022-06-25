@@ -3,10 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ass2.BusinessObject;
 
-namespace DataAccess.Repository
+namespace Ass2.DataAccess.Repository
 {
-    internal class IMemberRepository
+    public interface IMemberRepository
     {
+        IEnumerable<Member> GetMembers();
+        Member GetMemberByID(int memberID);
+        void InsertMember(Member member);
+        void DeleteMember(int memberID);
+        void UpdateMember(Member member);
     }
 }

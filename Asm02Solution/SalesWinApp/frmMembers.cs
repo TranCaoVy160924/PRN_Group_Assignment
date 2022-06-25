@@ -15,7 +15,7 @@ namespace SalesWinApp
 {
     public partial class frmMembers : Form
     {
-        MemberRepository MemberRepository = new MemberRepository();
+        IMemberRepository MemberRepository = new MemberRepository();
         //Create a data source
         SortableBindingList<Member> source;
 
@@ -54,8 +54,24 @@ namespace SalesWinApp
                 //txtCountry.DataBindings.Add("Text", source, "MemberCountry");
                 //txtCity.DataBindings.Add("Text", source, "MemberCity");
 
-                //dgvMemberList.DataSource = null;
-                dgvMemberList.DataSource = source;
+                DataTable dataTable = new DataTable();
+                dataTable.Columns.Add("ID", typeof(int));
+                dataTable.Columns.Add("Email", typeof(string));
+                dataTable.Columns.Add("CompanyName", typeof(string));
+                dataTable.Columns.Add("City", typeof(string));
+                dataTable.Columns.Add("Country", typeof(string));
+                dataTable.Columns.Add("Role", typeof(bool));
+
+                dataTable.Columns["Role"].ReadOnly = true;
+
+                foreach (var member in members)
+                {
+                    dataTable.Rows.Add(member.MemberId, member.Email,
+                        member.CompanyName, member.City, member.Country,
+                        member.IsAdmin);
+                }
+
+                dgvMemberList.DataSource = dataTable;
                 //GetCountryChoice((List<MemberDTO>)members);
                 //GetCityChoice((List<MemberDTO>)members);
 

@@ -19,14 +19,14 @@ GO
 
 INSERT INTO Member (Email, CompanyName, City, Country, Password, isAdmin)
 values
-('dknhien@gmail.com', 'FPT', 'HCM', 'Viet Nam', '12345678', 0),
-('tcvy@gmail.com', 'FPT', 'Ha Noi', 'Viet Nam', '12345678', 0),
-('lmnhat@gmail.com', 'FPT', 'Quy Nhon', 'Viet Nam', '12345678', 0),
-('ddtung@gmail.com', 'FPT', 'Hai Phong', 'Viet Nam', '12345678', 0),
-('tlhnhan@gmail.com', 'FPT', 'HCM', 'Viet Nam', '12345678', 0),
-('tvdat@gmail.com', 'ABC', 'Da Nang', 'Viet Nam', '12345678', 0),
-('lnquang@gmail.com', 'PHP', 'Phu Yen', 'Viet Nam', '12345678', 0),
-('vdhoa@gmail.com', 'High Land', 'Nha Trang', 'Viet Nam', '12345678', 0),
+('dknhien@gmail.com', 'FPT', 'HCM', 'Viet Nam', '12345678', 1),
+('tcvy@gmail.com', 'FPT', 'Ha Noi', 'Viet Nam', '12345678', 1),
+('lmnhat@gmail.com', 'FPT', 'Quy Nhon', 'Viet Nam', '12345678', 1),
+('ddtung@gmail.com', 'FPT', 'Hai Phong', 'Viet Nam', '12345678', 1),
+('tlhnhan@gmail.com', 'FPT', 'HCM', 'Viet Nam', '12345678', 1),
+('tvdat@gmail.com', 'ABC', 'Da Nang', 'Viet Nam', '12345678', 1),
+('lnquang@gmail.com', 'PHP', 'Phu Yen', 'Viet Nam', '12345678', 1),
+('vdhoa@gmail.com', 'High Land', 'Nha Trang', 'Viet Nam', '12345678', 1),
 ('dnbchau@gmail.com', 'Duy Tan', 'Binh Dinh', 'Viet Nam', '12345678', 0),
 ('cdquan@gmail.com', 'HUTECH', 'HCM', 'Viet Nam', '12345678', 0)
 GO

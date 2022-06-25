@@ -8,6 +8,7 @@ namespace Ass2.DataAccess
         //singleton
         private static MemberDAO instance = null;
         private static readonly object instanceLock = new object();
+        ASS2_DBContext dBContext = new ASS2_DBContext();
 
         private MemberDAO() { }
 
@@ -29,58 +30,16 @@ namespace Ass2.DataAccess
 
         public IEnumerable<Member> GetMemberList()
         {
-            ASS2_DBContext dBContext = new ASS2_DBContext();
             var members = dBContext.Members.ToList();
             return members;
         }
 
-        //public MemberDTO GetMemberByID(int MemberID)
-        //{
-        //    MemberDTO member = null;
-        //    IDataReader dataReader = null;
-        //    String SQLSelect = "Select MemberID, MemberName, Email, " +
-        //        "Password, City, Country " +
-        //        "From FStore " +
-        //        "Where MemberID = @MemberID";
-        //    //string SQLSelect = "SelectCarID, CarName, " +
-        //    //    "Manufacturer, Price, ReleaseYear from Cars" +
-        //    //    "where CarID = @CarID";
-        //    try
-        //    {
-        //        var param = dataProvider.CreateParameter(
-        //            "@MemberID", 4, MemberID, DbType.Int32);
-        //        dataReader = dataProvider.ExecuteSqlQuery(
-        //            SQLSelect, CommandType.Text,
-        //            out connection, param);
-        //        SqlDataReader reader = (SqlDataReader)dataReader;
-        //        if (reader.Read())
-        //        {
-        //            member = new MemberDTO
-        //            {
-        //                MemberID = reader.GetInt32("MemberID"),
-        //                MemberName = reader.GetString("MemberName"),
-        //                MemberEmail = reader.GetString("Email"),
-        //                Password = reader.GetString("Password"),
-        //                MemberCity = reader.GetString("City"),
-        //                MemberCountry = reader.GetString("Country")
-        //            };
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw new Exception(ex.Message);
-        //    }
-        //    finally
-        //    {
-        //        if (dataReader != null)
-        //        {
-        //            dataReader.Close();
-        //            CloseConnection();
-        //        }
-        //    }
-        //    return member;
-        //}
-        ////--------------------------------------------
+        public Member GetMemberByID(int MemberID)
+        {
+            Member member = (Member)dBContext.Members.Where(mem => mem.MemberId == MemberID);
+            return member;
+        }
+        //--------------------------------------------
         //public void AddMember(MemberDTO member)
         //{
         //    try
