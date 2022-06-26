@@ -19,6 +19,7 @@ namespace SalesWinApp
         private const string BY_PRICE = "price";
         private const string BY_UNIT_IN_STOCK = "unitInStock";
         private const string GENERAL = "general";
+        private const string BY_ID = "id";
 
         ProductRepository ProductRepository = new ProductRepository();
         //Create a data source
@@ -61,18 +62,6 @@ namespace SalesWinApp
                 }
 
                 dgvProductsList.DataSource = dataTable;
-                //GetCountryChoice((List<MemberDTO>)members);
-                //GetCityChoice((List<MemberDTO>)members);
-
-                //if (members.Count() == 0)
-                //{
-                //    ClearText();
-                //    btnRemove.Enabled = false;
-                //}
-                //else
-                //{
-                //    btnRemove.Enabled = true;
-                //}
             }
             catch (Exception ex)
             {
@@ -112,6 +101,75 @@ namespace SalesWinApp
                 txtWeight.Text = dgvRow.Cells[3].Value.ToString();
                 txtProductPrice.Text = dgvRow.Cells[4].Value.ToString();
                 txtUnitInPrice.Text = dgvRow.Cells[5].Value.ToString();
+            }
+        }
+
+        private void btnSearchByID_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!txtSearchID.Text.Equals(""))
+                {
+                    IEnumerable<Product> products
+                        = ProductRepository.GetProductsBy(BY_ID, txtSearchID.Text);
+                    LoadProductList(products);
+                }      
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }    
+        }
+
+        private void btnSearchByPrice_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!txtUptoPrice.Text.Equals(""))
+                {
+                    IEnumerable<Product> products
+                        = ProductRepository.GetProductsBy(BY_PRICE, txtUptoPrice.Text);
+                    LoadProductList(products);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSeachByUnit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!txtSearchByUnit.Text.Equals(""))
+                {
+                    IEnumerable<Product> products
+                        = ProductRepository.GetProductsBy(
+                            BY_UNIT_IN_STOCK, txtSearchByUnit.Text);
+                    LoadProductList(products);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSearchByName_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!txtSearchName.Text.Equals(""))
+                {
+                    IEnumerable<Product> products
+                        = ProductRepository.GetProductsBy(BY_NAME, txtSearchName.Text);
+                    LoadProductList(products);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

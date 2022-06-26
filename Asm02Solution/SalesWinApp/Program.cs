@@ -12,7 +12,7 @@ namespace SalesWinApp
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new frmProducts());
-            Application.Run(new frmMembers());
+            Application.Run(new frmProducts());
         }
     }
 }

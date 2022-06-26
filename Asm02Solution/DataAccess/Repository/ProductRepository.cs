@@ -12,6 +12,7 @@ namespace Ass2.DataAccess.Repository
         private const string BY_NAME = "name";
         private const string BY_PRICE = "price";
         private const string BY_UNIT_IN_STOCK = "unitInStock";
+        private const string BY_ID = "id";
         private const string GENERAL = "general";
 
         public IEnumerable<Product> GetProductsBy(
@@ -35,6 +36,10 @@ namespace Ass2.DataAccess.Repository
                 if (searchChoice.Equals(BY_UNIT_IN_STOCK) && !searchKey.Equals(""))
                 {
                     products = ProductDAO.Instance.GetProductByUnit(searchKey);
+                }
+                if (searchChoice.Equals(BY_ID) && !searchKey.Equals(""))
+                {
+                    products = ProductDAO.Instance.GetProductByID(searchKey);
                 }
             } 
             catch (Exception ex)

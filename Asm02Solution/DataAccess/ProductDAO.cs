@@ -39,10 +39,11 @@ namespace Ass2.DataAccess
             return products;
         }
 
-        public Product GetProductByID(int productID)
+        public IEnumerable<Product> GetProductByID(string txtProductID)
         {
-            Product product = dBContext.Products
-                .Where(pro => pro.ProductId == productID).FirstOrDefault();
+            int productID = int.Parse(txtProductID);
+            IEnumerable<Product> product = dBContext.Products
+                .Where(pro => pro.ProductId == productID).ToList();
             return product;
         }
 
@@ -57,7 +58,7 @@ namespace Ass2.DataAccess
         {
             decimal price = decimal.Parse(txtPrice);
             IEnumerable<Product> products = dBContext.Products
-                .Where(pro => pro.UnitPrice == price).ToList();
+                .Where(pro => pro.UnitPrice <= price).ToList();
             return products;
         }
 
@@ -65,7 +66,7 @@ namespace Ass2.DataAccess
         {
             int unit = int.Parse(txtUnit);
             IEnumerable<Product> products = dBContext.Products
-                .Where(pro => pro.UnitsInStock == unit).ToList();
+                .Where(pro => pro.UnitsInStock >= unit).ToList();
             return products;
         }
 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dgvProductsList = new System.Windows.Forms.DataGridView();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtSearchID = new System.Windows.Forms.MaskedTextBox();
             this.lbProductID = new System.Windows.Forms.Label();
             this.lbProductCategory = new System.Windows.Forms.Label();
             this.lbProductWeight = new System.Windows.Forms.Label();
@@ -42,29 +42,38 @@
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.txtWeight = new System.Windows.Forms.TextBox();
             this.txtUnitInPrice = new System.Windows.Forms.TextBox();
+            this.btnSearchByID = new System.Windows.Forms.Button();
+            this.txtSearchName = new System.Windows.Forms.TextBox();
+            this.btnSearchByName = new System.Windows.Forms.Button();
+            this.txtUptoPrice = new System.Windows.Forms.MaskedTextBox();
+            this.txtSearchByUnit = new System.Windows.Forms.MaskedTextBox();
+            this.btnSearchByPrice = new System.Windows.Forms.Button();
+            this.btnSeachByUnit = new System.Windows.Forms.Button();
+            this.lbUptoPrice = new System.Windows.Forms.Label();
+            this.lbMoreThanUnit = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductsList)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProductsList
             // 
             this.dgvProductsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductsList.Location = new System.Drawing.Point(12, 237);
+            this.dgvProductsList.Location = new System.Drawing.Point(12, 392);
             this.dgvProductsList.Name = "dgvProductsList";
             this.dgvProductsList.RowHeadersWidth = 51;
             this.dgvProductsList.RowTemplate.Height = 29;
             this.dgvProductsList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductsList.Size = new System.Drawing.Size(892, 188);
+            this.dgvProductsList.Size = new System.Drawing.Size(892, 248);
             this.dgvProductsList.TabIndex = 0;
             this.dgvProductsList.DataSourceChanged += new System.EventHandler(this.dgvProductsList_DataSourceChanged);
             this.dgvProductsList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductsList_CellClick);
             // 
-            // maskedTextBox1
+            // txtSearchID
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(405, 163);
-            this.maskedTextBox1.Mask = "00000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(115, 27);
-            this.maskedTextBox1.TabIndex = 2;
+            this.txtSearchID.Location = new System.Drawing.Point(49, 195);
+            this.txtSearchID.Mask = "00000";
+            this.txtSearchID.Name = "txtSearchID";
+            this.txtSearchID.Size = new System.Drawing.Size(57, 27);
+            this.txtSearchID.TabIndex = 2;
             // 
             // lbProductID
             // 
@@ -162,11 +171,102 @@
             this.txtUnitInPrice.Size = new System.Drawing.Size(125, 27);
             this.txtUnitInPrice.TabIndex = 14;
             // 
+            // btnSearchByID
+            // 
+            this.btnSearchByID.Location = new System.Drawing.Point(112, 193);
+            this.btnSearchByID.Name = "btnSearchByID";
+            this.btnSearchByID.Size = new System.Drawing.Size(139, 29);
+            this.btnSearchByID.TabIndex = 15;
+            this.btnSearchByID.Text = "Search By ID";
+            this.btnSearchByID.UseVisualStyleBackColor = true;
+            this.btnSearchByID.Click += new System.EventHandler(this.btnSearchByID_Click);
+            // 
+            // txtSearchName
+            // 
+            this.txtSearchName.Location = new System.Drawing.Point(49, 245);
+            this.txtSearchName.Name = "txtSearchName";
+            this.txtSearchName.Size = new System.Drawing.Size(651, 27);
+            this.txtSearchName.TabIndex = 16;
+            // 
+            // btnSearchByName
+            // 
+            this.btnSearchByName.Location = new System.Drawing.Point(706, 243);
+            this.btnSearchByName.Name = "btnSearchByName";
+            this.btnSearchByName.Size = new System.Drawing.Size(198, 29);
+            this.btnSearchByName.TabIndex = 17;
+            this.btnSearchByName.Text = "Search By Name";
+            this.btnSearchByName.UseVisualStyleBackColor = true;
+            this.btnSearchByName.Click += new System.EventHandler(this.btnSearchByName_Click);
+            // 
+            // txtUptoPrice
+            // 
+            this.txtUptoPrice.Location = new System.Drawing.Point(328, 195);
+            this.txtUptoPrice.Mask = "0000000";
+            this.txtUptoPrice.Name = "txtUptoPrice";
+            this.txtUptoPrice.Size = new System.Drawing.Size(99, 27);
+            this.txtUptoPrice.TabIndex = 18;
+            // 
+            // txtSearchByUnit
+            // 
+            this.txtSearchByUnit.Location = new System.Drawing.Point(691, 196);
+            this.txtSearchByUnit.Mask = "00000";
+            this.txtSearchByUnit.Name = "txtSearchByUnit";
+            this.txtSearchByUnit.Size = new System.Drawing.Size(70, 27);
+            this.txtSearchByUnit.TabIndex = 19;
+            this.txtSearchByUnit.ValidatingType = typeof(int);
+            // 
+            // btnSearchByPrice
+            // 
+            this.btnSearchByPrice.Location = new System.Drawing.Point(433, 193);
+            this.btnSearchByPrice.Name = "btnSearchByPrice";
+            this.btnSearchByPrice.Size = new System.Drawing.Size(130, 29);
+            this.btnSearchByPrice.TabIndex = 20;
+            this.btnSearchByPrice.Text = "Search By Price";
+            this.btnSearchByPrice.UseVisualStyleBackColor = true;
+            this.btnSearchByPrice.Click += new System.EventHandler(this.btnSearchByPrice_Click);
+            // 
+            // btnSeachByUnit
+            // 
+            this.btnSeachByUnit.Location = new System.Drawing.Point(767, 194);
+            this.btnSeachByUnit.Name = "btnSeachByUnit";
+            this.btnSeachByUnit.Size = new System.Drawing.Size(137, 29);
+            this.btnSeachByUnit.TabIndex = 21;
+            this.btnSeachByUnit.Text = "Search By Unit";
+            this.btnSeachByUnit.UseVisualStyleBackColor = true;
+            this.btnSeachByUnit.Click += new System.EventHandler(this.btnSeachByUnit_Click);
+            // 
+            // lbUptoPrice
+            // 
+            this.lbUptoPrice.AutoSize = true;
+            this.lbUptoPrice.Location = new System.Drawing.Point(264, 198);
+            this.lbUptoPrice.Name = "lbUptoPrice";
+            this.lbUptoPrice.Size = new System.Drawing.Size(48, 20);
+            this.lbUptoPrice.TabIndex = 22;
+            this.lbUptoPrice.Text = "Up To";
+            // 
+            // lbMoreThanUnit
+            // 
+            this.lbMoreThanUnit.AutoSize = true;
+            this.lbMoreThanUnit.Location = new System.Drawing.Point(599, 199);
+            this.lbMoreThanUnit.Name = "lbMoreThanUnit";
+            this.lbMoreThanUnit.Size = new System.Drawing.Size(80, 20);
+            this.lbMoreThanUnit.TabIndex = 23;
+            this.lbMoreThanUnit.Text = "More Than";
+            // 
             // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 450);
+            this.ClientSize = new System.Drawing.Size(916, 669);
+            this.Controls.Add(this.lbMoreThanUnit);
+            this.Controls.Add(this.lbUptoPrice);
+            this.Controls.Add(this.btnSeachByUnit);
+            this.Controls.Add(this.btnSearchByPrice);
+            this.Controls.Add(this.txtSearchByUnit);
+            this.Controls.Add(this.txtUptoPrice);
+            this.Controls.Add(this.btnSearchByName);
+            this.Controls.Add(this.txtSearchName);
+            this.Controls.Add(this.btnSearchByID);
             this.Controls.Add(this.txtUnitInPrice);
             this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.txtProductPrice);
@@ -179,7 +279,7 @@
             this.Controls.Add(this.lbProductWeight);
             this.Controls.Add(this.lbProductCategory);
             this.Controls.Add(this.lbProductID);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.txtSearchID);
             this.Controls.Add(this.dgvProductsList);
             this.Name = "frmProducts";
             this.Text = "frmProducts";
@@ -193,7 +293,7 @@
         #endregion
 
         private DataGridView dgvProductsList;
-        private MaskedTextBox maskedTextBox1;
+        private MaskedTextBox txtSearchID;
         private Label lbProductID;
         private Label lbProductCategory;
         private Label lbProductWeight;
@@ -206,5 +306,14 @@
         private TextBox txtProductPrice;
         private TextBox txtWeight;
         private TextBox txtUnitInPrice;
+        private Button btnSearchByID;
+        private TextBox txtSearchName;
+        private Button btnSearchByName;
+        private MaskedTextBox txtUptoPrice;
+        private MaskedTextBox txtSearchByUnit;
+        private Button btnSearchByPrice;
+        private Button btnSeachByUnit;
+        private Label lbUptoPrice;
+        private Label lbMoreThanUnit;
     }
 }
