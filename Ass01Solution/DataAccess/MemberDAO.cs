@@ -230,5 +230,49 @@ namespace Ass1.DataAccess
                 CloseConnection();
             }
         }
+        //----------------------------------------------------------------
+        public IEnumerable<MemberDTO> FilterMember(string queryString)
+        {
+            IDataReader dataReader = null;
+            string SQLSelect = "Select MemberID, MemberName, Email, " +
+                "Password, City, Country " +
+                "From FStore" +
+                "Where City like '%" + queryString + "%' or " +
+                "Country like '%" + queryString + "%' or ";
+            var members = new List<MemberDTO>();
+            try
+            {
+                dataReader = dataProvider.ExecuteSqlQuery(SQLSelect,
+                    CommandType.Text, out connection);
+                SqlDataReader reader = (SqlDataReader)dataReader;
+                while (reader.Read())
+                {
+                    members.Add(new MemberDTO
+                    {
+                        MemberID = reader.GetInt32("MemberID"),
+                        MemberName = reader.GetString("MemberName"),
+                        MemberEmail = reader.GetString("Email"),
+                        Password = reader.GetString("Password"),
+                        MemberCity = reader.GetString("City"),
+                        MemberCountry = reader.GetString("Country")
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (dataReader != null)
+                {
+                    dataReader.Close();
+                    CloseConnection();
+                }
+            }
+            return members;
+        }
     }
 }
+    
+

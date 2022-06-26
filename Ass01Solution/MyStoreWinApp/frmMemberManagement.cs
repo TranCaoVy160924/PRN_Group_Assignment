@@ -15,7 +15,10 @@ namespace MyStoreWinApp
 {
     public partial class frmMemberManagement : Form
     {
-        IMemberRepository MemberRepository = new MemberRepository();
+        //IMemberRepository MemberRepository = new MemberRepository();
+        public MemberDTO MemberInfo { get; internal set; }
+        public bool InsertOrUpdate { get; internal set; }
+        public IMemberRepository MemberRepository { get; internal set; }
         //Create a data source
         SortableBindingList<MemberDTO> source;
         public frmMemberManagement()
@@ -223,7 +226,55 @@ namespace MyStoreWinApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            this.dgvMemberList.Sort(this.dgvMemberList.Columns["MemberName"], ListSortDirection.Ascending);
+        }
+       
 
+        private void btnFilter_Click_1(object sender, EventArgs e)
+        {
+            var members = MemberRepository.FilterMember(txtSearch.Text);
+            try
+            {
+                source = new SortableBindingList<MemberDTO>();
+                foreach (var member in members)
+                {
+                    source.Add(member);
+                }
+
+                txtID.DataBindings.Clear();
+                txtName.DataBindings.Clear();
+                txtEmail.DataBindings.Clear();
+                txtPassword.DataBindings.Clear();
+                txtCountry.DataBindings.Clear();
+                txtCity.DataBindings.Clear();
+
+                txtID.DataBindings.Add("Text", source, "MemberID");
+                txtName.DataBindings.Add("Text", source, "MemberName");
+                txtEmail.DataBindings.Add("Text", source, "MemberEmail");
+                txtPassword.DataBindings.Add("Text", source, "Password");
+                txtCountry.DataBindings.Add("Text", source, "MemberCountry");
+                txtCity.DataBindings.Add("Text", source, "MemberCity");
+
+                //dgvMemberList.DataSource = null;
+                dgvMemberList.DataSource = source;
+                GetCountryChoice((List<MemberDTO>)members);
+                GetCityChoice((List<MemberDTO>)members);
+
+                if (members.Count() == 0)
+                {
+                    ClearText();
+                    btnRemove.Enabled = false;
+                }
+                else
+                {
+                    btnRemove.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Load Member list");
+            }
         }
     }
 }
+

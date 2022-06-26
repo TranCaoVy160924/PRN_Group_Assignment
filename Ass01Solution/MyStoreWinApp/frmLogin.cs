@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ass1.BusinessObject;
+using Ass1.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +14,9 @@ namespace MyStoreWinApp
 {
     public partial class frmLogin : Form
     {
+        IMemberRepository memberRepository = new MemberRepository();
+
+        BindingSource source;
         public frmLogin()
         {
             InitializeComponent();
@@ -24,29 +29,44 @@ namespace MyStoreWinApp
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            /*if (isValid())
+            string email = txtEmail.Text;
+            string password = txtPassword.Text;
+
+            string text = txtEmail.Text;
+            string Email = text;
+            string Password = txtPassword.Text;
+            MemberDTO mem = memberRepository.GetMemberObjectByEmailAndPassword(email, password);
+            if (mem != null)
             {
-                using(SqlConnection conn=new SqlConnection(@"Data Source=(LocalDb)\MSSQLLocalDB;
-                AttachDbFilename=|DataDirectory|\ASS1_DB.mdf;Integrated Security=true"))
+                frmMemberManagement frmMemberManagement = new frmMemberManagement
                 {
-                    string query = "select * from FStore where Email = '" +
-                    txtEmail.Text.Trim() + "'and Password = " + txtPassword.Text.Trim() + "'";
-                    SqlDataAdapter sda = new SqlDataAdapter(query, conn);
-                    DataTable dta = new DataTable();
-                    sda.Fill(dta);
-                    if(dta.Rows.Count == 1)
-                    {
-                        frmMemberManagement frmMemberManagement = new frmMemberManagement();
-                        this.Hide();
-                        frmMemberManagement.Show();
-                    }
-               }
-            }*/
+                    Text = "User " + mem.MemberEmail,
+                    MemberInfo = mem,
+                    InsertOrUpdate = true,
+                    MemberRepository = memberRepository
+
+                };
+                if (frmMemberManagement.ShowDialog() == DialogResult.OK)
+                {
+                    source.Position = source.Count - 1;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Email or password does not match.");
+            }
+            frmMemberManagement frm = new frmMemberManagement();
+            frm.Show();
+            this.Hide();
         }
+
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Do you want Close?", "Notification", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
         private bool isValid()
         {
@@ -54,12 +74,19 @@ namespace MyStoreWinApp
             {
                 MessageBox.Show("Invalid email!");
                 return false;
-            }else if(txtPassword.Text.TrimStart() == string.Empty)
+            }
+            else if (txtPassword.Text.TrimStart() == string.Empty)
             {
                 MessageBox.Show("Invalid password");
                 return false;
             }
             return true;
         }
+
+        private void lbLogin_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
