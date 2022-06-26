@@ -18,16 +18,12 @@ namespace Ass2.DataAccess.Repository
         }
 
         public void InsertMember(Member member)
-        {
-
-        }
+            => MemberDAO.Instance.Add(member);
 
         public void DeleteMember(int memberID) 
-           => MemberDAO.Instance.Delete(memberID);
-        
-        public void UpdateMember(Member member)
-        {
+            => MemberDAO.Instance.Delete(memberID);
 
-        }
+        public void UpdateMember(Member member)
+            => MemberDAO.Instance.Update(member);
     }
 }

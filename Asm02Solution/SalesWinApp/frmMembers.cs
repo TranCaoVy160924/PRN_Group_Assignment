@@ -16,6 +16,7 @@ namespace SalesWinApp
     public partial class frmMembers : Form
     {
         IMemberRepository MemberRepository = new MemberRepository();
+        public Member MemberInfo { get; internal set; }
         //Create a data source
         SortableBindingList<Member> source;
 
@@ -164,6 +165,45 @@ namespace SalesWinApp
                 txtPassword.Text = dgvRow.Cells[5].Value.ToString();
                 chkAdmin.Checked = Convert.ToBoolean(dgvRow.Cells[6].Value);
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            {
+                frmMembersDetails frm = new frmMembersDetails
+                    {
+                        Text = "Update Member",
+                        InsertOrUpdate = true,
+                        memberInfo = GetMemberObject(),
+                        MemberRepository = this.MemberRepository
+                    };
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    var m1 = MemberRepository.GetMembers();
+                    LoadMemberList(m1);
+                    //set focus member update
+                    //source.Position = source.Count - 1;
+                }
+                var m2 = MemberRepository.GetMembers();
+                LoadMemberList(m2);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmMembersDetails frm = new frmMembersDetails
+            {
+                    Text = "Add Member",
+                    InsertOrUpdate = false,
+                    MemberRepository = MemberRepository,
+                };
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //Set focus car inserted 
+                //source.Position = source.Count - 1;
+            }
+            var m = MemberRepository.GetMembers();
+            LoadMemberList(m);
         }
     }
 }
