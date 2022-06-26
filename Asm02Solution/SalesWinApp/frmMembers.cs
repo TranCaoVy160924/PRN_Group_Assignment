@@ -28,10 +28,6 @@ namespace SalesWinApp
         {
             var members = MemberRepository.GetMembers();
             LoadMemberList(members);
-            foreach (var member in members)
-            {
-                Member blabla = MemberRepository.GetMemberByID(member.MemberId);
-            }
         }
 
         public void LoadMemberList(IEnumerable<Member> members)
@@ -68,23 +64,6 @@ namespace SalesWinApp
                 dataTable.Columns.Add("Role", typeof(bool));
 
                 dataTable.Columns["Role"].ReadOnly = true;
-
-                ////load on textbox
-                //txtID.DataBindings.Clear();
-                //txtEmail.DataBindings.Clear();
-                //txtCompany.DataBindings.Clear();
-                //txtCity.DataBindings.Clear();
-                //txtCountry.DataBindings.Clear();
-                //txtPassword.DataBindings.Clear();
-                //chkAdmin.DataBindings.Clear();
-
-                //txtID.DataBindings.Add("Int", dataTable, "MemberId");
-                //txtEmail.DataBindings.Add("Text", dataTable, "Email");
-                //txtCompany.DataBindings.Add("Text", dataTable, "CompanyName");
-                //txtCity.DataBindings.Add("Text", dataTable, "City");
-                //txtCountry.DataBindings.Add("Text", dataTable, "Country");
-                //txtPassword.DataBindings.Add("Text", dataTable, "Password");
-                //chkAdmin.DataBindings.Add("Text", dataTable, "IsAdmin");
 
                 foreach (var member in members)
                 {

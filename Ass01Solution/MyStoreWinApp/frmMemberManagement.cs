@@ -18,7 +18,7 @@ namespace MyStoreWinApp
         //IMemberRepository MemberRepository = new MemberRepository();
         public MemberDTO MemberInfo { get; internal set; }
         public bool InsertOrUpdate { get; internal set; }
-        public IMemberRepository MemberRepository { get; internal set; }
+        public IMemberRepository MemberRepository = new MemberRepository();
         //Create a data source
         SortableBindingList<MemberDTO> source;
         public frmMemberManagement()

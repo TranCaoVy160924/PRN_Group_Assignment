@@ -74,7 +74,7 @@ CREATE TABLE Product (
 )
 GO
 
-/*
+
 INSERT INTO Product (Category, ProductName, Weight, UnitPrice, UnitsInStock)
 values
 (1, 'Laptop TUF ASUS', '5 KG', 30000, 100),
@@ -88,7 +88,6 @@ values
 (4, 'Laptop HP', '4 KG', 20000, 400),
 (5, 'Laptop Dell', '3 KG', 50000, 500)
 GO
-*/
 
 /*ORDER DETAIL*/
 CREATE TABLE OrderDetail (

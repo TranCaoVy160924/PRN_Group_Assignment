@@ -39,11 +39,34 @@ namespace Ass2.DataAccess
             return products;
         }
 
-        public Product GetProductByID(string productID)
+        public Product GetProductByID(int productID)
         {
-            Product product = (Product)dBContext.Products
-                .Where(pro => pro.ProductId.ToString().Equals(productID));
+            Product product = dBContext.Products
+                .Where(pro => pro.ProductId == productID).FirstOrDefault();
             return product;
+        }
+
+        public IEnumerable<Product> GetProductByName(string productName)
+        {
+            IEnumerable<Product> products = dBContext.Products
+                .Where(pro => pro.ProductName.Contains(productName)).ToList();
+            return products;
+        }
+
+        public IEnumerable<Product> GetProductByPrice(string txtPrice)
+        {
+            decimal price = decimal.Parse(txtPrice);
+            IEnumerable<Product> products = dBContext.Products
+                .Where(pro => pro.UnitPrice == price).ToList();
+            return products;
+        }
+
+        public IEnumerable<Product> GetProductByUnit(string txtUnit)
+        {
+            int unit = int.Parse(txtUnit);
+            IEnumerable<Product> products = dBContext.Products
+                .Where(pro => pro.UnitsInStock == unit).ToList();
+            return products;
         }
     }
 }

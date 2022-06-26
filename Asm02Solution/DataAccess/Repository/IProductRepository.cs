@@ -10,7 +10,7 @@ namespace Ass2.DataAccess.Repository
     public interface IProductRepository
     {
         Func<string, IEnumerable<Product>> GetProducts();
-        IEnumerable<Product> GetProducts<T>(T searchKey);
+        IEnumerable<Product> GetProducts(string searchChoice, string searchKey);
         Product GetProductByID(int productID);
         void InsertProduct(Product product);
         void DeleteMember(int productID);
