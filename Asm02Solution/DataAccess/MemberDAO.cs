@@ -71,8 +71,8 @@ namespace Ass2.DataAccess
         {
             try
             {
-                    dBContext.Members.Add(m);
-                    dBContext.SaveChanges();
+                dBContext.Members.Add(m);
+                dBContext.SaveChanges();
             }
             catch (Exception ex)
             {

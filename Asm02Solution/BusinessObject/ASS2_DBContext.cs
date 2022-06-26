@@ -35,7 +35,7 @@ namespace Ass2.BusinessObject
             {
                 entity.ToTable("Member");
 
-                entity.Property(e => e.MemberId).ValueGeneratedNever();
+                entity.Property(e => e.MemberId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.City)
                     .HasMaxLength(15)

@@ -126,6 +126,7 @@ namespace SalesWinApp
                     CompanyName = txtCompany.Text,
                     City = txtCity.Text,
                     Country = txtCountry.Text,
+                    Password = txtPassword.Text,
                     IsAdmin = chkAdmin.Checked
                 };
             }
