@@ -11,8 +11,12 @@ namespace Ass1.DataAccess
     {
         IEnumerable<MemberDTO> GetMembers();
         MemberDTO GetMemberByID(int memberID);
+        IEnumerable<MemberDTO> GetMemberObjectByName(string memberobjectName);
         void InsertMember(MemberDTO member);
         void DeleteMember(int memberID);
         void UpdateMember(MemberDTO member);
+        MemberDTO GetMemberObjectByEmailAndPassword(string email, string password);
+        MemberDTO GetMemberObjectByNameAndID(int memberobjectID, string memberobjectName);
+        IEnumerable<MemberDTO> FilterMember(string country, string city);
     }
 }

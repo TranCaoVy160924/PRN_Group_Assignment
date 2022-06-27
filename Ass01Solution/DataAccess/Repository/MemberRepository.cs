@@ -21,5 +21,22 @@ namespace Ass1.DataAccess
             => MemberDAO.Instance.RemoveMember(memberID);
         public void UpdateMember(MemberDTO member) 
             => MemberDAO.Instance.UpdateMember(member);
+        public IEnumerable<MemberDTO> FilterMember(string country, string city)
+            => MemberDAO.Instance.FilterMember(country, city);
+
+        public MemberDTO GetMemberObjectByEmailAndPassword(string email, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<MemberDTO> GetMemberObjectByName(string memberobjectName)
+            => MemberDAO.Instance.GetMemberByName(memberobjectName);
+        
+
+        public MemberDTO GetMemberObjectByNameAndID(int memberobjectID, string memberobjectName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
+

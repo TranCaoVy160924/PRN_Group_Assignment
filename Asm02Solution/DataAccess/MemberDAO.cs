@@ -65,6 +65,38 @@ namespace Ass2.DataAccess
             }
             
         }
+
+        //add a member
+        public void Add(Member m)
+        {
+            try
+            {
+                dBContext.Members.Add(m);
+                dBContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
+
+        //update a member
+        public void Update(Member m)
+        {
+            try
+            {
+                var member = dBContext.Members.SingleOrDefault(mem => mem.MemberId == m.MemberId);
+                if (member != null)
+                {
+                    dBContext.Members.Update(member);
+                    dBContext.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         //--------------------------------------------
         //public void AddMember(MemberDTO member)
         //{

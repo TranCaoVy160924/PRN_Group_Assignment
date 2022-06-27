@@ -16,6 +16,7 @@ namespace SalesWinApp
     public partial class frmMembers : Form
     {
         IMemberRepository MemberRepository = new MemberRepository();
+        public Member MemberInfo { get; internal set; }
         //Create a data source
         SortableBindingList<Member> source;
 
@@ -28,10 +29,6 @@ namespace SalesWinApp
         {
             var members = MemberRepository.GetMembers();
             LoadMemberList(members);
-            foreach (var member in members)
-            {
-                Member blabla = MemberRepository.GetMemberByID(member.MemberId);
-            }
         }
 
         public void LoadMemberList(IEnumerable<Member> members)
@@ -68,23 +65,6 @@ namespace SalesWinApp
                 dataTable.Columns.Add("Role", typeof(bool));
 
                 dataTable.Columns["Role"].ReadOnly = true;
-
-                ////load on textbox
-                //txtID.DataBindings.Clear();
-                //txtEmail.DataBindings.Clear();
-                //txtCompany.DataBindings.Clear();
-                //txtCity.DataBindings.Clear();
-                //txtCountry.DataBindings.Clear();
-                //txtPassword.DataBindings.Clear();
-                //chkAdmin.DataBindings.Clear();
-
-                //txtID.DataBindings.Add("Int", dataTable, "MemberId");
-                //txtEmail.DataBindings.Add("Text", dataTable, "Email");
-                //txtCompany.DataBindings.Add("Text", dataTable, "CompanyName");
-                //txtCity.DataBindings.Add("Text", dataTable, "City");
-                //txtCountry.DataBindings.Add("Text", dataTable, "Country");
-                //txtPassword.DataBindings.Add("Text", dataTable, "Password");
-                //chkAdmin.DataBindings.Add("Text", dataTable, "IsAdmin");
 
                 foreach (var member in members)
                 {
@@ -146,6 +126,7 @@ namespace SalesWinApp
                     CompanyName = txtCompany.Text,
                     City = txtCity.Text,
                     Country = txtCountry.Text,
+                    Password = txtPassword.Text,
                     IsAdmin = chkAdmin.Checked
                 };
             }
@@ -185,6 +166,45 @@ namespace SalesWinApp
                 txtPassword.Text = dgvRow.Cells[5].Value.ToString();
                 chkAdmin.Checked = Convert.ToBoolean(dgvRow.Cells[6].Value);
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            {
+                frmMembersDetails frm = new frmMembersDetails
+                    {
+                        Text = "Update Member",
+                        InsertOrUpdate = true,
+                        memberInfo = GetMemberObject(),
+                        MemberRepository = this.MemberRepository
+                    };
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    var m1 = MemberRepository.GetMembers();
+                    LoadMemberList(m1);
+                    //set focus member update
+                    //source.Position = source.Count - 1;
+                }
+                var m2 = MemberRepository.GetMembers();
+                LoadMemberList(m2);
+            }
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmMembersDetails frm = new frmMembersDetails
+            {
+                    Text = "Add Member",
+                    InsertOrUpdate = false,
+                    MemberRepository = MemberRepository,
+                };
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //Set focus car inserted 
+                //source.Position = source.Count - 1;
+            }
+            var m = MemberRepository.GetMembers();
+            LoadMemberList(m);
         }
     }
 }
