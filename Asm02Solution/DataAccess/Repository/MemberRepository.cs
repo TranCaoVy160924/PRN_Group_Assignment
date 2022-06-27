@@ -17,6 +17,10 @@ namespace Ass2.DataAccess.Repository
             return MemberDAO.Instance.GetMemberByID(memberID);
         }
 
+        public Member GetMailAndPassword(string email, string password)
+        {
+            return MemberDAO.Instance.GetMailAndPassword(email, password);
+        }
         public void InsertMember(Member member)
         {
 

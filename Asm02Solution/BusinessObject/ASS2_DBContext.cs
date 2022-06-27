@@ -25,7 +25,7 @@ namespace Ass2.BusinessObject
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("server =(local); database = ASS2_DB;TrustServerCertificate=True;uid=sa;pwd=admin;");
+                optionsBuilder.UseSqlServer("server =(local); database = ASS2_DB;TrustServerCertificate=True;Trusted_Connection=True;uid=sa;pwd=admin;");
             }
         }
 

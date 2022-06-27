@@ -11,6 +11,7 @@ namespace Ass2.DataAccess.Repository
     {
         IEnumerable<Member> GetMembers();
         Member GetMemberByID(int memberID);
+        Member GetMailAndPassword(string email, string password);
         void InsertMember(Member member);
         void DeleteMember(int memberID);
         void UpdateMember(Member member);

@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using Microsoft.Data.SqlClient;
-using Ass2.BusinessObject;
+using Ass2.DataAccess.Repository;
+using Ass2.DataAccess;
 
 namespace SalesWinApp
 {
@@ -19,30 +19,14 @@ namespace SalesWinApp
         {
             InitializeComponent();
         }
-
         
-
-        private void Emailtb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Passwordtb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        MemberRepository db = new MemberRepository();
         private void frmLogin_Load(object sender, EventArgs e)
         {
 
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void labelEmail_Click(object sender, EventArgs e)
         {
 
         }
@@ -69,18 +53,35 @@ namespace SalesWinApp
 
         private void buttonLogin_Click_1(object sender, EventArgs e)
         {
-            frmMain f = new frmMain();
-            f.Show();
-            this.Hide();
-            string Email, password;
-            Email = textBoxEmail.Text;
-            password = textBoxPassword.Text;
+            string EmailIn, passwordIn;
+            EmailIn = tbEmail.Text;
+            passwordIn= tbPassword.Text;
+   
+            var check = db.GetMailAndPassword(EmailIn, passwordIn);
 
-          
-
+            if(check == null)
+            {
+                lbErrorMessage.Show();
+            }
+            else
+            {
+                frmMain f = new frmMain();
+                f.Show();
+                this.Hide();
+            }
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbErrorMessage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbPassword_TextChanged(object sender, EventArgs e)
         {
 
         }

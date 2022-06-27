@@ -41,9 +41,9 @@ namespace Ass2.DataAccess
             return member;
         }
 
-        public Member GetMemberByMailAndPassword(string Email, String Password)
+        public Member GetMailAndPassword(string Email, string Password)
         {
-            Member member = dBContext.Members.Where(mem =>mem.Email == Email && mem.Password == Password).FirstOrDefault();
+            Member member = dBContext.Members.Where(mem => mem.Email == Email && mem.Password == Password).FirstOrDefault();
             return member;
         }
 
