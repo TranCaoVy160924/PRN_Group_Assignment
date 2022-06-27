@@ -17,8 +17,6 @@ namespace SalesWinApp
     {
         IMemberRepository MemberRepository = new MemberRepository();
         public Member MemberInfo { get; internal set; }
-        //Create a data source
-        SortableBindingList<Member> source;
 
         public frmMembers()
         {
@@ -35,11 +33,7 @@ namespace SalesWinApp
         {
             try
             {
-                source = new SortableBindingList<Member>();
-                foreach (var member in members)
-                {
-                    source.Add(member);
-                }
+                
 
                 //txtID.DataBindings.Clear();
                 //txtName.DataBindings.Clear();

@@ -62,6 +62,13 @@ namespace SalesWinApp
                 }
 
                 dgvProductsList.DataSource = dataTable;
+
+                txtProductID.Text = dataTable.Rows[0][0].ToString();
+                txtProductCategory.Text = dataTable.Rows[0][1].ToString();
+                txtProductName.Text = dataTable.Rows[0][2].ToString();
+                txtWeight.Text = dataTable.Rows[0][3].ToString();
+                txtProductPrice.Text = dataTable.Rows[0][4].ToString();
+                txtUnitInStock.Text = dataTable.Rows[0][5].ToString();
             }
             catch (Exception ex)
             {
@@ -100,7 +107,7 @@ namespace SalesWinApp
                 txtProductName.Text = dgvRow.Cells[2].Value.ToString();
                 txtWeight.Text = dgvRow.Cells[3].Value.ToString();
                 txtProductPrice.Text = dgvRow.Cells[4].Value.ToString();
-                txtUnitInPrice.Text = dgvRow.Cells[5].Value.ToString();
+                txtUnitInStock.Text = dgvRow.Cells[5].Value.ToString();
             }
         }
 
@@ -170,6 +177,92 @@ namespace SalesWinApp
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtSearchID.Text = "";
+            txtSearchName.Text = "";
+            txtSearchByUnit.Text = "";
+            txtUptoPrice.Text = "";
+
+            var products = ProductRepository.GetProductsBy(GENERAL);
+            LoadProductList(products);
+        }
+
+        private void Delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var product = GetProductObject();
+                ProductRepository.DeleteProduct(product.ProductId);
+                var products = ProductRepository.GetProductsBy(GENERAL);
+                LoadProductList(products);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private Product GetProductObject()
+        {
+            Product product = null;
+            try
+            {
+                product = new Product
+                {
+                    ProductId = int.Parse(txtProductID.Text),
+                    Category = int.Parse(txtProductCategory.Text),
+                    ProductName = txtProductName.Text,
+                    Weight = txtWeight.Text,
+                    UnitPrice = decimal.Parse(txtUnitInStock.Text),
+                    UnitsInStock = int.Parse(txtUnitInStock.Text)
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get product");
+            }
+            return product;
+        }//end get member
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            frmProductDetail frm = new frmProductDetail
+            {
+                Text = "Add Product",
+                InsertOrUpdate = false,
+                ProductRepository = ProductRepository
+            };
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //Set focus car inserted 
+                //source.Position = source.Count - 1;
+            }
+            var products = ProductRepository.GetProductsBy(GENERAL);
+            LoadProductList(products);
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            {
+                frmProductDetail frm = new frmProductDetail
+                {
+                    Text = "Update Member",
+                    InsertOrUpdate = true,
+                    productInfo = GetProductObject(),
+                    ProductRepository = this.ProductRepository
+                };
+                if (frm.ShowDialog() == DialogResult.OK)
+                {
+                    
+                    //set focus member update
+                    //source.Position = source.Count - 1;
+                }
+                var products = ProductRepository.GetProductsBy(GENERAL);
+                LoadProductList(products);
             }
         }
     }

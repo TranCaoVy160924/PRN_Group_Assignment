@@ -50,5 +50,14 @@ namespace Ass2.DataAccess.Repository
             return products;
         }
 
+        public void DeleteProduct(int productID) 
+            => ProductDAO.Instance.Delete(productID);
+
+        public void AddProduct(Product product)
+            => ProductDAO.Instance.Add(product);
+
+        public void UpdateProduct(Product product)
+            => ProductDAO.Instance.Update(product);
+
     }
 }

@@ -41,7 +41,7 @@
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.txtProductPrice = new System.Windows.Forms.TextBox();
             this.txtWeight = new System.Windows.Forms.TextBox();
-            this.txtUnitInPrice = new System.Windows.Forms.TextBox();
+            this.txtUnitInStock = new System.Windows.Forms.TextBox();
             this.btnSearchByID = new System.Windows.Forms.Button();
             this.txtSearchName = new System.Windows.Forms.TextBox();
             this.btnSearchByName = new System.Windows.Forms.Button();
@@ -51,6 +51,10 @@
             this.btnSeachByUnit = new System.Windows.Forms.Button();
             this.lbUptoPrice = new System.Windows.Forms.Label();
             this.lbMoreThanUnit = new System.Windows.Forms.Label();
+            this.btnClear = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductsList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -125,14 +129,15 @@
             this.lbUnitInStock.AutoSize = true;
             this.lbUnitInStock.Location = new System.Drawing.Point(623, 87);
             this.lbUnitInStock.Name = "lbUnitInStock";
-            this.lbUnitInStock.Size = new System.Drawing.Size(88, 20);
+            this.lbUnitInStock.Size = new System.Drawing.Size(92, 20);
             this.lbUnitInStock.TabIndex = 8;
-            this.lbUnitInStock.Text = "Unit In Price";
+            this.lbUnitInStock.Text = "Unit In Stock";
             // 
             // txtProductID
             // 
             this.txtProductID.Location = new System.Drawing.Point(107, 26);
             this.txtProductID.Name = "txtProductID";
+            this.txtProductID.ReadOnly = true;
             this.txtProductID.Size = new System.Drawing.Size(125, 27);
             this.txtProductID.TabIndex = 9;
             // 
@@ -140,6 +145,7 @@
             // 
             this.txtProductCategory.Location = new System.Drawing.Point(107, 84);
             this.txtProductCategory.Name = "txtProductCategory";
+            this.txtProductCategory.ReadOnly = true;
             this.txtProductCategory.Size = new System.Drawing.Size(125, 27);
             this.txtProductCategory.TabIndex = 10;
             // 
@@ -147,6 +153,7 @@
             // 
             this.txtProductName.Location = new System.Drawing.Point(405, 26);
             this.txtProductName.Name = "txtProductName";
+            this.txtProductName.ReadOnly = true;
             this.txtProductName.Size = new System.Drawing.Size(185, 27);
             this.txtProductName.TabIndex = 11;
             // 
@@ -154,6 +161,7 @@
             // 
             this.txtProductPrice.Location = new System.Drawing.Point(405, 84);
             this.txtProductPrice.Name = "txtProductPrice";
+            this.txtProductPrice.ReadOnly = true;
             this.txtProductPrice.Size = new System.Drawing.Size(185, 27);
             this.txtProductPrice.TabIndex = 12;
             // 
@@ -161,15 +169,17 @@
             // 
             this.txtWeight.Location = new System.Drawing.Point(729, 26);
             this.txtWeight.Name = "txtWeight";
+            this.txtWeight.ReadOnly = true;
             this.txtWeight.Size = new System.Drawing.Size(125, 27);
             this.txtWeight.TabIndex = 13;
             // 
-            // txtUnitInPrice
+            // txtUnitInStock
             // 
-            this.txtUnitInPrice.Location = new System.Drawing.Point(729, 81);
-            this.txtUnitInPrice.Name = "txtUnitInPrice";
-            this.txtUnitInPrice.Size = new System.Drawing.Size(125, 27);
-            this.txtUnitInPrice.TabIndex = 14;
+            this.txtUnitInStock.Location = new System.Drawing.Point(729, 81);
+            this.txtUnitInStock.Name = "txtUnitInStock";
+            this.txtUnitInStock.ReadOnly = true;
+            this.txtUnitInStock.Size = new System.Drawing.Size(125, 27);
+            this.txtUnitInStock.TabIndex = 14;
             // 
             // btnSearchByID
             // 
@@ -253,11 +263,55 @@
             this.lbMoreThanUnit.TabIndex = 23;
             this.lbMoreThanUnit.Text = "More Than";
             // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(729, 333);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(94, 29);
+            this.btnClear.TabIndex = 24;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // Delete
+            // 
+            this.Delete.Location = new System.Drawing.Point(86, 333);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(94, 29);
+            this.Delete.TabIndex = 25;
+            this.Delete.Text = "Delete";
+            this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(306, 333);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(94, 29);
+            this.btnAdd.TabIndex = 26;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(523, 333);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(94, 29);
+            this.btnUpdate.TabIndex = 27;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
             // frmProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 669);
+            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lbMoreThanUnit);
             this.Controls.Add(this.lbUptoPrice);
             this.Controls.Add(this.btnSeachByUnit);
@@ -267,7 +321,7 @@
             this.Controls.Add(this.btnSearchByName);
             this.Controls.Add(this.txtSearchName);
             this.Controls.Add(this.btnSearchByID);
-            this.Controls.Add(this.txtUnitInPrice);
+            this.Controls.Add(this.txtUnitInStock);
             this.Controls.Add(this.txtWeight);
             this.Controls.Add(this.txtProductPrice);
             this.Controls.Add(this.txtProductName);
@@ -305,7 +359,7 @@
         private TextBox txtProductName;
         private TextBox txtProductPrice;
         private TextBox txtWeight;
-        private TextBox txtUnitInPrice;
+        private TextBox txtUnitInStock;
         private Button btnSearchByID;
         private TextBox txtSearchName;
         private Button btnSearchByName;
@@ -315,5 +369,9 @@
         private Button btnSeachByUnit;
         private Label lbUptoPrice;
         private Label lbMoreThanUnit;
+        private Button btnClear;
+        private Button Delete;
+        private Button btnAdd;
+        private Button btnUpdate;
     }
 }

@@ -88,7 +88,7 @@ namespace Ass2.BusinessObject
             {
                 entity.ToTable("Product");
 
-                entity.Property(e => e.ProductId).ValueGeneratedNever();
+                entity.Property(e => e.ProductId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.ProductName)
                     .HasMaxLength(40)
