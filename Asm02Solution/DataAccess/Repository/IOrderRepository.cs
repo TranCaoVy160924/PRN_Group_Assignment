@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    internal class IOrderRepository
+    public interface IOrderRepository
     {
+        IEnumerable<OrderObject> GetOrders();
+        OrderObject GetOrderByID(int OrderID);
+        void InsertOrder(OrderObject order);
+        void DeleteOrder(int OrderID);
+        void UpdateOrder(OrderObject order);
     }
 }

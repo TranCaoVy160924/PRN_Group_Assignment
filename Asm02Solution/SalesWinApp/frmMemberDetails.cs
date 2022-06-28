@@ -37,12 +37,7 @@ namespace SalesWinApp
             }
         }
 
-        private IMemberRepository GetMemberRepository()
-        {
-            return MemberRepository;
-        }
-
-        private void btnSave_Click(object sender, EventArgs e, IMemberRepository memberRepository)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (txtCompName.Text.Equals("") || txtEmail.Text.Equals("") || txtPassword.Text.Equals("") || txtCity.Text.Equals("") || txtCountry.Text.Equals(""))
             {
@@ -64,7 +59,7 @@ namespace SalesWinApp
                     };
                     if (InsertOrUpdate == false)
                     {
-                        memberRepository.InsertMember(member);
+                        MemberRepository.InsertMember(member);
                     }
                     else
                     {
