@@ -1,18 +1,19 @@
-﻿using BusinessObject;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ass2.BusinessObject;
 
-namespace DataAccess.Repository
+namespace Ass2.DataAccess.Repository
 {
     public interface IMemberRepository
     {
-        IEnumerable<MemberObject> GetMembers();
-        MemberObject GetMemberByID(int MemberID);
-        void InsertMember(MemberObject member);
+        IEnumerable<Member> GetMembers();
+        Member GetMemberByID(int memberID);
+        Member GetMailAndPassword(string email, string password);
+        void InsertMember(Member member);
         void DeleteMember(int memberID);
-        void UpdateMember(MemberObject member);
+        void UpdateMember(Member member);
     }
 }
