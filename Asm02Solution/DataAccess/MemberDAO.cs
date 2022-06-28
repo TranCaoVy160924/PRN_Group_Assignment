@@ -30,12 +30,14 @@ namespace Ass2.DataAccess
 
         public IEnumerable<Member> GetMemberList()
         {
+            using ASS2_DBContext dBContext = new ASS2_DBContext();
             var members = dBContext.Members.ToList();
             return members;
         }
 
         public Member GetMemberByID(int MemberID)
         {
+            using ASS2_DBContext dBContext = new ASS2_DBContext();
             IEnumerable<Member> members = dBContext.Members.Where(mem => mem.MemberId == MemberID);
             Member member = members.FirstOrDefault();
             return member;
@@ -43,6 +45,7 @@ namespace Ass2.DataAccess
 
         public Member GetMailAndPassword(string Email, string Password)
         {
+            using ASS2_DBContext dBContext = new ASS2_DBContext();
             Member member = dBContext.Members.Where(mem => mem.Email == Email && mem.Password == Password).FirstOrDefault();
             return member;
         }
@@ -52,6 +55,7 @@ namespace Ass2.DataAccess
         {
             try
             {
+                using ASS2_DBContext dBContext = new ASS2_DBContext();
                 var member = dBContext.Members.SingleOrDefault(mem => mem.MemberId == MemberID);
                 if (member != null)
                 {
@@ -71,6 +75,7 @@ namespace Ass2.DataAccess
         {
             try
             {
+                using ASS2_DBContext dBContext = new ASS2_DBContext();
                 dBContext.Members.Add(m);
                 dBContext.SaveChanges();
             }
@@ -81,11 +86,13 @@ namespace Ass2.DataAccess
         }
 
         //update a member
-        public void Update(Member m)
+        public void Update(Member member)
         {
             try
             {
-                var member = dBContext.Members.SingleOrDefault(mem => mem.MemberId == m.MemberId);
+                using ASS2_DBContext dBContext = new ASS2_DBContext();
+                //var member = dBContext.Members.SingleOrDefault(mem => mem.MemberId == m.MemberId);
+                dBContext.Entry<Member>(member).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 if (member != null)
                 {
                     dBContext.Members.Update(member);

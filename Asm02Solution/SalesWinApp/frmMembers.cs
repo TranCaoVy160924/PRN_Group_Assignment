@@ -149,17 +149,25 @@ namespace SalesWinApp
 
         private void dgvMemberList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex != -1)
+            try
             {
-                DataGridViewRow dgvRow = dgvMemberList.Rows[e.RowIndex];
-                txtID.Text = dgvRow.Cells[0].Value.ToString();
-                txtEmail.Text = dgvRow.Cells[1].Value.ToString();
-                txtCompany.Text = dgvRow.Cells[2].Value.ToString();
-                txtCity.Text = dgvRow.Cells[3].Value.ToString();
-                txtCountry.Text = dgvRow.Cells[4].Value.ToString();
-                txtPassword.Text = dgvRow.Cells[5].Value.ToString();
-                chkAdmin.Checked = Convert.ToBoolean(dgvRow.Cells[6].Value);
+                if (e.RowIndex != -1)
+                {
+                    DataGridViewRow dgvRow = dgvMemberList.Rows[e.RowIndex];
+                    txtID.Text = dgvRow.Cells[0].Value.ToString();
+                    txtEmail.Text = dgvRow.Cells[1].Value.ToString();
+                    txtCompany.Text = dgvRow.Cells[2].Value.ToString();
+                    txtCity.Text = dgvRow.Cells[3].Value.ToString();
+                    txtCountry.Text = dgvRow.Cells[4].Value.ToString();
+                    txtPassword.Text = dgvRow.Cells[5].Value.ToString();
+                    chkAdmin.Checked = Convert.ToBoolean(dgvRow.Cells[6].Value);
+                }
             }
+            catch(Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

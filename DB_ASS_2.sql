@@ -46,7 +46,7 @@ CREATE TABLE UserOrder (
     CONSTRAINT PK_Order PRIMARY KEY (OrderId)
 )
 GO
-/*
+
 INSERT INTO UserOrder (MemberId, OrderDate, RequiredDate, ShippedDate, Freight)
 values
 (1, '2022-06-25 10:30:30', '2022-07-25 10:30:30', '2022-07-10 10:30:30', 100),
@@ -60,7 +60,7 @@ values
 (9, '2022-07-03 10:30:30', '2022-08-02 10:30:30', '2022-07-14 18:30:30', 900),
 (10, '2022-07-04 10:30:30', '2022-08-03 10:30:30', '2022-07-19 10:30:30', 1000)
 GO
-*/
+
 
 /*PRODUCT*/
 CREATE TABLE Product (

@@ -39,7 +39,7 @@ namespace SalesWinApp
                 };
                 if (InsertOrUpdate == false)
                 {
-                    MessageBox.Show(member.MemberId.ToString(), "hello");
+                    //MessageBox.Show(member.MemberId.ToString(), "hello");
                     MemberRepository.InsertMember(member);
                 }
                 else
