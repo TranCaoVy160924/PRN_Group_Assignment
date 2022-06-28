@@ -116,6 +116,50 @@ namespace Ass1.DataAccess
             }
             return member;
         }
+
+        public IEnumerable<MemberDTO> GetMemberByName(string memberName)
+        {
+            var members = new List<MemberDTO>();
+            IDataReader dataReader = null;
+            String SQLSelect = "Select MemberID, MemberName, Email, " +
+                "Password, City, Country " +
+                "From FStore " +
+                "Where MemberName like @MemberName";
+            try
+            {
+                var param = dataProvider.CreateParameter(
+                    "@MemberName", 50, '%' + memberName + '%', DbType.String);
+                dataReader = dataProvider.ExecuteSqlQuery(
+                    SQLSelect, CommandType.Text,
+                    out connection, param);
+                SqlDataReader reader = (SqlDataReader)dataReader;
+                while (reader.Read())
+                {
+                    members.Add(new MemberDTO
+                    {
+                        MemberID = reader.GetInt32("MemberID"),
+                        MemberName = reader.GetString("MemberName"),
+                        MemberEmail = reader.GetString("Email"),
+                        Password = reader.GetString("Password"),
+                        MemberCity = reader.GetString("City"),
+                        MemberCountry = reader.GetString("Country")
+                    });
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (dataReader != null)
+                {
+                    dataReader.Close();
+                    CloseConnection();
+                }
+            }
+            return members;
+        }
         //--------------------------------------------
         public void AddMember(MemberDTO member)
         {
@@ -231,14 +275,14 @@ namespace Ass1.DataAccess
             }
         }
         //----------------------------------------------------------------
-        public IEnumerable<MemberDTO> FilterMember(string queryString)
+        public IEnumerable<MemberDTO> FilterMember(string country, string city)
         {
             IDataReader dataReader = null;
             string SQLSelect = "Select MemberID, MemberName, Email, " +
                 "Password, City, Country " +
-                "From FStore" +
-                "Where City like '%" + queryString + "%' or " +
-                "Country like '%" + queryString + "%' or ";
+                "From FStore " +
+                "Where City like '" + city + "' and " +
+                "Country like '" + country + "'";
             var members = new List<MemberDTO>();
             try
             {

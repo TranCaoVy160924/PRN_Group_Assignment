@@ -42,7 +42,7 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnSort = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.lbPassword = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
@@ -192,16 +192,16 @@
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnSort
+            // btnClear
             // 
-            this.btnSort.Location = new System.Drawing.Point(561, 242);
-            this.btnSort.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSort.Name = "btnSort";
-            this.btnSort.Size = new System.Drawing.Size(90, 27);
-            this.btnSort.TabIndex = 17;
-            this.btnSort.Text = "Sort";
-            this.btnSort.UseVisualStyleBackColor = true;
-            this.btnSort.Click += new System.EventHandler(this.btnSort_Click);
+            this.btnClear.Location = new System.Drawing.Point(561, 242);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(90, 27);
+            this.btnClear.TabIndex = 17;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // lbPassword
             // 
@@ -308,7 +308,7 @@
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.lbPassword);
-            this.Controls.Add(this.btnSort);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtID);
@@ -349,7 +349,7 @@
         private TextBox txtID;
         private TextBox txtEmail;
         private Button btnSearch;
-        private Button btnSort;
+        private Button btnClear;
         private Label lbPassword;
         private TextBox txtPassword;
         private TextBox txtSearch;
