@@ -1,18 +1,33 @@
-﻿using BusinessObject;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ass2.BusinessObject;
 
-namespace DataAccess.Repository
+namespace Ass2.DataAccess.Repository
 {
-    public class MemberRepository : IMemberRepository
+    public class MemberRepository: IMemberRepository
     {
-        public MemberObject GetMemberByID(int MemberID) => MemberDAO.Instance.GetMemberByID(MemberID);
-        public IEnumerable<MemberObject> GetMembers() => MemberDAO.Instance.GetMemberList();
-        public void InsertMember(MemberObject member) => MemberDAO.Instance.AddNew(member);
-        public void DeleteMember(int MemberID) => MemberDAO.Instance.Remove(MemberID);
-        public void UpdateMember(MemberObject member) => MemberDAO.Instance.Update(member);
+        public IEnumerable<Member> GetMembers()
+            => MemberDAO.Instance.GetMemberList();
+
+        public Member GetMemberByID(int memberID)
+        {
+            return MemberDAO.Instance.GetMemberByID(memberID);
+        }
+
+        public Member GetMailAndPassword(string email, string password)
+        {
+            return MemberDAO.Instance.GetMailAndPassword(email, password);
+        }
+        public void InsertMember(Member member)
+            => MemberDAO.Instance.Add(member);
+
+        public void DeleteMember(int memberID) 
+            => MemberDAO.Instance.Delete(memberID);
+
+        public void UpdateMember(Member member)
+            => MemberDAO.Instance.Update(member);
     }
 }
