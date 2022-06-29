@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using Ass2.DataAccess.Repository;
-using Ass2.DataAccess;
+using Ass2.BusinessObject;
 
 namespace SalesWinApp
 {
@@ -55,9 +55,18 @@ namespace SalesWinApp
         {
             string EmailIn, passwordIn;
             EmailIn = tbEmail.Text;
-            passwordIn= tbPassword.Text;
-   
-            var check = db.GetMailAndPassword(EmailIn, passwordIn);
+            passwordIn = tbPassword.Text;
+
+            //test for admin
+            //EmailIn = "tlhnhan@gmail.com";
+            //passwordIn = "12345678";
+
+            //test for normal user
+            //EmailIn = "dnbchau@";
+            //passwordIn = "12345678";
+
+
+            Member check = db.GetMailAndPassword(EmailIn, passwordIn);
 
             if(check == null)
             {
@@ -65,8 +74,9 @@ namespace SalesWinApp
             }
             else
             {
-                frmMain f = new frmMain();
-                f.Show();
+                frmMain mainForm = new frmMain();
+                mainForm.user = check;
+                mainForm.Show();
                 this.Hide();
             }
         }

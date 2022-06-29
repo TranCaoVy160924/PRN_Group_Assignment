@@ -93,11 +93,12 @@ namespace Ass2.DataAccess
                 using ASS2_DBContext dBContext = new ASS2_DBContext();
                 //var member = dBContext.Members.SingleOrDefault(mem => mem.MemberId == m.MemberId);
                 dBContext.Entry<Member>(member).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-                if (member != null)
-                {
-                    dBContext.Members.Update(member);
-                    dBContext.SaveChanges();
-                }
+                dBContext.SaveChanges();
+                //if (member != null)
+                //{
+                //    dBContext.Members.Update(member);
+                //    dBContext.SaveChanges();
+                //}
             }
             catch (Exception ex)
             {
