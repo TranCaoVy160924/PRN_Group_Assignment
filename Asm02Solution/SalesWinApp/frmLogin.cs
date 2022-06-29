@@ -62,8 +62,8 @@ namespace SalesWinApp
             //passwordIn = "12345678";
 
             //test for normal user
-            //EmailIn = "dnbchau@";
-            //passwordIn = "12345678";
+            EmailIn = "dnbchau@";
+            passwordIn = "12345678";
 
 
             Member check = db.GetMailAndPassword(EmailIn, passwordIn);

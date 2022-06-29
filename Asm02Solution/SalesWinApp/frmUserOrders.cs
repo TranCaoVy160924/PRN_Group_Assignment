@@ -39,15 +39,15 @@ namespace SalesWinApp
             {
                 Text = "Add Order",
                 InsertOrUpdate = false,
-                MemberRepository = MemberRepository,
+                orderRepository = this.orderRepository
             };
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 //Set focus car inserted 
                 //source.Position = source.Count - 1;
             }
-            var m = MemberRepository.GetMembers();
-            LoadMemberList(m);
+            //var m = MemberRepository.GetMembers();
+            //LoadMemberList(m);
         }
 
         private void frmUserOrders_Load(object sender, EventArgs e)
