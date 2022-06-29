@@ -15,7 +15,6 @@ namespace SalesWinApp
 {
     public partial class frmUserOrders : Form
     {
-
         IOrderRepository orderRepository = new OrderRepository();
         public UserOrder OrderInfo { get; internal set; }
 
@@ -36,7 +35,19 @@ namespace SalesWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            frmUserOrdersDetails frm = new frmUserOrdersDetails
+            {
+                Text = "Add Order",
+                InsertOrUpdate = false,
+                MemberRepository = MemberRepository,
+            };
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                //Set focus car inserted 
+                //source.Position = source.Count - 1;
+            }
+            var m = MemberRepository.GetMembers();
+            LoadMemberList(m);
         }
 
         private void frmUserOrders_Load(object sender, EventArgs e)
@@ -90,6 +101,50 @@ namespace SalesWinApp
 
                 // Set Width to calculated AutoSize value:
                 dgvOrderList.Columns[i].Width = colw;
+            }
+        }
+
+        //Get order list
+        private UserOrder GetOrderObject()
+        {
+            UserOrder order = null;
+            try
+            {
+                order = new UserOrder
+                {
+                    OrderId = int.Parse(txtOderID.Text),
+                    MemberId = int.Parse(txtMemberID.Text),
+                    Freight = int.Parse(txtFreight.Text),
+                    OrderDate = DateTime.Parse(txtOrderDate.Text),
+                    RequiredDate = DateTime.Parse(txtRequiredDate.Text),
+                    ShippedDate = DateTime.Parse(txtShippedDate.Text)
+                };
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get order");
+            }
+            return order;
+        }//end get member
+
+        private void dgvOrderList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.RowIndex != -1)
+                {
+                    DataGridViewRow dgvRow = dgvOrderList.Rows[e.RowIndex];
+                    txtOderID.Text = dgvRow.Cells[0].Value.ToString();
+                    txtMemberID.Text = dgvRow.Cells[1].Value.ToString();
+                    txtFreight.Text = dgvRow.Cells[2].Value.ToString();
+                    txtOrderDate.Text = dgvRow.Cells[3].Value.ToString();
+                    txtRequiredDate.Text = dgvRow.Cells[4].Value.ToString();
+                    txtShippedDate.Text = dgvRow.Cells[5].Value.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
             }
         }
     }

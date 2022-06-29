@@ -59,7 +59,7 @@
             // 
             // txtOderID
             // 
-            this.txtOderID.Location = new System.Drawing.Point(115, 6);
+            this.txtOderID.Location = new System.Drawing.Point(112, 6);
             this.txtOderID.Margin = new System.Windows.Forms.Padding(2);
             this.txtOderID.Name = "txtOderID";
             this.txtOderID.ReadOnly = true;
@@ -69,7 +69,7 @@
             // lbMemberID
             // 
             this.lbMemberID.AutoSize = true;
-            this.lbMemberID.Location = new System.Drawing.Point(313, 9);
+            this.lbMemberID.Location = new System.Drawing.Point(11, 59);
             this.lbMemberID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMemberID.Name = "lbMemberID";
             this.lbMemberID.Size = new System.Drawing.Size(97, 25);
@@ -78,7 +78,7 @@
             // 
             // txtMemberID
             // 
-            this.txtMemberID.Location = new System.Drawing.Point(431, 6);
+            this.txtMemberID.Location = new System.Drawing.Point(112, 56);
             this.txtMemberID.Margin = new System.Windows.Forms.Padding(2);
             this.txtMemberID.Name = "txtMemberID";
             this.txtMemberID.ReadOnly = true;
@@ -88,7 +88,7 @@
             // lbFreight
             // 
             this.lbFreight.AutoSize = true;
-            this.lbFreight.Location = new System.Drawing.Point(636, 9);
+            this.lbFreight.Location = new System.Drawing.Point(13, 103);
             this.lbFreight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFreight.Name = "lbFreight";
             this.lbFreight.Size = new System.Drawing.Size(67, 25);
@@ -97,7 +97,7 @@
             // 
             // txtFreight
             // 
-            this.txtFreight.Location = new System.Drawing.Point(752, 6);
+            this.txtFreight.Location = new System.Drawing.Point(112, 103);
             this.txtFreight.Margin = new System.Windows.Forms.Padding(2);
             this.txtFreight.Name = "txtFreight";
             this.txtFreight.ReadOnly = true;
@@ -107,7 +107,7 @@
             // lbOrderDate
             // 
             this.lbOrderDate.AutoSize = true;
-            this.lbOrderDate.Location = new System.Drawing.Point(11, 86);
+            this.lbOrderDate.Location = new System.Drawing.Point(300, 12);
             this.lbOrderDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbOrderDate.Name = "lbOrderDate";
             this.lbOrderDate.Size = new System.Drawing.Size(100, 25);
@@ -116,17 +116,17 @@
             // 
             // txtOrderDate
             // 
-            this.txtOrderDate.Location = new System.Drawing.Point(115, 83);
+            this.txtOrderDate.Location = new System.Drawing.Point(431, 6);
             this.txtOrderDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtOrderDate.Name = "txtOrderDate";
             this.txtOrderDate.ReadOnly = true;
-            this.txtOrderDate.Size = new System.Drawing.Size(150, 31);
+            this.txtOrderDate.Size = new System.Drawing.Size(370, 31);
             this.txtOrderDate.TabIndex = 9;
             // 
             // lbRequiredDate
             // 
             this.lbRequiredDate.AutoSize = true;
-            this.lbRequiredDate.Location = new System.Drawing.Point(303, 89);
+            this.lbRequiredDate.Location = new System.Drawing.Point(300, 56);
             this.lbRequiredDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRequiredDate.Name = "lbRequiredDate";
             this.lbRequiredDate.Size = new System.Drawing.Size(124, 25);
@@ -135,17 +135,17 @@
             // 
             // txtRequiredDate
             // 
-            this.txtRequiredDate.Location = new System.Drawing.Point(431, 83);
+            this.txtRequiredDate.Location = new System.Drawing.Point(431, 56);
             this.txtRequiredDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtRequiredDate.Name = "txtRequiredDate";
             this.txtRequiredDate.ReadOnly = true;
-            this.txtRequiredDate.Size = new System.Drawing.Size(150, 31);
+            this.txtRequiredDate.Size = new System.Drawing.Size(370, 31);
             this.txtRequiredDate.TabIndex = 11;
             // 
             // lbShippedDate
             // 
             this.lbShippedDate.AutoSize = true;
-            this.lbShippedDate.Location = new System.Drawing.Point(636, 86);
+            this.lbShippedDate.Location = new System.Drawing.Point(304, 106);
             this.lbShippedDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbShippedDate.Name = "lbShippedDate";
             this.lbShippedDate.Size = new System.Drawing.Size(120, 25);
@@ -154,28 +154,29 @@
             // 
             // txtShippedDate
             // 
-            this.txtShippedDate.Location = new System.Drawing.Point(752, 83);
+            this.txtShippedDate.Location = new System.Drawing.Point(431, 100);
             this.txtShippedDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtShippedDate.Name = "txtShippedDate";
             this.txtShippedDate.ReadOnly = true;
-            this.txtShippedDate.Size = new System.Drawing.Size(150, 31);
+            this.txtShippedDate.Size = new System.Drawing.Size(370, 31);
             this.txtShippedDate.TabIndex = 13;
             // 
             // dgvOrderList
             // 
             this.dgvOrderList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderList.Location = new System.Drawing.Point(11, 201);
+            this.dgvOrderList.Location = new System.Drawing.Point(11, 140);
             this.dgvOrderList.Margin = new System.Windows.Forms.Padding(4);
             this.dgvOrderList.Name = "dgvOrderList";
             this.dgvOrderList.RowHeadersWidth = 51;
             this.dgvOrderList.RowTemplate.Height = 29;
             this.dgvOrderList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvOrderList.Size = new System.Drawing.Size(891, 317);
+            this.dgvOrderList.Size = new System.Drawing.Size(967, 317);
             this.dgvOrderList.TabIndex = 14;
+            this.dgvOrderList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrderList_CellClick);
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(378, 148);
+            this.btnUpdate.Location = new System.Drawing.Point(866, 50);
             this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(112, 34);
@@ -186,7 +187,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(185, 148);
+            this.btnAdd.Location = new System.Drawing.Point(866, 7);
             this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(112, 34);
@@ -197,7 +198,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(566, 148);
+            this.btnDelete.Location = new System.Drawing.Point(866, 100);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(112, 34);
@@ -210,7 +211,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 531);
+            this.ClientSize = new System.Drawing.Size(987, 468);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnUpdate);
@@ -228,7 +229,7 @@
             this.Controls.Add(this.txtOderID);
             this.Controls.Add(this.lbOrderID);
             this.Name = "frmUserOrders";
-            this.Text = "User Orders";
+            this.Text = "User Order Detail";
             this.Load += new System.EventHandler(this.frmUserOrders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderList)).EndInit();
             this.ResumeLayout(false);
