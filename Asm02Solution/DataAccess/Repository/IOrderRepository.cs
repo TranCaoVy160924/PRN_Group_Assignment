@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Ass2.BusinessObject;
 
-namespace DataAccess.Repository
+namespace Ass2.DataAccess.Repository
 {
-    internal class IOrderRepository
+    public interface IOrderRepository
     {
+        IEnumerable<UserOrder> GetOrders(); 
+        void InsertOrder(UserOrder order);
+        void DeleteOrder(int orderID);
+        void UpdateOrder(UserOrder order);
     }
 }
