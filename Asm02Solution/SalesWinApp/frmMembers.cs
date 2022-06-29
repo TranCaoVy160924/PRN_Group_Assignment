@@ -208,5 +208,10 @@ namespace SalesWinApp
             var m = MemberRepository.GetMembers();
             LoadMemberList(m);
         }
+
+        private void chkAdmin_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

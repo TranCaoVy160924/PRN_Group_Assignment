@@ -16,7 +16,10 @@
     <Compile Update="frmMembersDetails.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="frmOrders.cs">
+    <Compile Update="frmUserOrdersDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmUserOrders.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="frmProductDetail.cs">
