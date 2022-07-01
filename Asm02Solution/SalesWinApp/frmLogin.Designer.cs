@@ -40,6 +40,7 @@
             this.btClose = new System.Windows.Forms.Button();
             this.btLogin = new System.Windows.Forms.Button();
             this.lbErrorMessage = new System.Windows.Forms.Label();
+            this.btnSignUp = new System.Windows.Forms.Button();
             this.panelLeft.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLock)).BeginInit();
@@ -96,7 +97,7 @@
             this.lbLoginForm.ForeColor = System.Drawing.Color.White;
             this.lbLoginForm.Location = new System.Drawing.Point(142, 26);
             this.lbLoginForm.Name = "lbLoginForm";
-            this.lbLoginForm.Size = new System.Drawing.Size(416, 70);
+            this.lbLoginForm.Size = new System.Drawing.Size(344, 59);
             this.lbLoginForm.TabIndex = 2;
             this.lbLoginForm.Text = "LOGIN FORM";
             this.lbLoginForm.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -108,7 +109,7 @@
             this.lbEmail.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbEmail.Location = new System.Drawing.Point(126, 145);
             this.lbEmail.Name = "lbEmail";
-            this.lbEmail.Size = new System.Drawing.Size(117, 54);
+            this.lbEmail.Size = new System.Drawing.Size(99, 46);
             this.lbEmail.TabIndex = 2;
             this.lbEmail.Text = "Email";
             this.lbEmail.Click += new System.EventHandler(this.labelEmail_Click_1);
@@ -134,7 +135,7 @@
             this.lbPassword.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbPassword.Location = new System.Drawing.Point(126, 231);
             this.lbPassword.Name = "lbPassword";
-            this.lbPassword.Size = new System.Drawing.Size(188, 54);
+            this.lbPassword.Size = new System.Drawing.Size(160, 46);
             this.lbPassword.TabIndex = 4;
             this.lbPassword.Text = "Password";
             this.lbPassword.Click += new System.EventHandler(this.label1_Click);
@@ -175,7 +176,7 @@
             this.btLogin.ForeColor = System.Drawing.Color.Transparent;
             this.btLogin.Location = new System.Drawing.Point(166, 304);
             this.btLogin.Name = "btLogin";
-            this.btLogin.Size = new System.Drawing.Size(608, 64);
+            this.btLogin.Size = new System.Drawing.Size(302, 64);
             this.btLogin.TabIndex = 3;
             this.btLogin.Text = "Login";
             this.btLogin.UseVisualStyleBackColor = false;
@@ -187,16 +188,30 @@
             this.lbErrorMessage.ForeColor = System.Drawing.Color.Red;
             this.lbErrorMessage.Location = new System.Drawing.Point(373, 123);
             this.lbErrorMessage.Name = "lbErrorMessage";
-            this.lbErrorMessage.Size = new System.Drawing.Size(383, 25);
+            this.lbErrorMessage.Size = new System.Drawing.Size(320, 20);
             this.lbErrorMessage.TabIndex = 8;
             this.lbErrorMessage.Text = "Email or Password is incorrect, please try again.";
             this.lbErrorMessage.Click += new System.EventHandler(this.lbErrorMessage_Click);
-            this.lbErrorMessage.Hide();
+            // 
+            // btnSignUp
+            // 
+            this.btnSignUp.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnSignUp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnSignUp.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSignUp.ForeColor = System.Drawing.Color.Transparent;
+            this.btnSignUp.Location = new System.Drawing.Point(474, 304);
+            this.btnSignUp.Name = "btnSignUp";
+            this.btnSignUp.Size = new System.Drawing.Size(302, 64);
+            this.btnSignUp.TabIndex = 9;
+            this.btnSignUp.Text = "SignUp";
+            this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.btnSignUp_Click);
             // 
             // frmLogin
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnSignUp);
             this.Controls.Add(this.lbErrorMessage);
             this.Controls.Add(this.btLogin);
             this.Controls.Add(this.btClose);
@@ -235,5 +250,6 @@
         private PictureBox pictureBoxLock;
         private Panel panel1;
         private Label lbErrorMessage;
+        private Button btnSignUp;
     }
 }

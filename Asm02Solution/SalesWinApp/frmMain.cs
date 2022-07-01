@@ -44,7 +44,8 @@ namespace SalesWinApp
                 frmMemberForUser childForm = new frmMemberForUser
                 {
                     user = user,
-                    mainForm = this
+                    mainForm = this,
+                    addOrUpdate = true
                 };
                 childForm.MdiParent = this;
                 childForm.Dock = DockStyle.Fill;

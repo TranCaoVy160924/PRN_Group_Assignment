@@ -23,7 +23,7 @@ namespace SalesWinApp
         MemberRepository db = new MemberRepository();
         private void frmLogin_Load(object sender, EventArgs e)
         {
-
+            lbErrorMessage.Visible = false;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -62,8 +62,8 @@ namespace SalesWinApp
             //passwordIn = "12345678";
 
             //test for normal user
-            EmailIn = "dnbchau@";
-            passwordIn = "12345678";
+            //EmailIn = "dnbchau@";
+            //passwordIn = "12345678";
 
 
             Member check = db.GetMailAndPassword(EmailIn, passwordIn);
@@ -94,6 +94,17 @@ namespace SalesWinApp
         private void tbPassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSignUp_Click(object sender, EventArgs e)
+        {
+            frmMemberForUser signUpFrm = new frmMemberForUser
+            {
+                user = null,
+                mainForm = null,
+                addOrUpdate = false
+            };
+            signUpFrm.ShowDialog();
         }
     }
 }

@@ -14,9 +14,12 @@ namespace SalesWinApp
 {
     public partial class frmMemberForUser : Form
     {
-        public Member user { get; set; }
-        public frmMain mainForm { get; set; } 
+        public Member? user { get; set; }
+        public frmMain? mainForm { get; set; } 
+        public bool addOrUpdate { get; set; }//true: update, false: add
+
         private MemberRepository memberRepository = new MemberRepository();
+
 
         public frmMemberForUser()
         {
@@ -25,7 +28,10 @@ namespace SalesWinApp
 
         private void frmMemberForUser_Load(object sender, EventArgs e)
         {
-            GetMemberInfo();
+            if (addOrUpdate)
+            {
+                GetMemberInfo();
+            }
         }
 
         private void GetMemberInfo()
@@ -42,20 +48,39 @@ namespace SalesWinApp
         {
             try
             {
-                Member member = new Member
+                if (txtEmail.Text.Trim().Length > 0 && txtPassword.Text.Trim().Length > 0
+                    && txtCompany.Text.Trim().Length > 0 && txtCountry.Text.Trim().Length > 0
+                    && txtCity.Text.Trim().Length > 0)
                 {
-                    MemberId = int.Parse(txtID.Text),
-                    Email = txtEmail.Text,
-                    Password = txtPassword.Text,
-                    CompanyName = txtCompany.Text,
-                    Country = txtCountry.Text,
-                    City = txtCity.Text
-                };
-                memberRepository.UpdateMember(member);
-                user = member;
-                mainForm.user = this.user;
-                GetMemberInfo();
-                MessageBox.Show("Update fail successfully");
+                    Member member = new Member
+                    {
+                        Email = txtEmail.Text,
+                        Password = txtPassword.Text,
+                        CompanyName = txtCompany.Text,
+                        Country = txtCountry.Text,
+                        City = txtCity.Text
+                    };
+                    if (addOrUpdate)
+                    {
+                        member.MemberId = int.Parse(txtID.Text);
+                        memberRepository.UpdateMember(member);
+                        user = member;
+                        mainForm.user = this.user;
+                        GetMemberInfo();
+                        MessageBox.Show("Update fail successfully");
+                    }
+                    else
+                    {
+                        memberRepository.InsertMember(member);
+                        MessageBox.Show("Add fail successfully");
+                        Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Input invalid");
+                }
+                
             }
             catch (Exception ex)
             {
