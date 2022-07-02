@@ -42,7 +42,7 @@ CREATE TABLE UserOrder (
 	RequiredDate DATETIME,
 	ShippedDate DATETIME,
 	Freight MONEY,
-	CONSTRAINT FK_MemberId FOREIGN KEY (MemberId) REFERENCES Member(MemberId),
+	CONSTRAINT FK_MemberId FOREIGN KEY (MemberId) REFERENCES Member(MemberId) ON DELETE CASCADE,
     CONSTRAINT PK_Order PRIMARY KEY (OrderId)
 )
 GO
@@ -96,13 +96,12 @@ CREATE TABLE OrderDetail (
 	UnitPrice money NOT NULL,
 	Quantity int NOT NULL,
 	Discount float NOT NULL,
-	CONSTRAINT FK_OrderId FOREIGN KEY (OrderId) REFERENCES UserOrder(OrderId),
-	CONSTRAINT FK_ProductId FOREIGN KEY (ProductId) REFERENCES Product(ProductId),
+	CONSTRAINT FK_OrderId FOREIGN KEY (OrderId) REFERENCES UserOrder(OrderId) ON DELETE CASCADE,
+	CONSTRAINT FK_ProductId FOREIGN KEY (ProductId) REFERENCES Product(ProductId) ON DELETE CASCADE,
     CONSTRAINT PK_OrderDetail PRIMARY KEY NONCLUSTERED (OrderId, ProductId)
 )
 GO
 
-/*
 INSERT INTO OrderDetail (OrderId, ProductId, UnitPrice, Quantity, Discount)
 values
 (1, 1, 30000, 1, 30),
@@ -116,4 +115,3 @@ values
 (9, 9, 90000, 4, 0),
 (10, 10, 10000, 10, 20)
 GO
-*/

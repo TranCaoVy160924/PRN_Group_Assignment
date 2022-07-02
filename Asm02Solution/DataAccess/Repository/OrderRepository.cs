@@ -12,6 +12,9 @@ namespace Ass2.DataAccess.Repository
         public IEnumerable<UserOrder> GetOrders()
             => OrderDAO.Instance.GetOrderList();
 
+        public UserOrder GetOrderByID(int orderID) 
+            => OrderDAO.Instance.GetOrderByID(orderID);
+
         public void InsertOrder(UserOrder order)
             => OrderDAO.Instance.Add(order);
 

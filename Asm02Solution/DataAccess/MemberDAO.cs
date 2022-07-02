@@ -56,16 +56,17 @@ namespace Ass2.DataAccess
             try
             {
                 using ASS2_DBContext dBContext = new ASS2_DBContext();
+
                 var member = dBContext.Members.SingleOrDefault(mem => mem.MemberId == MemberID);
                 if (member != null)
                 {
-                    dBContext.Members.Remove(member);
+                    dBContext.Remove(member);
                     dBContext.SaveChanges();
                 }
             }
             catch(Exception ex)
             {
-                throw new Exception(ex.Message);
+                throw new Exception(ex.ToString());
             }
             
         }

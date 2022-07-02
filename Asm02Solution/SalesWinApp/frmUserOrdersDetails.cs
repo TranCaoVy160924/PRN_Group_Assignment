@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,10 +32,13 @@ namespace SalesWinApp
                 var order = new UserOrder
                 {
                     MemberId = int.Parse(txtMemberID.Text),
-                    Freight = int.Parse(txtFreight.Text),
-                    OrderDate = DateTime.Parse(txtOrderDate.Text),
-                    RequiredDate = DateTime.Parse(txtRequiredDate.Text),
-                    ShippedDate = DateTime.Parse(txtShippedDate.Text)
+                    Freight = decimal.Parse(txtFreight.Text),
+                    OrderDate = DateTime.ParseExact(
+                        txtOrderDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                    RequiredDate = DateTime.ParseExact(
+                        txtRequiredDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture),
+                    ShippedDate = DateTime.ParseExact(
+                        txtShippedDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)
                 };
                 if (InsertOrUpdate == false)
                 {
@@ -46,11 +50,11 @@ namespace SalesWinApp
                     orderRepository.UpdateOrder(order);
 
                 }
-                this.Close();
+                Close();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Insert");
+                MessageBox.Show(ex.ToString(), "Insert");
             }
         }
 
@@ -71,13 +75,14 @@ namespace SalesWinApp
             txtOderID.Enabled = false;
             if (InsertOrUpdate == true) //update mode
             {
+
                 //Show current information
                 txtOderID.Text = orderInfo.OrderId.ToString();
                 txtMemberID.Text = orderInfo.MemberId.ToString();
                 txtFreight.Text = orderInfo.Freight.ToString();
-                txtOrderDate.Text = orderInfo.OrderDate.ToString();
-                txtRequiredDate.Text = orderInfo.RequiredDate.ToString();
-                txtShippedDate.Text = orderInfo.ShippedDate.ToString();
+                txtOrderDate.Text = orderInfo.OrderDate.ToString("dd/MM/yyyy");
+                txtRequiredDate.Text = orderInfo.RequiredDate.ToString("dd/MM/yyyy");
+                txtShippedDate.Text = orderInfo.ShippedDate.ToString("dd/MM/yyyy");
             }
         }
     }

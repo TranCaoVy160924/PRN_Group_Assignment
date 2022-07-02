@@ -37,10 +37,19 @@ namespace Ass2.DataAccess
             return order;
         }
 
+        public UserOrder GetOrderByID(int orderID)
+        {
+            ASS2_DBContext dBContext = new ASS2_DBContext();
+            UserOrder order = dBContext.UserOrders
+                .Where(order => order.OrderId == orderID).FirstOrDefault();
+            return order;
+        }
+
         public void Delete(int OrderID)
         {
             using ASS2_DBContext dBContext = new ASS2_DBContext();
-            UserOrder order = dBContext.UserOrders.Where(ord => ord.OrderId == OrderID).FirstOrDefault();
+            UserOrder order = dBContext.UserOrders
+                .Where(ord => ord.OrderId == OrderID).FirstOrDefault();
             dBContext.UserOrders.Remove(order);
             dBContext.SaveChanges();
         }

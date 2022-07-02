@@ -37,7 +37,7 @@ namespace SalesWinApp
                 orderInfo = GetOrderObject(),
                 orderRepository = this.orderRepository
             };
-            frm.Show();
+            frm.ShowDialog();
             var orders = orderRepository.GetOrders();
             LoadOrderList(orders);
         }
@@ -50,7 +50,7 @@ namespace SalesWinApp
                 InsertOrUpdate = false,
                 orderRepository = this.orderRepository
             };
-            frm.Show();
+            frm.ShowDialog();
             var orders = orderRepository.GetOrders();
             LoadOrderList(orders);
         }
@@ -81,6 +81,13 @@ namespace SalesWinApp
                 }
 
                 dgvOrderList.DataSource = dataTable;
+
+                txtOderID.Text = dataTable.Rows[0][0].ToString();
+                txtMemberID.Text = dataTable.Rows[0][1].ToString();
+                txtFreight.Text = dataTable.Rows[0][2].ToString();
+                txtOrderDate.Text = dataTable.Rows[0][3].ToString();
+                txtRequiredDate.Text = dataTable.Rows[0][4].ToString();
+                txtShippedDate.Text = dataTable.Rows[0][5].ToString();
             }
             catch (Exception ex)
             {
@@ -115,15 +122,18 @@ namespace SalesWinApp
             UserOrder order = null;
             try
             {
-                order = new UserOrder
-                {
-                    OrderId = int.Parse(txtOderID.Text),
-                    MemberId = int.Parse(txtMemberID.Text),
-                    Freight = int.Parse(txtFreight.Text),
-                    OrderDate = DateTime.Parse(txtOrderDate.Text),
-                    RequiredDate = DateTime.Parse(txtRequiredDate.Text),
-                    ShippedDate = DateTime.Parse(txtShippedDate.Text)
-                };
+                int orderID = int.Parse(txtOderID.Text);
+                order = orderRepository.GetOrderByID(orderID);
+
+                //order = new UserOrder
+                //{
+                //    OrderId = int.Parse(txtOderID.Text),
+                //    MemberId = int.Parse(txtMemberID.Text),
+                //    Freight = int.Parse(txtFreight.Text),
+                //    OrderDate = DateTime.Parse(txtOrderDate.Text),
+                //    RequiredDate = DateTime.Parse(txtRequiredDate.Text),
+                //    ShippedDate = DateTime.Parse(txtShippedDate.Text)
+                //};
             }
             catch (Exception ex)
             {

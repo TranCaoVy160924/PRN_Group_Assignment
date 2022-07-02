@@ -47,94 +47,94 @@
             // lbOrderID
             // 
             this.lbOrderID.AutoSize = true;
-            this.lbOrderID.Location = new System.Drawing.Point(11, 9);
+            this.lbOrderID.Location = new System.Drawing.Point(9, 7);
             this.lbOrderID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbOrderID.Name = "lbOrderID";
-            this.lbOrderID.Size = new System.Drawing.Size(81, 25);
+            this.lbOrderID.Size = new System.Drawing.Size(66, 20);
             this.lbOrderID.TabIndex = 3;
             this.lbOrderID.Text = "Order ID";
             // 
             // txtOderID
             // 
-            this.txtOderID.Location = new System.Drawing.Point(117, 6);
+            this.txtOderID.Location = new System.Drawing.Point(94, 5);
             this.txtOderID.Margin = new System.Windows.Forms.Padding(2);
             this.txtOderID.Name = "txtOderID";
             this.txtOderID.ReadOnly = true;
-            this.txtOderID.Size = new System.Drawing.Size(150, 31);
+            this.txtOderID.Size = new System.Drawing.Size(121, 27);
             this.txtOderID.TabIndex = 4;
             // 
             // lbOrderDate
             // 
             this.lbOrderDate.AutoSize = true;
-            this.lbOrderDate.Location = new System.Drawing.Point(281, 9);
+            this.lbOrderDate.Location = new System.Drawing.Point(225, 7);
             this.lbOrderDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbOrderDate.Name = "lbOrderDate";
-            this.lbOrderDate.Size = new System.Drawing.Size(100, 25);
+            this.lbOrderDate.Size = new System.Drawing.Size(83, 20);
             this.lbOrderDate.TabIndex = 9;
             this.lbOrderDate.Text = "Order Date";
             // 
             // lbMemberID
             // 
             this.lbMemberID.AutoSize = true;
-            this.lbMemberID.Location = new System.Drawing.Point(11, 56);
+            this.lbMemberID.Location = new System.Drawing.Point(9, 45);
             this.lbMemberID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbMemberID.Name = "lbMemberID";
-            this.lbMemberID.Size = new System.Drawing.Size(97, 25);
+            this.lbMemberID.Size = new System.Drawing.Size(80, 20);
             this.lbMemberID.TabIndex = 11;
             this.lbMemberID.Text = "MemberID";
             // 
             // txtMemberID
             // 
-            this.txtMemberID.Location = new System.Drawing.Point(117, 53);
+            this.txtMemberID.Location = new System.Drawing.Point(94, 42);
             this.txtMemberID.Margin = new System.Windows.Forms.Padding(2);
             this.txtMemberID.Name = "txtMemberID";
-            this.txtMemberID.Size = new System.Drawing.Size(150, 31);
+            this.txtMemberID.Size = new System.Drawing.Size(121, 27);
             this.txtMemberID.TabIndex = 12;
             // 
             // lbRequiredDate
             // 
             this.lbRequiredDate.AutoSize = true;
-            this.lbRequiredDate.Location = new System.Drawing.Point(281, 56);
+            this.lbRequiredDate.Location = new System.Drawing.Point(225, 45);
             this.lbRequiredDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbRequiredDate.Name = "lbRequiredDate";
-            this.lbRequiredDate.Size = new System.Drawing.Size(124, 25);
+            this.lbRequiredDate.Size = new System.Drawing.Size(105, 20);
             this.lbRequiredDate.TabIndex = 13;
             this.lbRequiredDate.Text = "Required Date";
             // 
             // lbFreight
             // 
             this.lbFreight.AutoSize = true;
-            this.lbFreight.Location = new System.Drawing.Point(11, 103);
+            this.lbFreight.Location = new System.Drawing.Point(9, 82);
             this.lbFreight.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFreight.Name = "lbFreight";
-            this.lbFreight.Size = new System.Drawing.Size(67, 25);
+            this.lbFreight.Size = new System.Drawing.Size(55, 20);
             this.lbFreight.TabIndex = 15;
             this.lbFreight.Text = "Freight";
             // 
             // txtFreight
             // 
-            this.txtFreight.Location = new System.Drawing.Point(117, 100);
+            this.txtFreight.Location = new System.Drawing.Point(94, 80);
             this.txtFreight.Margin = new System.Windows.Forms.Padding(2);
             this.txtFreight.Name = "txtFreight";
-            this.txtFreight.Size = new System.Drawing.Size(150, 31);
+            this.txtFreight.Size = new System.Drawing.Size(121, 27);
             this.txtFreight.TabIndex = 16;
             // 
             // lbShippedDate
             // 
             this.lbShippedDate.AutoSize = true;
-            this.lbShippedDate.Location = new System.Drawing.Point(285, 103);
+            this.lbShippedDate.Location = new System.Drawing.Point(228, 82);
             this.lbShippedDate.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbShippedDate.Name = "lbShippedDate";
-            this.lbShippedDate.Size = new System.Drawing.Size(120, 25);
+            this.lbShippedDate.Size = new System.Drawing.Size(100, 20);
             this.lbShippedDate.TabIndex = 17;
             this.lbShippedDate.Text = "Shipped Date";
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(182, 152);
+            this.btnSave.Location = new System.Drawing.Point(146, 122);
             this.btnSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(112, 34);
+            this.btnSave.Size = new System.Drawing.Size(90, 27);
             this.btnSave.TabIndex = 19;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -142,10 +142,10 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(380, 152);
+            this.btnClose.Location = new System.Drawing.Point(304, 122);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(112, 34);
+            this.btnClose.Size = new System.Drawing.Size(90, 27);
             this.btnClose.TabIndex = 20;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -153,36 +153,39 @@
             // 
             // txtOrderDate
             // 
-            this.txtOrderDate.Location = new System.Drawing.Point(419, 3);
-            this.txtOrderDate.Mask = "00/00/0000 90:00";
+            this.txtOrderDate.Location = new System.Drawing.Point(335, 2);
+            this.txtOrderDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtOrderDate.Mask = "00/00/0000";
             this.txtOrderDate.Name = "txtOrderDate";
-            this.txtOrderDate.Size = new System.Drawing.Size(221, 31);
+            this.txtOrderDate.Size = new System.Drawing.Size(178, 27);
             this.txtOrderDate.TabIndex = 21;
             this.txtOrderDate.ValidatingType = typeof(System.DateTime);
             // 
             // txtRequiredDate
             // 
-            this.txtRequiredDate.Location = new System.Drawing.Point(419, 53);
-            this.txtRequiredDate.Mask = "00/00/0000 90:00";
+            this.txtRequiredDate.Location = new System.Drawing.Point(335, 42);
+            this.txtRequiredDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtRequiredDate.Mask = "00/00/0000";
             this.txtRequiredDate.Name = "txtRequiredDate";
-            this.txtRequiredDate.Size = new System.Drawing.Size(221, 31);
+            this.txtRequiredDate.Size = new System.Drawing.Size(178, 27);
             this.txtRequiredDate.TabIndex = 22;
             this.txtRequiredDate.ValidatingType = typeof(System.DateTime);
             // 
             // txtShippedDate
             // 
-            this.txtShippedDate.Location = new System.Drawing.Point(419, 103);
-            this.txtShippedDate.Mask = "00/00/0000 90:00";
+            this.txtShippedDate.Location = new System.Drawing.Point(335, 82);
+            this.txtShippedDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtShippedDate.Mask = "00/00/0000";
             this.txtShippedDate.Name = "txtShippedDate";
-            this.txtShippedDate.Size = new System.Drawing.Size(221, 31);
+            this.txtShippedDate.Size = new System.Drawing.Size(178, 27);
             this.txtShippedDate.TabIndex = 23;
             this.txtShippedDate.ValidatingType = typeof(System.DateTime);
             // 
             // frmUserOrdersDetails
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 208);
+            this.ClientSize = new System.Drawing.Size(640, 166);
             this.Controls.Add(this.txtShippedDate);
             this.Controls.Add(this.txtRequiredDate);
             this.Controls.Add(this.txtOrderDate);
@@ -197,6 +200,7 @@
             this.Controls.Add(this.lbOrderDate);
             this.Controls.Add(this.txtOderID);
             this.Controls.Add(this.lbOrderID);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmUserOrdersDetails";
             this.Text = "frmUserOrderDetails";
             this.Load += new System.EventHandler(this.frmUserOrdersDetails_Load);
