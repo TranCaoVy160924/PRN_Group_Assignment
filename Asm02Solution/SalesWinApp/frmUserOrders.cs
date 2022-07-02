@@ -25,7 +25,17 @@ namespace SalesWinApp
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var order = GetOrderObject();
+                orderRepository.DeleteOrder(order.OrderId);
+                var orders = orderRepository.GetOrders();
+                LoadOrderList(orders);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
