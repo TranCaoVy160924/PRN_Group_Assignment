@@ -24,5 +24,8 @@ namespace Ass2.DataAccess.Repository
 
         public void UpdateDetail(OrderDetail detail)
             => OrderDetailDAO.Instance.Update(detail);
+
+        public List<Report> GetSaleReport(DateTime from, DateTime to)
+            => OrderDetailDAO.Instance.GetSaleByPeriod(from, to);
     }
 }

@@ -17,8 +17,8 @@ namespace Ass2.DataAccess.Repository
             => OrderDetailDAO.Instance.Add(order);
         */
 
-        public void DeleteOrderDetail(int orderID)
-            => OrderDetailDAO.Instance.Delete(orderID);
+        public void DeleteOrderDetail(int orderID, int productID)
+            => OrderDetailDAO.Instance.Delete(orderID, productID);
 
         public void UpdateOrder(OrderDetail orderDetail)
             => OrderDetailDAO.Instance.Update(orderDetail);

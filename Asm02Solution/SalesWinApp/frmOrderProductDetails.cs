@@ -29,11 +29,14 @@ namespace SalesWinApp
             ProductRepository productRepository = new ProductRepository();
             try
             {
+                Product choice = (Product)cboProductChoice.SelectedItem;
                 var detail = new OrderDetail
                 {
                     Quantity = int.Parse(txtQuantity.Text),
                     Discount = float.Parse(txtDiscount.Text),
-                    UnitPrice = decimal.Parse(txtUnitPrice.Text)
+                    UnitPrice = decimal.Parse(txtUnitPrice.Text),
+                    OrderId = orderId,
+                    ProductId = choice.ProductId,
                 };
                 if (InsertOrUpdate == false)
                 {
@@ -41,8 +44,7 @@ namespace SalesWinApp
                 }
                 else
                 {
-                    detail.OrderId = orderId;
-                    detail.ProductId = int.Parse(cboProductChoice.SelectedItem.ToString());
+                    
                     OrderDetaiRepository.UpdateDetail(detail);
                 }
                 Close();
@@ -73,19 +75,25 @@ namespace SalesWinApp
             txtOderID.Text = orderId.ToString();
 
 
-                foreach (Product product in products)
-                {
-                    cboProductChoice.Items.Add(product);
-                }
+            foreach (Product product in products)
+            {
+                cboProductChoice.Items.Add(product);
+            }
 
             txtOderID.Enabled = false;
             
             if (InsertOrUpdate == true) //update mode
             {
-                foreach (Product product in currentProducts)
+                cboProductChoice.Enabled = false;
+
+                int numberOfItem = cboProductChoice.Items.Count;
+                for (int i = 0; i < numberOfItem; i++)
                 {
-                    cboProductChoice.Items.Add(product);
-                    cboProductChoice.SelectedIndex = 0;
+                    Product product =(Product) cboProductChoice.Items[i];
+                    if (product.ProductId == OrderDetailInfo.ProductId)
+                    {
+                        cboProductChoice.SelectedIndex = i;
+                    }
                 }
                 //Show current information
                 txtDiscount.Text = OrderDetailInfo.Discount.ToString();

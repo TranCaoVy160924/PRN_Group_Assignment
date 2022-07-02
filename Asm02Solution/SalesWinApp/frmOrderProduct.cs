@@ -30,7 +30,7 @@ namespace SalesWinApp
         {
             frmOrderProductDetails frm = new frmOrderProductDetails
             {
-                orderId = int.Parse(txtOderID.Text),
+                orderId = this.orderId,
                 Text = "Add Order",
                 InsertOrUpdate = false,
                 OrderDetaiRepository = this.OrderDetaiRepository
@@ -43,7 +43,7 @@ namespace SalesWinApp
         {
             frmOrderProductDetails frm = new frmOrderProductDetails
             {
-                orderId = int.Parse(txtOderID.Text),
+                orderId = this.orderId,
                 Text = "Update detail",
                 InsertOrUpdate = true,
                 OrderDetailInfo = GetDetailObject(),
@@ -79,26 +79,30 @@ namespace SalesWinApp
         {
             try
             {
-                DataTable dataTable = new DataTable();
-                dataTable.Columns.Add("Order ID", typeof(int));
-                dataTable.Columns.Add("Product ID", typeof(int));
-                dataTable.Columns.Add("Quantity", typeof(int));
-                dataTable.Columns.Add("Discount", typeof(double));
-                dataTable.Columns.Add("Unit Price", typeof(decimal));
-
-                foreach (var orderDetail in orderDetails)
+                if (orderDetails.Count() > 0)
                 {
-                    dataTable.Rows.Add(orderDetail.ProductId, orderDetail.ProductId,
-                        orderDetail.Quantity, orderDetail.Discount, orderDetail.UnitPrice);
+                    DataTable dataTable = new DataTable();
+                    dataTable.Columns.Add("Order ID", typeof(int));
+                    dataTable.Columns.Add("Product ID", typeof(int));
+                    dataTable.Columns.Add("Quantity", typeof(int));
+                    dataTable.Columns.Add("Discount", typeof(double));
+                    dataTable.Columns.Add("Unit Price", typeof(decimal));
+
+                    foreach (var orderDetail in orderDetails)
+                    {
+                        dataTable.Rows.Add(orderDetail.ProductId, orderDetail.ProductId,
+                            orderDetail.Quantity, orderDetail.Discount, orderDetail.UnitPrice);
+                    }
+
+                    dgvOrderDetailList.DataSource = dataTable;
+
+                    txtOderID.Text = dataTable.Rows[0][0].ToString();
+                    txtProductID.Text = dataTable.Rows[0][1].ToString();
+                    txtQuantity.Text = dataTable.Rows[0][2].ToString();
+                    txtDiscount.Text = dataTable.Rows[0][3].ToString();
+                    txtUnitPrice.Text = dataTable.Rows[0][4].ToString();
                 }
-
-                dgvOrderDetailList.DataSource = dataTable;
-
-                txtOderID.Text = dataTable.Rows[0][0].ToString();
-                txtProductID.Text = dataTable.Rows[0][1].ToString();
-                txtQuantity.Text = dataTable.Rows[0][2].ToString();
-                txtDiscount.Text = dataTable.Rows[0][3].ToString();
-                txtUnitPrice.Text = dataTable.Rows[0][4].ToString();
+                
             }
             catch (Exception ex)
             {

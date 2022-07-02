@@ -11,7 +11,7 @@ namespace Ass2.DataAccess.Repository
     {
         Func<string, IEnumerable<Product>> getOrderDetail();
         void InsertProduct(Product product);
-        void DeleteMember(int productID);
+        void DeleteMember(int orderID, int productID);
         void UpdateMember(Product product);
         List<Report> GetSaleReport(DateTime from, DateTime to);
     }
