@@ -44,5 +44,38 @@ namespace Ass2.DataAccess
         dBContext.OrderDetails.Remove(order);
         dBContext.SaveChanges();
     }
-}
+        public void Add(OrderDetail order)
+        {
+            try
+            {
+                using ASS2_DBContext dBContext = new ASS2_DBContext();
+                dBContext.OrderDetails.Add(order);
+                dBContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
+        public void Update(OrderDetail od)
+        {
+            try
+            {
+                using ASS2_DBContext dBContext = new ASS2_DBContext();
+                //var member = dBContext.Members.SingleOrDefault(mem => mem.MemberId == m.MemberId);
+                dBContext.Entry<OrderDetail>(od).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                dBContext.SaveChanges();
+                //if (member != null)
+                //{
+                //    dBContext.Members.Update(member);
+                //    dBContext.SaveChanges();
+                //}
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+    
+    }
 }

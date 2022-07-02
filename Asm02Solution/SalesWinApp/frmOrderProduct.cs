@@ -7,11 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ass2.BusinessObject;
+using Ass2.DataAccess.Repository;
+using Ass2.DataAccess;
 
 namespace SalesWinApp
 {
     public partial class frmOrderProduct : Form
     {
+        IOrderRepository OrderRepository= new OrderRepository();
+
+        public OrderDetail OrderDetailInfo { get; internal set; }
         public frmOrderProduct()
         {
             InitializeComponent();
@@ -24,9 +30,11 @@ namespace SalesWinApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
+            frmOrderProductDetails frm = new frmOrderProductDetails
+            {
+                OrderID = txtOrderID
+            }
         }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
 

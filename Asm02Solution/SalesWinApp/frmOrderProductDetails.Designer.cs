@@ -30,13 +30,13 @@
         {
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.txtFreight = new System.Windows.Forms.TextBox();
+            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.lbUnitPrice = new System.Windows.Forms.Label();
-            this.txtRequiredDate = new System.Windows.Forms.TextBox();
+            this.txtDiscount = new System.Windows.Forms.TextBox();
             this.lbDiscount = new System.Windows.Forms.Label();
             this.txtMemberID = new System.Windows.Forms.TextBox();
-            this.lbProductID = new System.Windows.Forms.Label();
-            this.txtOrderDate = new System.Windows.Forms.TextBox();
+            this.lbMemberID = new System.Windows.Forms.Label();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.lbQuantity = new System.Windows.Forms.Label();
             this.txtOderID = new System.Windows.Forms.TextBox();
             this.lbOrderID = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.btnClose.TabIndex = 34;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnSave
             // 
@@ -61,15 +62,16 @@
             this.btnSave.TabIndex = 33;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // txtFreight
+            // txtUnitPrice
             // 
-            this.txtFreight.Location = new System.Drawing.Point(117, 108);
-            this.txtFreight.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFreight.Name = "txtFreight";
-            this.txtFreight.ReadOnly = true;
-            this.txtFreight.Size = new System.Drawing.Size(150, 31);
-            this.txtFreight.TabIndex = 30;
+            this.txtUnitPrice.Location = new System.Drawing.Point(117, 108);
+            this.txtUnitPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUnitPrice.Name = "txtUnitPrice";
+            this.txtUnitPrice.ReadOnly = true;
+            this.txtUnitPrice.Size = new System.Drawing.Size(150, 31);
+            this.txtUnitPrice.TabIndex = 30;
             // 
             // lbUnitPrice
             // 
@@ -77,18 +79,18 @@
             this.lbUnitPrice.Location = new System.Drawing.Point(11, 111);
             this.lbUnitPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbUnitPrice.Name = "lbUnitPrice";
-            this.lbUnitPrice.Size = new System.Drawing.Size(67, 25);
+            this.lbUnitPrice.Size = new System.Drawing.Size(81, 25);
             this.lbUnitPrice.TabIndex = 29;
-            this.lbUnitPrice.Text = "Freight";
+            this.lbUnitPrice.Text = "UnitPrice";
             // 
-            // txtRequiredDate
+            // txtDiscount
             // 
-            this.txtRequiredDate.Location = new System.Drawing.Point(419, 61);
-            this.txtRequiredDate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRequiredDate.Name = "txtRequiredDate";
-            this.txtRequiredDate.ReadOnly = true;
-            this.txtRequiredDate.Size = new System.Drawing.Size(370, 31);
-            this.txtRequiredDate.TabIndex = 28;
+            this.txtDiscount.Location = new System.Drawing.Point(419, 61);
+            this.txtDiscount.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDiscount.Name = "txtDiscount";
+            this.txtDiscount.ReadOnly = true;
+            this.txtDiscount.Size = new System.Drawing.Size(370, 31);
+            this.txtDiscount.TabIndex = 28;
             // 
             // lbDiscount
             // 
@@ -96,9 +98,9 @@
             this.lbDiscount.Location = new System.Drawing.Point(281, 64);
             this.lbDiscount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDiscount.Name = "lbDiscount";
-            this.lbDiscount.Size = new System.Drawing.Size(124, 25);
+            this.lbDiscount.Size = new System.Drawing.Size(82, 25);
             this.lbDiscount.TabIndex = 27;
-            this.lbDiscount.Text = "Required Date";
+            this.lbDiscount.Text = "Discount";
             // 
             // txtMemberID
             // 
@@ -109,24 +111,24 @@
             this.txtMemberID.Size = new System.Drawing.Size(150, 31);
             this.txtMemberID.TabIndex = 26;
             // 
-            // lbProductID
+            // lbMemberID
             // 
-            this.lbProductID.AutoSize = true;
-            this.lbProductID.Location = new System.Drawing.Point(11, 64);
-            this.lbProductID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbProductID.Name = "lbProductID";
-            this.lbProductID.Size = new System.Drawing.Size(97, 25);
-            this.lbProductID.TabIndex = 25;
-            this.lbProductID.Text = "MemberID";
+            this.lbMemberID.AutoSize = true;
+            this.lbMemberID.Location = new System.Drawing.Point(11, 64);
+            this.lbMemberID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbMemberID.Name = "lbMemberID";
+            this.lbMemberID.Size = new System.Drawing.Size(97, 25);
+            this.lbMemberID.TabIndex = 25;
+            this.lbMemberID.Text = "MemberID";
             // 
-            // txtOrderDate
+            // txtQuantity
             // 
-            this.txtOrderDate.Location = new System.Drawing.Point(419, 17);
-            this.txtOrderDate.Margin = new System.Windows.Forms.Padding(2);
-            this.txtOrderDate.Name = "txtOrderDate";
-            this.txtOrderDate.ReadOnly = true;
-            this.txtOrderDate.Size = new System.Drawing.Size(370, 31);
-            this.txtOrderDate.TabIndex = 24;
+            this.txtQuantity.Location = new System.Drawing.Point(419, 17);
+            this.txtQuantity.Margin = new System.Windows.Forms.Padding(2);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.ReadOnly = true;
+            this.txtQuantity.Size = new System.Drawing.Size(370, 31);
+            this.txtQuantity.TabIndex = 24;
             // 
             // lbQuantity
             // 
@@ -134,9 +136,9 @@
             this.lbQuantity.Location = new System.Drawing.Point(281, 17);
             this.lbQuantity.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbQuantity.Name = "lbQuantity";
-            this.lbQuantity.Size = new System.Drawing.Size(100, 25);
+            this.lbQuantity.Size = new System.Drawing.Size(80, 25);
             this.lbQuantity.TabIndex = 23;
-            this.lbQuantity.Text = "Order Date";
+            this.lbQuantity.Text = "Quantity";
             // 
             // txtOderID
             // 
@@ -164,13 +166,13 @@
             this.ClientSize = new System.Drawing.Size(800, 208);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.txtFreight);
+            this.Controls.Add(this.txtUnitPrice);
             this.Controls.Add(this.lbUnitPrice);
-            this.Controls.Add(this.txtRequiredDate);
+            this.Controls.Add(this.txtDiscount);
             this.Controls.Add(this.lbDiscount);
             this.Controls.Add(this.txtMemberID);
-            this.Controls.Add(this.lbProductID);
-            this.Controls.Add(this.txtOrderDate);
+            this.Controls.Add(this.lbMemberID);
+            this.Controls.Add(this.txtQuantity);
             this.Controls.Add(this.lbQuantity);
             this.Controls.Add(this.txtOderID);
             this.Controls.Add(this.lbOrderID);
@@ -185,13 +187,13 @@
 
         private Button btnClose;
         private Button btnSave;
-        private TextBox txtFreight;
+        private TextBox txtUnitPrice;
         private Label lbUnitPrice;
-        private TextBox txtRequiredDate;
+        private TextBox txtDiscount;
         private Label lbDiscount;
         private TextBox txtMemberID;
-        private Label lbProductID;
-        private TextBox txtOrderDate;
+        private Label lbMemberID;
+        private TextBox txtQuantity;
         private Label lbQuantity;
         private TextBox txtOderID;
         private Label lbOrderID;
