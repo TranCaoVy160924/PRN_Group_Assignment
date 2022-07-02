@@ -172,7 +172,7 @@ namespace SalesWinApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            {
+            
                 frmMembersDetails frm = new frmMembersDetails
                     {
                         Text = "Update Member",
@@ -189,7 +189,7 @@ namespace SalesWinApp
                 }
                 var m2 = MemberRepository.GetMembers();
                 LoadMemberList(m2);
-            }
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

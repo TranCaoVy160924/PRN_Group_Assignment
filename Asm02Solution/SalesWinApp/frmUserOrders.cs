@@ -30,7 +30,16 @@ namespace SalesWinApp
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            frmUserOrdersDetails frm = new frmUserOrdersDetails
+            {
+                Text = "Update order",
+                InsertOrUpdate = true,
+                orderInfo = GetOrderObject(),
+                orderRepository = this.orderRepository
+            };
+            frm.Show();
+            var orders = orderRepository.GetOrders();
+            LoadOrderList(orders);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -41,13 +50,9 @@ namespace SalesWinApp
                 InsertOrUpdate = false,
                 orderRepository = this.orderRepository
             };
-            if (frm.ShowDialog() == DialogResult.OK)
-            {
-                //Set focus car inserted 
-                //source.Position = source.Count - 1;
-            }
-            //var m = MemberRepository.GetMembers();
-            //LoadMemberList(m);
+            frm.Show();
+            var orders = orderRepository.GetOrders();
+            LoadOrderList(orders);
         }
 
         private void frmUserOrders_Load(object sender, EventArgs e)

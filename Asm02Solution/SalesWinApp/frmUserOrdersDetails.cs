@@ -75,7 +75,7 @@ namespace SalesWinApp
                 txtOderID.Text = orderInfo.OrderId.ToString();
                 txtMemberID.Text = orderInfo.MemberId.ToString();
                 txtFreight.Text = orderInfo.Freight.ToString();
-                txtOrderDate.Text =  orderInfo.OrderDate.ToString();
+                txtOrderDate.Text = orderInfo.OrderDate.ToString();
                 txtRequiredDate.Text = orderInfo.RequiredDate.ToString();
                 txtShippedDate.Text = orderInfo.ShippedDate.ToString();
             }

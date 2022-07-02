@@ -108,7 +108,7 @@ namespace Ass2.BusinessObject
 
                 entity.ToTable("UserOrder");
 
-                entity.Property(e => e.OrderId).ValueGeneratedNever();
+                entity.Property(e => e.OrderId).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.Freight).HasColumnType("money");
 
