@@ -15,7 +15,7 @@ namespace SalesWinApp
 {
     public partial class frmOrderProduct : Form
     {
-        OrderDetaiRepository OrderDetaiRepository= new OrderDetaiRepository();
+        OrderDetailRepository OrderDetaiRepository= new OrderDetailRepository();
 
         public int orderId { get; set; }
 
@@ -25,31 +25,53 @@ namespace SalesWinApp
             InitializeComponent();
         }
 
-        private void lbMemberID_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmOrderProductDetails frm = new frmOrderProductDetails
             {
-                //OrderID = txtOrderI
+                orderId = int.Parse(txtOderID.Text),
+                Text = "Add Order",
+                InsertOrUpdate = false,
+                OrderDetaiRepository = this.OrderDetaiRepository
             };
+            frm.ShowDialog();
+            var orders = OrderDetaiRepository.getOrderDetail(orderId);
+            LoadOrderDetailList(orders);
         }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
+            frmOrderProductDetails frm = new frmOrderProductDetails
+            {
+                orderId = int.Parse(txtOderID.Text),
+                Text = "Update detail",
+                InsertOrUpdate = true,
+                OrderDetailInfo = GetDetailObject(),
+                OrderDetaiRepository = this.OrderDetaiRepository
+            };
+            frm.ShowDialog();
+            var orders = OrderDetaiRepository.getOrderDetail(orderId);
+            LoadOrderDetailList (orders);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                var detail = GetDetailObject();
+                OrderDetaiRepository.DeleteDetail(detail.OrderId, detail.ProductId);
+                var details = OrderDetaiRepository.getOrderDetail(orderId);
+                LoadOrderDetailList(details);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void frmOrderProduct_Load(object sender, EventArgs e)
         {
-            var orderDetails = OrderDetaiRepository.GetOrderDetails(this.orderId);
+            var orderDetails = OrderDetaiRepository.getOrderDetail(this.orderId);
             LoadOrderDetailList(orderDetails);
         }
 
@@ -103,6 +125,22 @@ namespace SalesWinApp
                 // Set Width to calculated AutoSize value:
                 dgvOrderDetailList.Columns[i].Width = colw;
             }
+
+        }
+
+        private OrderDetail GetDetailObject()
+        {
+            OrderDetail detail = null;
+            try
+            {
+                int orderID = orderId;
+                detail = OrderDetaiRepository.GetDetailByID(orderID);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Get order");
+            }
+            return detail;
         }
     }
 }

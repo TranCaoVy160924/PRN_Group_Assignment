@@ -38,10 +38,10 @@ namespace Ass2.DataAccess
             return OrderDetail;
         }
 
-        public void Delete(int OrderID)
+        public void Delete(int OrderID, int ProductID)
         {
             using ASS2_DBContext dBContext = new ASS2_DBContext();
-            OrderDetail order = dBContext.OrderDetails.Where(ord => ord.OrderId == OrderID).FirstOrDefault();
+            OrderDetail order = dBContext.OrderDetails.Where(ord => ord.OrderId == OrderID && ord.ProductId == ProductID).FirstOrDefault();
             dBContext.OrderDetails.Remove(order);
             dBContext.SaveChanges();
         }
@@ -78,6 +78,14 @@ namespace Ass2.DataAccess
                 throw new Exception(ex.Message);
             }
         }
-    
+
+        public OrderDetail GetDetailByID(int orderID)
+        {
+            ASS2_DBContext dBContext = new ASS2_DBContext();
+            OrderDetail detail = dBContext.OrderDetails
+                .Where(detail => detail.OrderId == orderID).FirstOrDefault();
+            return detail;
+        }
+
     }
 }

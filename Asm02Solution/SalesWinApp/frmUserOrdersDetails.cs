@@ -31,7 +31,7 @@ namespace SalesWinApp
             {
                 var order = new UserOrder
                 {
-                    MemberId = int.Parse(txtMemberID.Text),
+                    MemberId = int.Parse(txtMemberId.Text),
                     Freight = decimal.Parse(txtFreight.Text),
                     OrderDate = DateTime.ParseExact(
                         txtOrderDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture),
@@ -78,7 +78,7 @@ namespace SalesWinApp
 
                 //Show current information
                 txtOderID.Text = orderInfo.OrderId.ToString();
-                txtMemberID.Text = orderInfo.MemberId.ToString();
+                txtMemberId.Text = orderInfo.MemberId.ToString();
                 txtFreight.Text = orderInfo.Freight.ToString();
                 txtOrderDate.Text = orderInfo.OrderDate.ToString("dd/MM/yyyy");
                 txtRequiredDate.Text = orderInfo.RequiredDate.ToString("dd/MM/yyyy");

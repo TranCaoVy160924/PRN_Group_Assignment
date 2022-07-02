@@ -15,59 +15,83 @@ namespace SalesWinApp
 {
     public partial class frmOrderProductDetails : Form
     {
-        public OrderDetail orderDetailInfo = new OrderDetail();
+        public int orderId { get; set; }
+        public OrderDetail OrderDetailInfo = new OrderDetail();
+        public Product ProductInfo = new Product();
         public bool InsertOrUpdate { get; set; }//False: insert, true: update
-        public IOrderDetaiRepository OrderDetaiRepository { get; set; }
+        public IOrderDetailRepository OrderDetaiRepository { get; set; }
         public frmOrderProductDetails()
         {
-            InitializeComponent();
-        }
+            InitializeComponent();        }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    var orderDetail = new OrderDetail
-            //    {
-            //        UnitPrice = decimal.Parse(txtUnitPrice.Text),
-            //        Quantity = int.Parse(txtQuantity.Text),
-            //        Discount = double.Parse(txtDiscount.Text),
-            //    };
-            //    if (InsertOrUpdate == false)
-            //    {
-            //        MessageBox.Show(member.MemberId.ToString(), "hello");
-            //        OrderDetailRepository.InsertOrderDetail(orderDetail);
-            //        OrderDetaiRepository.
-            //    }
-            //    else
-            //    {
-            //        member.MemberId = int.Parse(txtID.Text);
-            //        MemberRepository.UpdateMember(member);
-
-            //    }
-            //    this.Close();
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message, "Insert");
-            //}
-
+            ProductRepository productRepository = new ProductRepository();
+            try
+            {
+                var detail = new OrderDetail
+                {
+                    Quantity = int.Parse(txtQuantity.Text),
+                    Discount = float.Parse(txtDiscount.Text),
+                    UnitPrice = decimal.Parse(txtUnitPrice.Text)
+                };
+                if (InsertOrUpdate == false)
+                {
+                    OrderDetaiRepository.InsertDetail(detail);
+                }
+                else
+                {
+                    detail.OrderId = orderId;
+                    detail.ProductId = int.Parse(cboProductChoice.SelectedItem.ToString());
+                    OrderDetaiRepository.UpdateDetail(detail);
+                }
+                Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Insert");
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Close form");
+            }
         }
 
         private void frmOrderProductDetails_Load(object sender, EventArgs e)
         {
             ProductRepository productRepository = new ProductRepository();
             var products = productRepository.GetProductsBy("general");
+            var currentProducts = productRepository.GetProductsBy("id", OrderDetailInfo.ProductId.ToString());
+            txtOderID.Text = orderId.ToString();
 
-            foreach (Product product in products)
+
+                foreach (Product product in products)
+                {
+                    cboProductChoice.Items.Add(product);
+                }
+
+            txtOderID.Enabled = false;
+            
+            if (InsertOrUpdate == true) //update mode
             {
-                cboProductChoice.Items.Add(product);
-            }
+                foreach (Product product in currentProducts)
+                {
+                    cboProductChoice.Items.Add(product);
+                    cboProductChoice.SelectedIndex = 0;
+                }
+                //Show current information
+                txtDiscount.Text = OrderDetailInfo.Discount.ToString();
+                txtQuantity.Text = OrderDetailInfo.Quantity.ToString();
+                txtUnitPrice.Text = OrderDetailInfo.UnitPrice.ToString();
+            } 
         }
     }
 }
