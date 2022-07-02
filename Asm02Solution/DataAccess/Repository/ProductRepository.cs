@@ -7,7 +7,7 @@ using Ass2.BusinessObject;
 
 namespace Ass2.DataAccess.Repository
 {
-    public class ProductRepository
+    public class ProductRepository: IProductRepository
     {
         private const string BY_NAME = "name";
         private const string BY_PRICE = "price";

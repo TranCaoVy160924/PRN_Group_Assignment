@@ -16,7 +16,7 @@ namespace SalesWinApp
     {
         public Product productInfo { get; set; }
         public bool InsertOrUpdate { get; set; }//False: insert, true: update
-        public ProductRepository ProductRepository { get; set; }
+        public IProductRepository ProductRepository { get; set; }
 
         public frmProductDetail()
         {

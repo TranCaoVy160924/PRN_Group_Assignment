@@ -25,40 +25,40 @@ namespace SalesWinApp
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
-            {
-                var orderDetail = new OrderDetail
-                {
-                    UnitPrice = decimal.Parse(txtUnitPrice.Text),
-                    Quantity = int.Parse(txtQuantity.Text),
-                    Discount = double.Parse(txtDiscount.Text),
-                };
-                if (InsertOrUpdate == false)
-                {
-                    //MessageBox.Show(member.MemberId.ToString(), "hello");
-                    OrderDetailRepository.InsertOrderDetail(orderDetail);
-                    OrderDetaiRepository.
-                }
-                else
-                {
-                    member.MemberId = int.Parse(txtID.Text);
-                    MemberRepository.UpdateMember(member);
+            //try
+            //{
+            //    var orderDetail = new OrderDetail
+            //    {
+            //        UnitPrice = decimal.Parse(txtUnitPrice.Text),
+            //        Quantity = int.Parse(txtQuantity.Text),
+            //        Discount = double.Parse(txtDiscount.Text),
+            //    };
+            //    if (InsertOrUpdate == false)
+            //    {
+            //        MessageBox.Show(member.MemberId.ToString(), "hello");
+            //        OrderDetailRepository.InsertOrderDetail(orderDetail);
+            //        OrderDetaiRepository.
+            //    }
+            //    else
+            //    {
+            //        member.MemberId = int.Parse(txtID.Text);
+            //        MemberRepository.UpdateMember(member);
 
-                }
-                this.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Insert");
-            }
+            //    }
+            //    this.Close();
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message, "Insert");
+            //}
 
         }
 
-private void btnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
 
         }
     }
-            }
+}
     
 

@@ -28,25 +28,34 @@ namespace SalesWinApp
         {
             try
             {
-                var member = new Member
+                if (txtEmail.Text.Trim().Length > 0 && txtPassword.Text.Trim().Length > 0
+                        && txtCompany.Text.Trim().Length > 0 && txtCountry.Text.Trim().Length > 0
+                        && txtCity.Text.Trim().Length > 0)
                 {
-                    Email = txtEmail.Text,
-                    CompanyName = txtCompany.Text,
-                    City = txtCity.Text,
-                    Country = txtCountry.Text,
-                    Password = txtPassword.Text,
-                    IsAdmin = chkAdmin.Checked
-                };
-                if (InsertOrUpdate == false)
-                {
-                    //MessageBox.Show(member.MemberId.ToString(), "hello");
-                    MemberRepository.InsertMember(member);
+                    var member = new Member
+                    {
+                        Email = txtEmail.Text,
+                        CompanyName = txtCompany.Text,
+                        City = txtCity.Text,
+                        Country = txtCountry.Text,
+                        Password = txtPassword.Text,
+                        IsAdmin = chkAdmin.Checked
+                    };
+                    if (InsertOrUpdate == false)
+                    {
+                        //MessageBox.Show(member.MemberId.ToString(), "hello");
+                        MemberRepository.InsertMember(member);
+                    }
+                    else
+                    {
+                        member.MemberId = int.Parse(txtID.Text);
+                        MemberRepository.UpdateMember(member);
+
+                    }
                 }
                 else
                 {
-                    member.MemberId = int.Parse(txtID.Text);
-                    MemberRepository.UpdateMember(member);
-
+                    MessageBox.Show("Input invalid");
                 }
                 this.Close();
             }

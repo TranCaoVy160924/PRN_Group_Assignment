@@ -21,7 +21,7 @@ namespace SalesWinApp
         private const string GENERAL = "general";
         private const string BY_ID = "id";
 
-        ProductRepository ProductRepository = new ProductRepository();
+        IProductRepository ProductRepository = new ProductRepository();
         //Create a data source
         SortableBindingList<Product> source;
 
@@ -119,7 +119,15 @@ namespace SalesWinApp
                 {
                     IEnumerable<Product> products
                         = ProductRepository.GetProductsBy(BY_ID, txtSearchID.Text);
-                    LoadProductList(products);
+                    if (products != null && products.Count() > 0)
+                    {
+                        LoadProductList(products);
+                    } 
+                    else
+                    {
+                        MessageBox.Show("No product found");
+                    }
+                    
                 }      
             }
             catch (Exception ex)
@@ -136,7 +144,14 @@ namespace SalesWinApp
                 {
                     IEnumerable<Product> products
                         = ProductRepository.GetProductsBy(BY_PRICE, txtUptoPrice.Text);
-                    LoadProductList(products);
+                    if (products != null && products.Count() > 0)
+                    {
+                        LoadProductList(products);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No product found");
+                    }
                 }
             }
             catch (Exception ex)
@@ -154,7 +169,14 @@ namespace SalesWinApp
                     IEnumerable<Product> products
                         = ProductRepository.GetProductsBy(
                             BY_UNIT_IN_STOCK, txtSearchByUnit.Text);
-                    LoadProductList(products);
+                    if (products != null && products.Count() > 0)
+                    {
+                        LoadProductList(products);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No product found");
+                    }
                 }
             }
             catch (Exception ex)
@@ -171,7 +193,14 @@ namespace SalesWinApp
                 {
                     IEnumerable<Product> products
                         = ProductRepository.GetProductsBy(BY_NAME, txtSearchName.Text);
-                    LoadProductList(products);
+                    if (products != null && products.Count() > 0)
+                    {
+                        LoadProductList(products);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No product found");
+                    }
                 }
             }
             catch (Exception ex)
