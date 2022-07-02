@@ -28,6 +28,14 @@ namespace SalesWinApp
             {
                 tlsManageProduct.Visible = false;
             }
+
+            ASS2_DBContext dBContext = new ASS2_DBContext();
+            var members = dBContext.Products.ToList();
+
+            foreach (var member in members)
+            {
+                comboBox1.Items.Add(member);
+            }
         }
 
         private void tlsManageMember_Click(object sender, EventArgs e)
@@ -72,6 +80,8 @@ namespace SalesWinApp
             childForm.MdiParent = this;
             childForm.Dock = DockStyle.Fill;
             childForm.Show();
+
+            
         }
     }
 }

@@ -58,12 +58,12 @@ namespace SalesWinApp
             passwordIn = tbPassword.Text;
 
             //test for admin
-            //EmailIn = "tlhnhan@gmail.com";
+            //EmailIn = "vdhoa@gmail.com";
             //passwordIn = "12345678";
 
             //test for normal user
-            //EmailIn = "dnbchau@";
-            //passwordIn = "12345678";
+            EmailIn = "dnbchau@gmail.com";
+            passwordIn = "12345678";
 
 
             Member check = db.GetMailAndPassword(EmailIn, passwordIn);

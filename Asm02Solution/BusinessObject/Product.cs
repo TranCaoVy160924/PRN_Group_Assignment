@@ -18,5 +18,10 @@ namespace Ass2.BusinessObject
         public int UnitsInStock { get; set; }
 
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
+
+        public override string? ToString()
+        {
+            return ProductName;
+        }
     }
 }

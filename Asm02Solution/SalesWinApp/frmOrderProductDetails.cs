@@ -58,6 +58,17 @@ namespace SalesWinApp
         {
 
         }
+
+        private void frmOrderProductDetails_Load(object sender, EventArgs e)
+        {
+            ProductRepository productRepository = new ProductRepository();
+            var products = productRepository.GetProductsBy("general");
+
+            foreach (Product product in products)
+            {
+                cboProductChoice.Items.Add(product);
+            }
+        }
     }
 }
     
