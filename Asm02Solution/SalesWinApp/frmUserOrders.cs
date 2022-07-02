@@ -162,5 +162,14 @@ namespace SalesWinApp
                 throw new Exception(ex.ToString());
             }
         }
+
+        private void btnViewDetail_Click(object sender, EventArgs e)
+        {
+            frmOrderProduct frmOrderProduct = new frmOrderProduct()
+            {
+                orderId = int.Parse(txtOderID.Text)
+            };
+            frmOrderProduct.ShowDialog();
+        }
     }
 }

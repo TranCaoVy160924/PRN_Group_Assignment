@@ -33,10 +33,11 @@
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsManageMember = new System.Windows.Forms.ToolStripMenuItem();
             this.tlsManageProduct = new System.Windows.Forms.ToolStripMenuItem();
+            this.tlsClose = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.tlsClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +60,8 @@
             // 
             this.windowsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlsManageMember,
-            this.tlsManageProduct});
+            this.tlsManageProduct,
+            this.orderToolStripMenuItem});
             this.windowsMenu.Name = "windowsMenu";
             this.windowsMenu.Size = new System.Drawing.Size(77, 24);
             this.windowsMenu.Text = "&Manage";
@@ -67,16 +69,23 @@
             // tlsManageMember
             // 
             this.tlsManageMember.Name = "tlsManageMember";
-            this.tlsManageMember.Size = new System.Drawing.Size(148, 26);
+            this.tlsManageMember.Size = new System.Drawing.Size(224, 26);
             this.tlsManageMember.Text = "&Member";
             this.tlsManageMember.Click += new System.EventHandler(this.tlsManageMember_Click);
             // 
             // tlsManageProduct
             // 
             this.tlsManageProduct.Name = "tlsManageProduct";
-            this.tlsManageProduct.Size = new System.Drawing.Size(148, 26);
+            this.tlsManageProduct.Size = new System.Drawing.Size(224, 26);
             this.tlsManageProduct.Text = "&Product";
             this.tlsManageProduct.Click += new System.EventHandler(this.tlsManageProduct_Click);
+            // 
+            // tlsClose
+            // 
+            this.tlsClose.Name = "tlsClose";
+            this.tlsClose.Size = new System.Drawing.Size(59, 24);
+            this.tlsClose.Text = "Close";
+            this.tlsClose.Click += new System.EventHandler(this.tlsClose_Click);
             // 
             // statusStrip
             // 
@@ -96,12 +105,12 @@
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
             // 
-            // tlsClose
+            // orderToolStripMenuItem
             // 
-            this.tlsClose.Name = "tlsClose";
-            this.tlsClose.Size = new System.Drawing.Size(59, 24);
-            this.tlsClose.Text = "Close";
-            this.tlsClose.Click += new System.EventHandler(this.tlsClose_Click);
+            this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
+            this.orderToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.orderToolStripMenuItem.Text = "Order";
+            this.orderToolStripMenuItem.Click += new System.EventHandler(this.orderToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -135,6 +144,7 @@
         private System.Windows.Forms.ToolStripMenuItem tlsManageProduct;
         private System.Windows.Forms.ToolTip toolTip;
         private ToolStripMenuItem tlsClose;
+        private ToolStripMenuItem orderToolStripMenuItem;
     }
 }
 

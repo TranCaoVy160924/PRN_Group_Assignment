@@ -33,21 +33,6 @@ namespace SalesWinApp
         {
             try
             {
-                
-
-                //txtID.DataBindings.Clear();
-                //txtName.DataBindings.Clear();
-                //txtEmail.DataBindings.Clear();
-                //txtPassword.DataBindings.Clear();
-                //txtCountry.DataBindings.Clear();
-                //txtCity.DataBindings.Clear();
-
-                //txtID.DataBindings.Add("Text", source, "MemberID");
-                //txtName.DataBindings.Add("Text", source, "MemberName");
-                //txtEmail.DataBindings.Add("Text", source, "MemberEmail");
-                //txtPassword.DataBindings.Add("Text", source, "Password");
-                //txtCountry.DataBindings.Add("Text", source, "MemberCountry");
-                //txtCity.DataBindings.Add("Text", source, "MemberCity");
 
                 DataTable dataTable = new DataTable();
                 dataTable.Columns.Add("ID", typeof(int));
@@ -68,18 +53,14 @@ namespace SalesWinApp
                 }
 
                 dgvMemberList.DataSource = dataTable;
-                //GetCountryChoice((List<MemberDTO>)members);
-                //GetCityChoice((List<MemberDTO>)members);
 
-                //if (members.Count() == 0)
-                //{
-                //    ClearText();
-                //    btnRemove.Enabled = false;
-                //}
-                //else
-                //{
-                //    btnRemove.Enabled = true;
-                //}
+                txtID.Text = dataTable.Rows[0][0].ToString();
+                txtEmail.Text = dataTable.Rows[0][1].ToString();
+                txtCompany.Text = dataTable.Rows[0][2].ToString();
+                txtCity.Text = dataTable.Rows[0][3].ToString();
+                txtCountry.Text = dataTable.Rows[0][4].ToString();
+                txtPassword.Text = dataTable.Rows[0][5].ToString();
+                chkAdmin.Checked = Convert.ToBoolean(dataTable.Rows[0][6]);
             }
             catch (Exception ex)
             {

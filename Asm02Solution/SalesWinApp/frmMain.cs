@@ -65,5 +65,13 @@ namespace SalesWinApp
         {
             Application.Exit();
         }
+
+        private void orderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmUserOrders childForm = new frmUserOrders();
+            childForm.MdiParent = this;
+            childForm.Dock = DockStyle.Fill;
+            childForm.Show();
+        }
     }
 }

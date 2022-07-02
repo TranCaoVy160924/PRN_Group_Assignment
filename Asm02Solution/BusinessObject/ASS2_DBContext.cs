@@ -67,7 +67,7 @@ namespace Ass2.BusinessObject
 
                 entity.ToTable("OrderDetail");
 
-                entity.Property(e => e.OrderDate).HasColumnType("datetime");
+                //entity.Property(e => e.OrderDate).HasColumnType("datetime");
 
                 entity.Property(e => e.UnitPrice).HasColumnType("money");
 

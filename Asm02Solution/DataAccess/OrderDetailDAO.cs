@@ -9,41 +9,43 @@ namespace Ass2.DataAccess
 {
     public class OrderDetailDAO
     { 
-    //---------------------------------------------
-    //singleton
-        private static OrderDetailDAO instance = null;
-    private static readonly object instanceLock = new object();
-    private OrderDetailDAO() { }
+        //---------------------------------------------
+        //singleton
+            private static OrderDetailDAO instance = null;
+        private static readonly object instanceLock = new object();
+        private OrderDetailDAO() { }
 
-    public static OrderDetailDAO Instance
-    {
-        get
+        public static OrderDetailDAO Instance
         {
-            lock (instanceLock)
+            get
             {
-                if (instance == null)
+                lock (instanceLock)
                 {
-                    instance = new OrderDetailDAO();
+                    if (instance == null)
+                    {
+                        instance = new OrderDetailDAO();
+                    }
+                    return instance;
                 }
-                return instance;
             }
         }
-    }
-    //---------------------------------------------
-    public IEnumerable<OrderDetail> GetOrderDetailList()
-    {
-        using ASS2_DBContext dBContext = new ASS2_DBContext();
-        var OrderDetail = dBContext.OrderDetails.ToList();
-        return OrderDetail;
-    }
+        //---------------------------------------------
+        public IEnumerable<OrderDetail> GetOrderDetailList(int orderID)
+        {
+            using ASS2_DBContext dBContext = new ASS2_DBContext();
+            var OrderDetail = dBContext.OrderDetails
+                .Where(detail => detail.OrderId == orderID).ToList();
+            return OrderDetail;
+        }
 
-    public void Delete(int OrderID)
-    {
-        using ASS2_DBContext dBContext = new ASS2_DBContext();
-        OrderDetail order = dBContext.OrderDetails.Where(ord => ord.OrderId == OrderID).FirstOrDefault();
-        dBContext.OrderDetails.Remove(order);
-        dBContext.SaveChanges();
-    }
+        public void Delete(int OrderID)
+        {
+            using ASS2_DBContext dBContext = new ASS2_DBContext();
+            OrderDetail order = dBContext.OrderDetails.Where(ord => ord.OrderId == OrderID).FirstOrDefault();
+            dBContext.OrderDetails.Remove(order);
+            dBContext.SaveChanges();
+        }
+
         public void Add(OrderDetail order)
         {
             try

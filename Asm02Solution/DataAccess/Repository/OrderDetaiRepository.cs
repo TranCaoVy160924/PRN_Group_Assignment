@@ -10,8 +10,8 @@ namespace Ass2.DataAccess.Repository
 {
     public class OrderDetaiRepository /*IOrderRepository*/
     {
-        public IEnumerable<OrderDetail> GetOrderDetails()
-            => OrderDetailDAO.Instance.GetOrderDetailList();
+        public IEnumerable<OrderDetail> GetOrderDetails(int orderID)
+            => OrderDetailDAO.Instance.GetOrderDetailList(orderID);
 
         /*public void InsertOrder(UserOrder order)
             => OrderDetailDAO.Instance.Add(order);
