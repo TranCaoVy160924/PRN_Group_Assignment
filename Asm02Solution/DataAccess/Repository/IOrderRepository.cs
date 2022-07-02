@@ -9,7 +9,7 @@ namespace Ass2.DataAccess.Repository
 {
     public interface IOrderRepository
     {
-        IEnumerable<UserOrder> GetOrders();
+        IEnumerable<UserOrder> GetOrders(int memberID = 0);
         UserOrder GetOrderByID(int orderID);
         void InsertOrder(UserOrder order);
         void DeleteOrder(int orderID);

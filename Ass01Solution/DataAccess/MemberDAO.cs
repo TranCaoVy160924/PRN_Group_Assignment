@@ -160,6 +160,54 @@ namespace Ass1.DataAccess
             }
             return members;
         }
+
+        public MemberDTO CheckLogin(string email, string password)
+        {
+            MemberDTO member = new MemberDTO();
+            IDataReader dataReader = null;
+            String SQLSelect = "Select MemberID, MemberName, Email, " +
+                "Password, City, Country " +
+                "From FStore " +
+                "Where Email = @Email and Password = @Password";
+            try
+            {
+                var parameters = new List<SqlParameter>();
+                parameters.Add(dataProvider.CreateParameter(
+                        "@Email", 100, email, DbType.String));
+                parameters.Add(dataProvider.CreateParameter(
+                    "@Password", 30, password, DbType.String));
+
+                dataReader = dataProvider.ExecuteSqlQuery(
+                    SQLSelect, CommandType.Text,
+                    out connection, parameters.ToArray());
+                SqlDataReader reader = (SqlDataReader)dataReader;
+                if (reader.Read())
+                {
+                    member = new MemberDTO
+                    {
+                        MemberID = reader.GetInt32("MemberID"),
+                        MemberName = reader.GetString("MemberName"),
+                        MemberEmail = reader.GetString("Email"),
+                        Password = reader.GetString("Password"),
+                        MemberCity = reader.GetString("City"),
+                        MemberCountry = reader.GetString("Country")
+                    };
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                if (dataReader != null)
+                {
+                    dataReader.Close();
+                    CloseConnection();
+                }
+            }
+            return member;
+        }
         //--------------------------------------------
         public void AddMember(MemberDTO member)
         {

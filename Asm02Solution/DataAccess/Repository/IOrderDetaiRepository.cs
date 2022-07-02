@@ -13,5 +13,6 @@ namespace Ass2.DataAccess.Repository
         void InsertProduct(Product product);
         void DeleteMember(int productID);
         void UpdateMember(Product product);
+        List<Report> GetSaleReport(DateTime from, DateTime to);
     }
 }

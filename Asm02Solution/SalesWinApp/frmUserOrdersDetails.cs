@@ -19,6 +19,7 @@ namespace SalesWinApp
         public UserOrder orderInfo = new UserOrder();
         public bool InsertOrUpdate { get; set; }//False: insert, true: update
         public IOrderRepository orderRepository { get; set; }
+        public Member user { get; set; }
 
         public frmUserOrdersDetails()
         {
@@ -31,7 +32,7 @@ namespace SalesWinApp
             {
                 var order = new UserOrder
                 {
-                    MemberId = int.Parse(txtMemberID.Text),
+                    MemberId = int.Parse(txtMemberId.Text),
                     Freight = decimal.Parse(txtFreight.Text),
                     OrderDate = DateTime.ParseExact(
                         txtOrderDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture),
@@ -78,11 +79,17 @@ namespace SalesWinApp
 
                 //Show current information
                 txtOderID.Text = orderInfo.OrderId.ToString();
-                txtMemberID.Text = orderInfo.MemberId.ToString();
+                txtMemberId.Text = orderInfo.MemberId.ToString();
                 txtFreight.Text = orderInfo.Freight.ToString();
                 txtOrderDate.Text = orderInfo.OrderDate.ToString("dd/MM/yyyy");
                 txtRequiredDate.Text = orderInfo.RequiredDate.ToString("dd/MM/yyyy");
                 txtShippedDate.Text = orderInfo.ShippedDate.ToString("dd/MM/yyyy");
+            }
+
+            if (!user.IsAdmin)
+            {
+                txtMemberId.Text = user.MemberId.ToString();
+                txtMemberId.ReadOnly = true;
             }
         }
     }

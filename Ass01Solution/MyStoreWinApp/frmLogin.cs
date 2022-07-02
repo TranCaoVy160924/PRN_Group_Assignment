@@ -1,5 +1,6 @@
 ﻿using Ass1.BusinessObject;
 using Ass1.DataAccess;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,7 +25,35 @@ namespace MyStoreWinApp
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
+            string username = "";
+            string password = "";
+            try
+            {
+                
+                IConfiguration config = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json", true, true)
+                    .Build();
+                username = config["DefaulAccount:USERNAME"];
+                password = config["DefaulAccount:PASSWORD"];
 
+                MemberDTO member = new MemberDTO();
+                member.MemberEmail = username;
+                member.Password = password;
+                member.MemberName = "dfasdf";
+                member.MemberCity = "sdafsadf";
+                member.MemberCountry = "sdafasd";
+
+                memberRepository.InsertMember(member);
+
+                MessageBox.Show("Insert Default member " + username +" " + password);
+            } 
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                MessageBox.Show("Insert Default member " + username + " " + password);
+            }
+            
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -46,6 +75,7 @@ namespace MyStoreWinApp
                     MemberRepository = memberRepository
 
                 };
+                Hide();
                 if (frmMemberManagement.ShowDialog() == DialogResult.OK)
                 {
                     source.Position = source.Count - 1;
@@ -55,9 +85,6 @@ namespace MyStoreWinApp
             {
                 MessageBox.Show("Email or password does not match.");
             }
-            frmMemberManagement frm = new frmMemberManagement();
-            frm.Show();
-            this.Hide();
         }
 
 

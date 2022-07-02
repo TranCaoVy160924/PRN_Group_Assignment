@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Ass2.BusinessObject;
+using Ass2.DataAccess.Repository;
 
 namespace Ass2.DataAccess
 {
@@ -77,6 +78,44 @@ namespace Ass2.DataAccess
             {
                 throw new Exception(ex.Message);
             }
+        }
+
+        public List<Report> GetSaleByPeriod(DateTime fromDate, DateTime toDate)
+        {
+            ASS2_DBContext dBContext = new ASS2_DBContext();
+            List<Report> reports = new List<Report>();
+
+            ProductRepository productRepository = new ProductRepository();
+            var products = productRepository.GetProductsBy("general");
+
+            foreach (Product product in products)
+            {
+                var orderDetails = dBContext.OrderDetails
+                    .Where( detail => DateTime.Compare(detail.Order.ShippedDate, fromDate)  >= 0
+                    && DateTime.Compare(detail.Order.ShippedDate, toDate) < 0
+                    && detail.ProductId == product.ProductId);
+
+                double sales = 0;
+                int numberSaled = 0;
+                int numOfOrder = orderDetails.Count();
+
+                foreach (OrderDetail orderDetail in orderDetails)
+                {
+                    sales += orderDetail.Quantity * 
+                        (double)orderDetail.UnitPrice * (1 - orderDetail.Discount/100);
+                    numberSaled += orderDetail.Quantity;
+                }
+
+                reports.Add(new Report {
+                    ProductID = product.ProductId,
+                    ProductName = product.ProductName,
+                    Sales = sales,
+                    NumberSaled = numberSaled,
+                    NumberOfOrders = numOfOrder
+                });
+            }
+
+            return reports;
         }
     
     }

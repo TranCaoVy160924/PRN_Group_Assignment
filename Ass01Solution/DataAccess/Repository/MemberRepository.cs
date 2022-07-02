@@ -25,9 +25,8 @@ namespace Ass1.DataAccess
             => MemberDAO.Instance.FilterMember(country, city);
 
         public MemberDTO GetMemberObjectByEmailAndPassword(string email, string password)
-        {
-            throw new NotImplementedException();
-        }
+            => MemberDAO.Instance.CheckLogin(email, password);
+
 
         public IEnumerable<MemberDTO> GetMemberObjectByName(string memberobjectName)
             => MemberDAO.Instance.GetMemberByName(memberobjectName);

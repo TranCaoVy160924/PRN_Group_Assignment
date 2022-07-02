@@ -17,6 +17,7 @@ namespace SalesWinApp
     {
         IOrderRepository orderRepository = new OrderRepository();
         public UserOrder OrderInfo { get; internal set; }
+        public Member user { get; set; }
 
         public frmUserOrders()
         {
@@ -29,8 +30,16 @@ namespace SalesWinApp
             {
                 var order = GetOrderObject();
                 orderRepository.DeleteOrder(order.OrderId);
-                var orders = orderRepository.GetOrders();
-                LoadOrderList(orders);
+                if (user.IsAdmin)
+                {
+                    var orders = orderRepository.GetOrders();
+                    LoadOrderList(orders);
+                }
+                else
+                {
+                    var orders = orderRepository.GetOrders(user.MemberId);
+                    LoadOrderList(orders);
+                }
             }
             catch (Exception ex)
             {
@@ -42,33 +51,60 @@ namespace SalesWinApp
         {
             frmUserOrdersDetails frm = new frmUserOrdersDetails
             {
+                user = this.user,
                 Text = "Update order",
                 InsertOrUpdate = true,
                 orderInfo = GetOrderObject(),
                 orderRepository = this.orderRepository
             };
             frm.ShowDialog();
-            var orders = orderRepository.GetOrders();
-            LoadOrderList(orders);
+            if (user.IsAdmin)
+            {
+                var orders = orderRepository.GetOrders();
+                LoadOrderList(orders);
+            }
+            else
+            {
+                var orders = orderRepository.GetOrders(user.MemberId);
+                LoadOrderList(orders);
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             frmUserOrdersDetails frm = new frmUserOrdersDetails
             {
+                user = this.user,
                 Text = "Add Order",
                 InsertOrUpdate = false,
                 orderRepository = this.orderRepository
             };
             frm.ShowDialog();
-            var orders = orderRepository.GetOrders();
-            LoadOrderList(orders);
+            if (user.IsAdmin)
+            {
+                var orders = orderRepository.GetOrders();
+                LoadOrderList(orders);
+            }
+            else
+            {
+                var orders = orderRepository.GetOrders(user.MemberId);
+                LoadOrderList(orders);
+            }
         }
 
         private void frmUserOrders_Load(object sender, EventArgs e)
         {
-            var order = orderRepository.GetOrders();
-            LoadOrderList(order);
+            if (user.IsAdmin)
+            {
+                var orders = orderRepository.GetOrders();
+                LoadOrderList(orders);
+            } 
+            else
+            {
+                var orders = orderRepository.GetOrders(user.MemberId);
+                LoadOrderList(orders);
+            }            
+            
         }
 
         public void LoadOrderList(IEnumerable<UserOrder> orders)
@@ -101,7 +137,7 @@ namespace SalesWinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Load Order list");
+                MessageBox.Show(ex.ToString(), "Load Order list");
             }
         }
 

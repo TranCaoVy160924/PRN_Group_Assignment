@@ -9,8 +9,8 @@ namespace Ass2.DataAccess.Repository
 {
     public class OrderRepository : IOrderRepository
     {
-        public IEnumerable<UserOrder> GetOrders()
-            => OrderDAO.Instance.GetOrderList();
+        public IEnumerable<UserOrder> GetOrders(int memberID = 0)
+            => OrderDAO.Instance.GetOrderList(memberID);
 
         public UserOrder GetOrderByID(int orderID) 
             => OrderDAO.Instance.GetOrderByID(orderID);

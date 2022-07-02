@@ -28,14 +28,6 @@ namespace SalesWinApp
             {
                 tlsManageProduct.Visible = false;
             }
-
-            ASS2_DBContext dBContext = new ASS2_DBContext();
-            var members = dBContext.Products.ToList();
-
-            foreach (var member in members)
-            {
-                comboBox1.Items.Add(member);
-            }
         }
 
         private void tlsManageMember_Click(object sender, EventArgs e)
@@ -77,11 +69,18 @@ namespace SalesWinApp
         private void orderToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmUserOrders childForm = new frmUserOrders();
+            childForm.user = user;
+            childForm.MdiParent = this;
+            childForm.Dock = DockStyle.Fill;
+            childForm.Show();           
+        }
+
+        private void saleReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSaleReport childForm = new frmSaleReport();
             childForm.MdiParent = this;
             childForm.Dock = DockStyle.Fill;
             childForm.Show();
-
-            
         }
     }
 }

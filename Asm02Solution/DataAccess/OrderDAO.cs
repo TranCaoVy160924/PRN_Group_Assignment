@@ -30,11 +30,20 @@ namespace Ass2.DataAccess
             }
         }
         //---------------------------------------------
-        public IEnumerable<UserOrder> GetOrderList()
+        public IEnumerable<UserOrder> GetOrderList(int memberID = 0)
         {
-            using ASS2_DBContext dBContext = new ASS2_DBContext();
-            var order = dBContext.UserOrders.ToList();
-            return order;
+            IEnumerable<UserOrder> orders = null;
+            ASS2_DBContext dBContext = new ASS2_DBContext();
+            if (memberID == 0)
+            {
+                orders = dBContext.UserOrders.ToList();
+            } 
+            else
+            {
+                orders = dBContext.UserOrders.Where(order => order.MemberId == memberID);
+            }
+            
+            return orders;
         }
 
         public UserOrder GetOrderByID(int orderID)
