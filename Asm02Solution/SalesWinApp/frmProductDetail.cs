@@ -27,25 +27,29 @@ namespace SalesWinApp
         {
             try
             {
-                Product product = new Product
+                if (txtProductCategory.Text.Trim().Length > 0 && txtProductName.Text.Trim().Length > 0
+                        && txtWeight.Text.Trim().Length > 0 && txtUnitInPrice.Text.Trim().Length > 0)
                 {
-                    Category = int.Parse(txtProductCategory.Text),
-                    ProductName = txtProductName.Text,
-                    Weight = txtWeight.Text,
-                    UnitPrice = decimal.Parse(txtUnitInPrice.Text),
-                    UnitsInStock = int.Parse(txtUnitInPrice.Text)
-                };
-                if (InsertOrUpdate == false)
-                {
-                    ProductRepository.AddProduct(product);
-                }
-                else
-                {
-                    product.ProductId = int.Parse(txtProductID.Text);
-                    ProductRepository.UpdateProduct(product);
+                    Product product = new Product
+                    {
+                        Category = int.Parse(txtProductCategory.Text),
+                        ProductName = txtProductName.Text,
+                        Weight = txtWeight.Text,
+                        UnitPrice = decimal.Parse(txtUnitInPrice.Text),
+                        UnitsInStock = int.Parse(txtUnitInPrice.Text)
+                    };
+                    if (InsertOrUpdate == false)
+                    {
+                        ProductRepository.AddProduct(product);
+                    }
+                    else
+                    {
+                        product.ProductId = int.Parse(txtProductID.Text);
+                        ProductRepository.UpdateProduct(product);
 
+                    }
+                    this.Close();
                 }
-                this.Close();
             }
             catch (Exception ex)
             {
