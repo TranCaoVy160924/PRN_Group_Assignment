@@ -43,7 +43,7 @@ namespace SalesWinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -109,36 +109,48 @@ namespace SalesWinApp
 
         public void LoadOrderList(IEnumerable<UserOrder> orders)
         {
-            try
+            if (orders != null && orders.Count() > 0)
             {
-                DataTable dataTable = new DataTable();
-                dataTable.Columns.Add("Order Id", typeof(int));
-                dataTable.Columns.Add("Member Id", typeof(int));
-                dataTable.Columns.Add("Freight", typeof(int));
-                dataTable.Columns.Add("Order Date", typeof(string));
-                dataTable.Columns.Add("Required Date", typeof(string));
-                dataTable.Columns.Add("Shipped Date", typeof(string));
-
-                foreach (var order in orders)
+                try
                 {
-                    dataTable.Rows.Add(order.OrderId, order.MemberId,
-                        order.Freight, order.OrderDate, order.RequiredDate,
-                        order.ShippedDate);
+                    DataTable dataTable = new DataTable();
+                    dataTable.Columns.Add("Order Id", typeof(int));
+                    dataTable.Columns.Add("Member Id", typeof(int));
+                    dataTable.Columns.Add("Freight", typeof(int));
+                    dataTable.Columns.Add("Order Date", typeof(string));
+                    dataTable.Columns.Add("Required Date", typeof(string));
+                    dataTable.Columns.Add("Shipped Date", typeof(string));
+
+                    foreach (var order in orders)
+                    {
+                        dataTable.Rows.Add(order.OrderId, order.MemberId,
+                            order.Freight, order.OrderDate, order.RequiredDate,
+                            order.ShippedDate);
+                    }
+
+                    dgvOrderList.DataSource = dataTable;
+
+                    txtOderID.Text = dataTable.Rows[0][0].ToString();
+                    txtMemberID.Text = dataTable.Rows[0][1].ToString();
+                    txtFreight.Text = dataTable.Rows[0][2].ToString();
+                    txtOrderDate.Text = dataTable.Rows[0][3].ToString();
+                    txtRequiredDate.Text = dataTable.Rows[0][4].ToString();
+                    txtShippedDate.Text = dataTable.Rows[0][5].ToString();
                 }
-
-                dgvOrderList.DataSource = dataTable;
-
-                txtOderID.Text = dataTable.Rows[0][0].ToString();
-                txtMemberID.Text = dataTable.Rows[0][1].ToString();
-                txtFreight.Text = dataTable.Rows[0][2].ToString();
-                txtOrderDate.Text = dataTable.Rows[0][3].ToString();
-                txtRequiredDate.Text = dataTable.Rows[0][4].ToString();
-                txtShippedDate.Text = dataTable.Rows[0][5].ToString();
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Load Order list");
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.ToString(), "Load Order list");
+                try
+                {
+                    dgvOrderList.DataSource = null;
+                }
+                catch { }
             }
+            
         }
 
         private void dgvOrderList_DataSourceChanged(object sender, EventArgs e)
@@ -205,7 +217,7 @@ namespace SalesWinApp
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                throw new Exception(ex.Message);
             }
         }
 

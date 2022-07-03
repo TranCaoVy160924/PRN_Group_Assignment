@@ -31,40 +31,51 @@ namespace SalesWinApp
 
         public void LoadMemberList(IEnumerable<Member> members)
         {
-            try
+            if (members.Count() > 0)
             {
-
-                DataTable dataTable = new DataTable();
-                dataTable.Columns.Add("ID", typeof(int));
-                dataTable.Columns.Add("Email", typeof(string));
-                dataTable.Columns.Add("CompanyName", typeof(string));
-                dataTable.Columns.Add("City", typeof(string));
-                dataTable.Columns.Add("Country", typeof(string));
-                dataTable.Columns.Add("Password", typeof(string));
-                dataTable.Columns.Add("Role", typeof(bool));
-
-                dataTable.Columns["Role"].ReadOnly = true;
-
-                foreach (var member in members)
+                try
                 {
-                    dataTable.Rows.Add(member.MemberId, member.Email,
-                        member.CompanyName, member.City, member.Country,
-                        member.Password,member.IsAdmin);
+
+                    DataTable dataTable = new DataTable();
+                    dataTable.Columns.Add("ID", typeof(int));
+                    dataTable.Columns.Add("Email", typeof(string));
+                    dataTable.Columns.Add("CompanyName", typeof(string));
+                    dataTable.Columns.Add("City", typeof(string));
+                    dataTable.Columns.Add("Country", typeof(string));
+                    dataTable.Columns.Add("Password", typeof(string));
+                    dataTable.Columns.Add("Role", typeof(bool));
+
+                    dataTable.Columns["Role"].ReadOnly = true;
+
+                    foreach (var member in members)
+                    {
+                        dataTable.Rows.Add(member.MemberId, member.Email,
+                            member.CompanyName, member.City, member.Country,
+                            member.Password, member.IsAdmin);
+                    }
+
+                    dgvMemberList.DataSource = dataTable;
+
+                    txtID.Text = dataTable.Rows[0][0].ToString();
+                    txtEmail.Text = dataTable.Rows[0][1].ToString();
+                    txtCompany.Text = dataTable.Rows[0][2].ToString();
+                    txtCity.Text = dataTable.Rows[0][3].ToString();
+                    txtCountry.Text = dataTable.Rows[0][4].ToString();
+                    txtPassword.Text = dataTable.Rows[0][5].ToString();
+                    chkAdmin.Checked = Convert.ToBoolean(dataTable.Rows[0][6]);
                 }
-
-                dgvMemberList.DataSource = dataTable;
-
-                txtID.Text = dataTable.Rows[0][0].ToString();
-                txtEmail.Text = dataTable.Rows[0][1].ToString();
-                txtCompany.Text = dataTable.Rows[0][2].ToString();
-                txtCity.Text = dataTable.Rows[0][3].ToString();
-                txtCountry.Text = dataTable.Rows[0][4].ToString();
-                txtPassword.Text = dataTable.Rows[0][5].ToString();
-                chkAdmin.Checked = Convert.ToBoolean(dataTable.Rows[0][6]);
-            }
-            catch (Exception ex)
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Load Member list");
+                }
+            } 
+            else
             {
-                MessageBox.Show(ex.Message, "Load Member list");
+                try
+                {
+                    dgvMemberList.DataSource = null;
+                }
+                catch{}
             }
         }
 
@@ -124,7 +135,7 @@ namespace SalesWinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }//end btnDelete
 
@@ -146,7 +157,7 @@ namespace SalesWinApp
             }
             catch(Exception ex)
             {
-                throw new Exception(ex.ToString());
+                throw new Exception(ex.Message);
             }
             
         }

@@ -67,12 +67,12 @@ namespace SalesWinApp
                         user = member;
                         mainForm.user = this.user;
                         GetMemberInfo();
-                        MessageBox.Show("Update fail successfully");
+                        MessageBox.Show("Update successfully");
                     }
                     else
                     {
                         memberRepository.InsertMember(member);
-                        MessageBox.Show("Add fail successfully");
+                        MessageBox.Show("Add successfully");
                         Close();
                     }
                 }
@@ -84,7 +84,7 @@ namespace SalesWinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Update account");
+                MessageBox.Show(ex.Message, "Update account");
             }
             
         }

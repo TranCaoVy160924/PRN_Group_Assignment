@@ -38,41 +38,52 @@ namespace SalesWinApp
 
         private void LoadProductList(IEnumerable<Product> products)
         {
-            try
+            if (products != null && products.Count() > 0)
             {
-                source = new SortableBindingList<Product>();
-                foreach (var product in products)
+                try
                 {
-                    source.Add(product);
+                    source = new SortableBindingList<Product>();
+                    foreach (var product in products)
+                    {
+                        source.Add(product);
+                    }
+
+                    DataTable dataTable = new DataTable();
+                    dataTable.Columns.Add("ID", typeof(int));
+                    dataTable.Columns.Add("Category", typeof(int));
+                    dataTable.Columns.Add("Product Name", typeof(string));
+                    dataTable.Columns.Add("Weight", typeof(string));
+                    dataTable.Columns.Add("Price", typeof(decimal));
+                    dataTable.Columns.Add("Unit In Stock", typeof(int));
+
+                    foreach (var product in products)
+                    {
+                        dataTable.Rows.Add(product.ProductId, product.Category,
+                            product.ProductName, product.Weight, product.UnitPrice,
+                            product.UnitsInStock);
+                    }
+
+                    dgvProductsList.DataSource = dataTable;
+
+                    txtProductID.Text = dataTable.Rows[0][0].ToString();
+                    txtProductCategory.Text = dataTable.Rows[0][1].ToString();
+                    txtProductName.Text = dataTable.Rows[0][2].ToString();
+                    txtWeight.Text = dataTable.Rows[0][3].ToString();
+                    txtProductPrice.Text = dataTable.Rows[0][4].ToString();
+                    txtUnitInStock.Text = dataTable.Rows[0][5].ToString();
                 }
-
-                DataTable dataTable = new DataTable();
-                dataTable.Columns.Add("ID", typeof(int));
-                dataTable.Columns.Add("Category", typeof(int));
-                dataTable.Columns.Add("Product Name", typeof(string));
-                dataTable.Columns.Add("Weight", typeof(string));
-                dataTable.Columns.Add("Price", typeof(decimal));
-                dataTable.Columns.Add("Unit In Stock", typeof(int));
-
-                foreach (var product in products)
+                catch (Exception ex)
                 {
-                    dataTable.Rows.Add(product.ProductId, product.Category,
-                        product.ProductName, product.Weight, product.UnitPrice,
-                        product.UnitsInStock);
+                    MessageBox.Show(ex.Message, "Load Product list");
                 }
-
-                dgvProductsList.DataSource = dataTable;
-
-                txtProductID.Text = dataTable.Rows[0][0].ToString();
-                txtProductCategory.Text = dataTable.Rows[0][1].ToString();
-                txtProductName.Text = dataTable.Rows[0][2].ToString();
-                txtWeight.Text = dataTable.Rows[0][3].ToString();
-                txtProductPrice.Text = dataTable.Rows[0][4].ToString();
-                txtUnitInStock.Text = dataTable.Rows[0][5].ToString();
-            }
-            catch (Exception ex)
+            }   
+            else
             {
-                MessageBox.Show(ex.Message, "Load Product list");
+                try
+                {
+                    dgvProductsList.DataSource = null;
+                }
+                catch { }
             }
         }
 
@@ -231,7 +242,7 @@ namespace SalesWinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 

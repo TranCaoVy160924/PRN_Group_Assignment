@@ -29,6 +29,18 @@ namespace SalesWinApp
             ProductRepository productRepository = new ProductRepository();
             try
             {
+                if (String.IsNullOrEmpty(txtQuantity.Text) 
+                    || String.IsNullOrEmpty(txtDiscount.Text) 
+                    || String.IsNullOrEmpty(txtUnitPrice.Text))
+                {
+                    throw new Exception("Invalid input");
+                }
+
+                if (float.Parse(txtDiscount.Text) > 100)
+                {
+                    throw new Exception("Discount must smaller than 100");
+                }
+
                 Product choice = (Product)cboProductChoice.SelectedItem;
                 var detail = new OrderDetail
                 {
@@ -51,7 +63,7 @@ namespace SalesWinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Insert");
+                MessageBox.Show(ex.Message, "Insert");
             }
         }
 

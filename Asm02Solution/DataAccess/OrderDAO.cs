@@ -73,7 +73,7 @@ namespace Ass2.DataAccess
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                throw new Exception(ex.Message);
             }
         }
 
@@ -87,7 +87,7 @@ namespace Ass2.DataAccess
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                throw new Exception(ex.Message);
             }
         }
     }

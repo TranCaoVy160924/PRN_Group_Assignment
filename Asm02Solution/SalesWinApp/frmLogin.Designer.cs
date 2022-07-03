@@ -65,7 +65,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(120, 117);
             this.panel1.TabIndex = 0;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // pictureBoxLock
             // 
@@ -100,7 +99,6 @@
             this.lbLoginForm.Size = new System.Drawing.Size(344, 59);
             this.lbLoginForm.TabIndex = 2;
             this.lbLoginForm.Text = "LOGIN FORM";
-            this.lbLoginForm.Click += new System.EventHandler(this.buttonLogin_Click);
             // 
             // lbEmail
             // 
@@ -112,7 +110,6 @@
             this.lbEmail.Size = new System.Drawing.Size(99, 46);
             this.lbEmail.TabIndex = 2;
             this.lbEmail.Text = "Email";
-            this.lbEmail.Click += new System.EventHandler(this.labelEmail_Click_1);
             // 
             // tbEmail
             // 
@@ -125,8 +122,6 @@
             this.tbEmail.Size = new System.Drawing.Size(446, 50);
             this.tbEmail.TabIndex = 1;
             this.tbEmail.WordWrap = false;
-            this.tbEmail.Click += new System.EventHandler(this.textBox1_TextChanged_1);
-            this.tbEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // lbPassword
             // 
@@ -138,7 +133,6 @@
             this.lbPassword.Size = new System.Drawing.Size(160, 46);
             this.lbPassword.TabIndex = 4;
             this.lbPassword.Text = "Password";
-            this.lbPassword.Click += new System.EventHandler(this.label1_Click);
             // 
             // tbPassword
             // 
@@ -151,8 +145,6 @@
             this.tbPassword.Size = new System.Drawing.Size(446, 50);
             this.tbPassword.TabIndex = 2;
             this.tbPassword.WordWrap = false;
-            this.tbPassword.Click += new System.EventHandler(this.tbPassword_TextChanged);
-            this.tbPassword.TextChanged += new System.EventHandler(this.tbPassword_TextChanged);
             // 
             // btClose
             // 
@@ -191,7 +183,6 @@
             this.lbErrorMessage.Size = new System.Drawing.Size(320, 20);
             this.lbErrorMessage.TabIndex = 8;
             this.lbErrorMessage.Text = "Email or Password is incorrect, please try again.";
-            this.lbErrorMessage.Click += new System.EventHandler(this.lbErrorMessage_Click);
             // 
             // btnSignUp
             // 

@@ -30,16 +30,32 @@ namespace SalesWinApp
         {
             try
             {
+                if (String.IsNullOrEmpty(txtMemberId.Text) || String.IsNullOrEmpty(txtFreight.Text)
+                    || String.IsNullOrEmpty(txtOrderDate.Text) || String.IsNullOrEmpty(txtRequiredDate.Text)
+                    || String.IsNullOrEmpty(txtShippedDate.Text))
+                {
+                    throw new Exception("Invalid input");
+                }
+                DateTime orderDate = DateTime.ParseExact(
+                        txtOrderDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DateTime requiredDate = DateTime.ParseExact(
+                        txtRequiredDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+                DateTime shippedDate = DateTime.ParseExact(
+                        txtShippedDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+                if (DateTime.Compare(orderDate, requiredDate) > 0 
+                    || DateTime.Compare(orderDate, shippedDate) > 0)
+                {
+                    throw new Exception("Invalid date time input");
+                }
+
                 var order = new UserOrder
                 {
                     MemberId = int.Parse(txtMemberId.Text),
                     Freight = decimal.Parse(txtFreight.Text),
-                    OrderDate = DateTime.ParseExact(
-                        txtOrderDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture),
-                    RequiredDate = DateTime.ParseExact(
-                        txtRequiredDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture),
-                    ShippedDate = DateTime.ParseExact(
-                        txtShippedDate.Text, "dd/MM/yyyy", CultureInfo.InvariantCulture)
+                    OrderDate = orderDate,
+                    RequiredDate = requiredDate,
+                    ShippedDate = shippedDate
                 };
                 if (InsertOrUpdate == false)
                 {
@@ -55,7 +71,7 @@ namespace SalesWinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Insert");
+                MessageBox.Show(ex.Message, "Insert");
             }
         }
 

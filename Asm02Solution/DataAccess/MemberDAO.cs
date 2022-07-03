@@ -46,7 +46,7 @@ namespace Ass2.DataAccess
         public Member GetMailAndPassword(string Email, string Password)
         {
             using ASS2_DBContext dBContext = new ASS2_DBContext();
-            Member member = dBContext.Members.Where(mem => mem.Email == Email && mem.Password == Password).FirstOrDefault();
+            Member? member = dBContext.Members.Where(mem => mem.Email == Email && mem.Password == Password).FirstOrDefault();
             return member;
         }
 
@@ -66,7 +66,7 @@ namespace Ass2.DataAccess
             }
             catch(Exception ex)
             {
-                throw new Exception(ex.ToString());
+                throw new Exception(ex.Message);
             }
             
         }
@@ -82,7 +82,7 @@ namespace Ass2.DataAccess
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.ToString());
+                throw new Exception(ex.Message);
             }
         }
 

@@ -65,7 +65,7 @@ namespace SalesWinApp
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -101,12 +101,22 @@ namespace SalesWinApp
                     txtQuantity.Text = dataTable.Rows[0][2].ToString();
                     txtDiscount.Text = dataTable.Rows[0][3].ToString();
                     txtUnitPrice.Text = dataTable.Rows[0][4].ToString();
+                } else
+                {
+                    try
+                    {
+                        dgvOrderDetailList.DataSource = null;
+                    }
+                    catch 
+                    {
+
+                    }
                 }
                 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Load Order Detail list");
+                MessageBox.Show(ex.Message, "Load Order Detail list");
             }
         }
 

@@ -28,7 +28,7 @@ namespace SalesWinApp
             {
                 if (txtFormDate.Text.Trim().Length < 0 || txtToDate.Text.Trim().Length < 0)
                 {
-                    throw new Exception();
+                    throw new Exception("Invalid input");
                 } 
                 else
                 {
@@ -37,23 +37,30 @@ namespace SalesWinApp
                     DateTime toDate = DateTime.ParseExact(txtToDate.Text, "dd/MM/yyyy",
                         CultureInfo.InvariantCulture);
 
-                    txtFormDate.Text = fromDate.ToString("dd/MM/yyyy");
-                    txtToDate.Text = toDate.ToString("dd/MM/yyyy");
-
-                    var reports = OrderDetaiRepository.GetSaleReport(fromDate, toDate);
-                    if (reports.Count > 0)
+                    if (DateTime.Compare(fromDate, toDate) < 0)
                     {
-                        LoadReportList(reports);
+                        txtFormDate.Text = fromDate.ToString("dd/MM/yyyy");
+                        txtToDate.Text = toDate.ToString("dd/MM/yyyy");
+
+                        var reports = OrderDetaiRepository.GetSaleReport(fromDate, toDate);
+                        if (reports.Count > 0)
+                        {
+                            LoadReportList(reports);
+                        }
+                        else
+                        {
+                            MessageBox.Show("No sale in period");
+                        }
                     } 
                     else
                     {
-                        MessageBox.Show("No sale in period");
+                        throw new Exception("Invalid input");
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
+                MessageBox.Show(ex.Message);
             }
             
         }
@@ -76,6 +83,8 @@ namespace SalesWinApp
                 }
 
                 dgvReport.DataSource = dataTable;
+
+                dgvReport.Sort(dgvReport.Columns[4], ListSortDirection.Descending);
             }
             catch (Exception ex)
             {

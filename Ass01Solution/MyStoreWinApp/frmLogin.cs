@@ -44,14 +44,15 @@ namespace MyStoreWinApp
                 member.MemberCity = "sdafsadf";
                 member.MemberCountry = "sdafasd";
 
-                memberRepository.InsertMember(member);
+                if (!username.Equals("") && !password.Equals(""))
+                {
+                    memberRepository.InsertMember(member);
+                }
 
                 MessageBox.Show("Insert Default member " + username +" " + password);
             } 
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString());
-                MessageBox.Show("Insert Default member " + username + " " + password);
             }
             
         }

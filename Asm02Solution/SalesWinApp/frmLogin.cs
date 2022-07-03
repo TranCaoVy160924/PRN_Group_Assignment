@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Ass2.DataAccess.Repository;
 using Ass2.BusinessObject;
+using Microsoft.Extensions.Configuration.Json;
+using Microsoft.Extensions.Configuration;
 
 namespace SalesWinApp
 {
@@ -24,31 +26,44 @@ namespace SalesWinApp
         private void frmLogin_Load(object sender, EventArgs e)
         {
             lbErrorMessage.Visible = false;
-        }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
+            string username;
+            string password;
+            try
+            {
 
-        }
+                IConfiguration config = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json", true, true)
+                    .Build();
+                username = config["DefaulAccount:USERNAME"];
+                password = config["DefaulAccount:PASSWORD"];
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
+                Member member = new Member();
+                member.Email = username;
+                member.Password = password;
+                member.Country = "dfasdf";
+                member.City = "sdafsadf";
+                member.CompanyName = "";
+                member.IsAdmin = true;
 
-        }
+                Member pre = db.GetMailAndPassword(username, password);
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+                if (!String.IsNullOrEmpty(username) && !String.IsNullOrEmpty(password)
+                    && pre == null)
+                {
+                    db.InsertMember(member);
+                    MessageBox.Show("Insert Default member " + username + " " + password);
+                }  
+            }
+            catch (Exception ex)
+            {
+            }
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void labelEmail_Click_1(object sender, EventArgs e)
-        {
-                 
         }
 
         private void buttonLogin_Click_1(object sender, EventArgs e)
@@ -58,8 +73,8 @@ namespace SalesWinApp
             passwordIn = tbPassword.Text;
 
             //test for admin
-            EmailIn = "vdhoa@gmail.com";
-            passwordIn = "12345678";
+            //EmailIn = "vdhoa@gmail.com";
+            //passwordIn = "12345678";
 
             //test for normal user
             //EmailIn = "dnbchau@gmail.com";
@@ -79,21 +94,6 @@ namespace SalesWinApp
                 mainForm.Show();
                 this.Hide();
             }
-        }
-
-        private void panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbErrorMessage_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbPassword_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSignUp_Click(object sender, EventArgs e)

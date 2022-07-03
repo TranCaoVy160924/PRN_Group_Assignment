@@ -42,6 +42,13 @@ namespace MyStoreWinApp
         {
             try
             {
+                if (String.IsNullOrEmpty(txtName.Text) || String.IsNullOrEmpty(txtPassword.Text)
+                    || String.IsNullOrEmpty(txtEmail.Text) || String.IsNullOrEmpty(txtCountry.Text)
+                    || String.IsNullOrEmpty(txtCity.Text))
+                {
+                    throw new Exception("Invalid input");
+                }
+
                 var member = new MemberDTO
                 {
                     MemberName = txtName.Text,
