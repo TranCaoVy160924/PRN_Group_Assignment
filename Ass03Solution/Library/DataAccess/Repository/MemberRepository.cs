@@ -8,8 +8,6 @@ namespace Ass3.Library
 {
     public class MemberRepository : IMemberRepository
     {
-        private string ConnectionString;
-
         public MemberRepository()
         {
         }

@@ -14,7 +14,15 @@ IServiceCollection services = builder.Services;
 services.AddDbContext<ASS2_DBContext>(options =>
             options.UseSqlServer(connectionString: strConn));
 services.AddScoped<ASS2_DBContext>();
+services.AddHttpContextAccessor();
+builder.Services.AddDistributedMemoryCache();
 
+builder.Services.AddSession(options =>
+{
+    options.IdleTimeout = TimeSpan.FromSeconds(10);
+    options.Cookie.HttpOnly = true;
+    options.Cookie.IsEssential = true;
+});
 services.AddRazorPages();
 services.AddControllersWithViews();
 
@@ -31,6 +39,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+app.UseSession();
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 

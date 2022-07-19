@@ -61,20 +61,28 @@ namespace eStore.Controllers
         // GET: MembersController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            MemberRepository = new MemberRepository();
+            var member = MemberRepository.GetMemberByID(id);
+            return View(member);
         }
 
         // POST: MembersController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Member member)
         {
+            MemberRepository = new MemberRepository();
             try
             {
+                if (ModelState.IsValid)
+                {
+                    MemberRepository.UpdateMember(member);
+                }
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
+                ViewBag.Message = ex.Message;
                 return View();
             }
         }
@@ -82,7 +90,9 @@ namespace eStore.Controllers
         // GET: MembersController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            MemberRepository = new MemberRepository();
+            var member = MemberRepository.GetMemberByID(id);
+            return View(member);
         }
 
         // POST: MembersController/Delete/5
@@ -90,8 +100,10 @@ namespace eStore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
+            MemberRepository = new MemberRepository();
             try
             {
+                MemberRepository.DeleteMember(id);
                 return RedirectToAction(nameof(Index));
             }
             catch

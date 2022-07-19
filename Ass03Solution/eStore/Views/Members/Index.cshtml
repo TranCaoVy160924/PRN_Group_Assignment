@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Ass3.Library.Member>
+﻿@using Microsoft.AspNetCore.Http
+@model IEnumerable<Ass3.Library.Member>
 
 @{
     ViewData["Title"] = "Index";
@@ -29,7 +30,7 @@
                 @Html.DisplayNameFor(model => model.Password)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IsAdmin)
+                @Html.DisplayNameFor(model => model.IsAdmin) 
             </th>
             <th></th>
         </tr>

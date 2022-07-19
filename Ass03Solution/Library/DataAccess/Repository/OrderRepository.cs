@@ -9,18 +9,76 @@ namespace Ass3.Library
     public class OrderRepository : IOrderRepository
     {
         public IEnumerable<UserOrder> GetOrders(int memberID = 0)
-            => OrderDAO.Instance.GetOrderList(memberID);
+        {
+            using ASS2_DBContext dBContext
+                = new ASS2_DBContext();
 
-        public UserOrder GetOrderByID(int orderID) 
-            => OrderDAO.Instance.GetOrderByID(orderID);
+            IEnumerable<UserOrder> orders = null;
+            if (memberID == 0)
+            {
+                orders = dBContext.UserOrders.ToList();
+            }
+            else
+            {
+                orders = dBContext.UserOrders.Where(
+                    order => order.MemberId == memberID).ToList();
+            }
+
+            return orders;
+        }
+
+        public UserOrder GetOrderByID(int orderID)
+        {
+            using ASS2_DBContext dBContext
+                = new ASS2_DBContext();
+
+            UserOrder order = dBContext.UserOrders.Where(
+                ord => ord.OrderId == orderID).FirstOrDefault();
+            return order;
+        }
 
         public void InsertOrder(UserOrder order)
-            => OrderDAO.Instance.Add(order);
+        {
+            using ASS2_DBContext dBContext
+                = new ASS2_DBContext();
+
+            try
+            {
+                dBContext.UserOrders.Add(order);
+                dBContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
 
         public void DeleteOrder(int OrderID)
-            => OrderDAO.Instance.Delete(OrderID);
+        {
+            using ASS2_DBContext dBContext
+                = new ASS2_DBContext();
+
+            UserOrder order = dBContext.UserOrders.Where(
+                ord => ord.OrderId == OrderID).FirstOrDefault();
+            dBContext.UserOrders.Remove(order);
+            dBContext.SaveChanges();
+        }
 
         public void UpdateOrder(UserOrder order)
-            => OrderDAO.Instance.Update(order);
+        {
+            using ASS2_DBContext dBContext 
+                = new ASS2_DBContext();
+            try
+            {
+                
+                dBContext.Entry<UserOrder>(order).State
+                    = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                dBContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
