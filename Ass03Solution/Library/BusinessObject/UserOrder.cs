@@ -17,7 +17,7 @@ namespace Ass3.Library
         public DateTime? ShippedDate { get; set; }
         public decimal? Freight { get; set; }
 
-        public virtual Member Member { get; set; }
+        public virtual Member? Member { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

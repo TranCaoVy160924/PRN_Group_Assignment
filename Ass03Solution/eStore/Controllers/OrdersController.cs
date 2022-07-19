@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Ass3.Library;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using eStore.Models;
 
 namespace eStore.Controllers
 {
@@ -28,70 +30,118 @@ namespace eStore.Controllers
         // GET: OrdersController/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            OrderRepository = new OrderRepository();
+            var order = OrderRepository.GetOrderByID(id);
+            return View(order);
         }
 
         // GET: OrdersController/Create
         public ActionResult Create()
         {
+            ViewBag.MemberId = GetMemberList();
             return View();
         }
 
         // POST: OrdersController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(UserOrderViewModel orderViewModel)
         {
+            OrderRepository = new OrderRepository();
+            
             try
             {
+                if (ModelState.IsValid)
+                {
+                    UserOrder userOrder = orderViewModel.ToDBModel();
+                    OrderRepository.InsertOrder(userOrder);
+                } 
+                else
+                {
+                    throw new Exception("Error");
+                }
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                ViewBag.Message = ex.Message;
+                return View(orderViewModel);
             }
         }
 
         // GET: OrdersController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            OrderRepository = new OrderRepository();
+            ViewBag.MemberId = GetMemberList();
+            var userOrder = OrderRepository.GetOrderByID(id);
+            return View(new UserOrderViewModel(userOrder));
         }
 
         // POST: OrdersController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, UserOrderViewModel orderViewModel)
         {
+            OrderRepository = new OrderRepository();
+
             try
             {
+                if (ModelState.IsValid)
+                {
+                    UserOrder userOrder = orderViewModel.ToDBModel();
+                    OrderRepository.UpdateOrder(userOrder);
+                }
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                ViewBag.Message = ex.Message;
+                return View(orderViewModel);
             }
         }
 
         // GET: OrdersController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            OrderRepository = new OrderRepository();
+            var userOrder = OrderRepository.GetOrderByID(id);
+            return View(userOrder);
         }
 
         // POST: OrdersController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, UserOrder userOrder)
         {
+            OrderRepository = new OrderRepository();
             try
             {
+                OrderRepository.DeleteOrder(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
                 return View();
             }
+        }
+
+        private List<SelectListItem> GetMemberList()
+        {
+            MemberRepository memberRepository = new MemberRepository();
+            var members = memberRepository.GetMembers();
+            var memberIdList = new List<SelectListItem>();
+
+            foreach (var member in members)
+            {
+                memberIdList.Add(new SelectListItem()
+                {
+                    Text = member.MemberId.ToString() + ". " + member.Email,
+                    Value = member.MemberId.ToString()
+                });
+            }
+
+            return memberIdList;
         }
     }
 }

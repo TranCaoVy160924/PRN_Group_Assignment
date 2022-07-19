@@ -2,8 +2,8 @@
 @inject IHttpContextAccessor HttpContextAccessor
 
 @{
-                            ISession session = HttpContextAccessor.HttpContext.Session;
-                        }
+    ISession session = HttpContextAccessor.HttpContext.Session;
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,10 +34,10 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Members" asp-action="Index">Member</a>
-                        </li> 
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="Index"
-                           asp-route-userID=@session.GetInt32("USER_ID")>Order @session.GetInt32("USER_ID").ToString()</a>
+                               asp-route-userID=@session.GetInt32("USER_ID")>Order @session.GetInt32("USER_ID").ToString()</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
