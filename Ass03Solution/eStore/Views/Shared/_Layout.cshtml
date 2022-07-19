@@ -1,5 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Http
 @inject IHttpContextAccessor HttpContextAccessor
+
+@{
+                            ISession session = HttpContextAccessor.HttpContext.Session;
+                        }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,14 +35,12 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Members" asp-action="Index">Member</a>
                         </li> 
-                        @{
-                            ISession session = HttpContextAccessor.HttpContext.Session;
-                            session.SetInt32("USER_ID", 3);
-                        }
-                        
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="Index"
                            asp-route-userID=@session.GetInt32("USER_ID")>Order @session.GetInt32("USER_ID").ToString()</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>
                         </li>
                     </ul>
                 </div>
