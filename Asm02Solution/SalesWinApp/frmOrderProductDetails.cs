@@ -89,7 +89,7 @@ namespace SalesWinApp
 
             foreach (Product product in products)
             {
-                cboProductChoice.Items.Add(product);
+                cboProductChoice.Items.Add(product.ToString());
             }
 
             txtOderID.Enabled = false;
