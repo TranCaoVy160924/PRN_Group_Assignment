@@ -8,8 +8,12 @@ namespace Ass3.Library
 {  
     public interface IProductRepository
     {
-        IEnumerable<Product> GetProductsBy(
-            string searchChoice, string searchKey = "");
+        IEnumerable<Product> GetProductList();
+
+        Product GetProductByID(int productID);
+
+        IEnumerable<Product> SearchProducts(string productName = "",
+            int lowerPrice = 0, int upperPrice = 0);
 
         void DeleteProduct(int productID);
 

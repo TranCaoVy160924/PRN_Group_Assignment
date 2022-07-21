@@ -10,11 +10,26 @@ namespace eStore.Controllers
         private IProductRepository ProductRepository = null;
 
         // GET: ProductsController
-        public ActionResult Index()
+        public ActionResult Index(string productName = "",
+            int lowerPrice = 0, int upperPrice = 0)
         {
             ProductRepository = new ProductRepository();
+            IEnumerable<Product> productList = null;
 
-            var productList = ProductRepository.GetProductsBy("general");
+            if (string.IsNullOrEmpty(productName) && lowerPrice == 0 
+                && upperPrice == 0)
+            {
+                productList = ProductRepository.GetProductList();
+            }
+            else
+            {
+                productList = ProductRepository
+                    .SearchProducts(productName, lowerPrice, upperPrice);
+                ViewBag.productName = productName;
+                ViewBag.lowerPrice = lowerPrice;
+                ViewBag.upperPrice = upperPrice;
+            }
+            
             return View(productList);
         }
 
@@ -22,12 +37,7 @@ namespace eStore.Controllers
         public ActionResult Details(int id)
         {
             ProductRepository = new ProductRepository();
-
-            var product = ProductRepository.GetProductsBy("id");
-            if (product == null)
-            {
-                return NotFound();
-            } 
+            var product = ProductRepository.GetProductByID(id);
             return View(product);
         }
 
@@ -61,28 +71,38 @@ namespace eStore.Controllers
         // GET: ProductsController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            ProductRepository = new ProductRepository();
+            var product = ProductRepository.GetProductByID(id);
+            return View(product);
         }
 
         // POST: ProductsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Product product)
         {
+            ProductRepository = new ProductRepository();
             try
             {
+                if (ModelState.IsValid)
+                {
+                    ProductRepository.UpdateProduct(product);
+                }
                 return RedirectToAction(nameof(Index));
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                ViewBag.Message = ex.Message;
+                return View(product);
             }
         }
 
         // GET: ProductsController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            ProductRepository = new ProductRepository();
+            var product = ProductRepository.GetProductByID(id);
+            return View(product);
         }
 
         // POST: ProductsController/Delete/5
@@ -90,8 +110,10 @@ namespace eStore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, IFormCollection collection)
         {
+            ProductRepository = new ProductRepository();
             try
             {
+                ProductRepository.DeleteProduct(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -99,5 +121,6 @@ namespace eStore.Controllers
                 return View();
             }
         }
+
     }
 }

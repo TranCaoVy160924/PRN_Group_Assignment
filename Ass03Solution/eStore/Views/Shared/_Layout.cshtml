@@ -1,8 +1,12 @@
 ﻿@using Microsoft.AspNetCore.Http
+@using eStore.Models;
+@using Ass3.Library;
+
 @inject IHttpContextAccessor HttpContextAccessor
 
 @{
     ISession session = HttpContextAccessor.HttpContext.Session;
+    Member member = session.GetObject<Member>("MEMBER");
 }
 
 <!DOCTYPE html>
@@ -37,7 +41,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Orders" asp-action="Index"
-                               asp-route-userID=@session.GetInt32("USER_ID")>Order @session.GetInt32("USER_ID").ToString()</a>
+                               asp-route-userID=@session.GetInt32("USER_ID")>Order @member.Email</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Products" asp-action="Index">Products</a>

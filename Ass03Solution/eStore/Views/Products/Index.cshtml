@@ -10,6 +10,19 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<form action="@Url.Action("Index", "Products")" method="post">
+    <label for="productName">Product Name</label>
+    <input type="text" name="productName" value="@ViewBag.productName"/>
+
+    <label for="lowerPrice">Lower Price</label>
+    <input id="lowerPrice" type="number" name="lowerPrice" 
+        min=0 onchange="setPriceMaxMin()" value="@ViewBag.lowerPrice"/>
+
+    <label for="upperPrice">Upper Price</label>
+    <input id="upperPrice" type="number" name="upperPrice" 
+        onchange="setPriceMaxMin()" value="@ViewBag.upperPrice"/>
+    <button type="submit">Search Product</button>
+</form>
 <table class="table">
     <thead>
         <tr>
@@ -58,3 +71,12 @@
 }
     </tbody>
 </table>
+<script>
+    function setPriceMaxMin() {
+        var lower = document.getElementById("lowerPrice");
+        var upper = document.getElementById("upperPrice");
+
+        lower.max = upper.value;
+        upper.min = lower.value;
+    }
+</script>

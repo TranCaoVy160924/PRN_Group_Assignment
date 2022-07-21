@@ -80,7 +80,7 @@ namespace Ass3.Library
             List<Report> reports = new List<Report>();
 
             ProductRepository productRepository = new ProductRepository();
-            var products = productRepository.GetProductsBy("general");
+            var products = productRepository.GetProductList();
 
             foreach (Product product in products)
             {

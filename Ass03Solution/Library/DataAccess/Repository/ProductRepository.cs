@@ -14,49 +14,80 @@ namespace Ass3.Library
         private const string BY_ID = "id";
         private const string GENERAL = "general";
 
-        public IEnumerable<Product> GetProductsBy(
-            string searchChoice, string searchKey = "")
+        public IEnumerable<Product> GetProductList()
         {
+            using ASS2_DBContext dBContext = new ASS2_DBContext();
+            var products = dBContext.Products.ToList();
+            return products;
+        }
+
+        public Product GetProductByID(int productID)
+        {
+            using ASS2_DBContext dBContext = new ASS2_DBContext();
+            Product product = dBContext.Products
+                .Where(pro => pro.ProductId == productID).FirstOrDefault();
+            return product;
+        }
+
+        public IEnumerable<Product> SearchProducts(string productName = "",
+            int lowerPrice = 0, int upperPrice = 0)
+        {
+            using ASS2_DBContext dBContext = new ASS2_DBContext();
             IEnumerable<Product> products = null;
+            if (!string.IsNullOrEmpty(productName))
+            {
+                products = dBContext.Products
+                .Where(pro => pro.ProductName.Contains(productName)).ToList();
+            }
+            if (lowerPrice > 0)
+            {
+                products = products.Where(pro => pro.UnitPrice > lowerPrice).ToList();
+            }
+            if (upperPrice > 0)
+            {
+                products = products.Where(pro => pro.UnitPrice < upperPrice).ToList();
+            }
+
+            return products;
+        }
+
+        public void DeleteProduct(int productID)
+        {
+            using ASS2_DBContext dBContext = new ASS2_DBContext();
+            Product product = dBContext.Products
+                .Where(pro => pro.ProductId == productID).FirstOrDefault();
+            dBContext.Products.Remove(product);
+            dBContext.SaveChanges();
+        }
+
+        public void AddProduct(Product product)
+        {
             try
             {
-                if (searchChoice.Equals(GENERAL))
-                {
-                    products = ProductDAO.Instance.GetProductList();
-                }
-                if (searchChoice.Equals(BY_NAME) && !searchKey.Equals(""))
-                {
-                    products = ProductDAO.Instance.GetProductByName(searchKey);
-                }
-                if (searchChoice.Equals(BY_PRICE) && !searchKey.Equals(""))
-                {
-                    products = ProductDAO.Instance.GetProductByPrice(searchKey);
-                }
-                if (searchChoice.Equals(BY_UNIT_IN_STOCK) && !searchKey.Equals(""))
-                {
-                    products = ProductDAO.Instance.GetProductByUnit(searchKey);
-                }
-                if (searchChoice.Equals(BY_ID) && !searchKey.Equals(""))
-                {
-                    products = ProductDAO.Instance.GetProductByID(searchKey);
-                }
-            } 
+                using ASS2_DBContext dBContext = new ASS2_DBContext();
+                dBContext.Products.Add(product);
+                dBContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            try
+            {
+                using ASS2_DBContext dBContext = new ASS2_DBContext();
+                dBContext.Entry<Product>(product).State 
+                    = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                dBContext.SaveChanges();
+            }
             catch (Exception ex)
             {
                 throw new Exception(ex.ToString());
             }
-            
-            return products;
         }
-
-        public void DeleteProduct(int productID) 
-            => ProductDAO.Instance.Delete(productID);
-
-        public void AddProduct(Product product)
-            => ProductDAO.Instance.Add(product);
-
-        public void UpdateProduct(Product product)
-            => ProductDAO.Instance.Update(product);
 
     }
 }

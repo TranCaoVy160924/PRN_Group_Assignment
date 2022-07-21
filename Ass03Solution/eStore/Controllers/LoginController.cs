@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using static eStore.Models.DBHelper;
 using Ass3.Library;
+using System.Web;
+using eStore.Models;
 
 namespace eStore.Controllers
 {
@@ -21,15 +23,16 @@ namespace eStore.Controllers
         public ActionResult btnLogin(string txtEmail, string txtPassword)
         {
             try
-            {
+            {            
                 MemberRepository = new MemberRepository();
                 if (ModelState.IsValid)
                 {
                     var email = Convert.ToString(txtEmail);
                     var password = Convert.ToString(txtPassword);
-                    var isMember = MemberRepository.GetMailAndPassword(email, password);
-                    if(isMember != null)
+                    Member member = MemberRepository.GetMailAndPassword(email, password);
+                    if(member != null)
                     {
+                        HttpContext.Session.SetObject("MEMBER", member);
                         return RedirectToAction("Index", "Home");
                     }
                 }
