@@ -36,6 +36,7 @@
                 <label asp-for="Freight" class="control-label"></label>
                 <input asp-for="Freight" class="form-control" />
                 <span asp-validation-for="Freight" class="text-danger"></span>
+                <span class="text-danger">@TempData["ErrorMessage"]</span> 
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

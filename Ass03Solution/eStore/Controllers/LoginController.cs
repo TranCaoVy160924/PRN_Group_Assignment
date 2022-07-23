@@ -36,7 +36,9 @@ namespace eStore.Controllers
                         return RedirectToAction("Index", "Home");
                     }
                 }
+                TempData["ErrorMessage"] = "Username or password is wronng!!!";
                 return RedirectToAction(nameof(Index));
+
             }
             catch (Exception ex)
             {

@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Ass3.Library.Report>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<form action="@Url.Action("Index", "Reports")" method="post">
+
+    <label for="startDate">Start Date</label>
+    <input id="startDate" type="date" name="startDate" value="@ViewBag.startDate"/>
+
+    <label for="endDate">Emd Date</label>
+    <input id="endDate" type="date" name="endDate" value="@ViewBag.endDate"/>
+
+    <button type="submit" value="true" name="Generate">Generate report</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberOfOrders)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumberSaled)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sales)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem => item.ProductID)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.NumberOfOrders)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.NumberSaled)
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem => item.Sales)
+            </th>
+            <td>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
