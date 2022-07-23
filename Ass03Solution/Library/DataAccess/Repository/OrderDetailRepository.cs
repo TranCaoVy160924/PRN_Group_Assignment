@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace Ass3.Library
 {
@@ -50,13 +51,15 @@ namespace Ass3.Library
             return reports;
         }
 
-        public IEnumerable<OrderDetail> getOrderDetail(int orderID)
+        public IEnumerable<OrderDetail> GetOrderDetail(int orderID)
         {
             using ASS2_DBContext dBContext
                 = new ASS2_DBContext();
 
             var OrderDetail = dBContext.OrderDetails
-                .Where(detail => detail.OrderId == orderID).ToList();
+                .Where(detail => detail.OrderId == orderID && detail.Order != null)
+                .Include(detail => detail.Order)
+                .Include(detail => detail.Product).ToList();
 
             return OrderDetail;
         }
@@ -67,7 +70,10 @@ namespace Ass3.Library
                 = new ASS2_DBContext();
 
             OrderDetail detail = dBContext.OrderDetails
-                .Where(detail => detail.OrderId == orderID).FirstOrDefault();
+                .Where(detail => detail.OrderId == orderID)
+                .Include(detail => detail.Order)
+                .Include(detail => detail.Product)
+                .FirstOrDefault();
 
             return detail;
         }

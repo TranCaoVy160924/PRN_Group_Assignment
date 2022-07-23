@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using static eStore.Models.DBHelper;
 using Ass3.Library;
+using eStore.Models;
 
 namespace eStore.Controllers
 {
@@ -72,13 +73,21 @@ namespace eStore.Controllers
         public ActionResult Edit(int id, Member member)
         {
             MemberRepository = new MemberRepository();
+            
             try
             {
                 if (ModelState.IsValid)
                 {
                     MemberRepository.UpdateMember(member);
                 }
-                return RedirectToAction(nameof(Index));
+                if (member.IsAdmin)
+                {
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return View(member);
+                }
             }
             catch (Exception ex)
             {
