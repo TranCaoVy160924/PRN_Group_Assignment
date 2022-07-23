@@ -1,8 +1,19 @@
-﻿@model Ass3.Library.Member
+﻿@using Microsoft.AspNetCore.Http
+@using eStore.Models;
+@using Ass3.Library;
+
+@inject IHttpContextAccessor HttpContextAccessor
+
+@model Ass3.Library.Member
 
 @{
     ViewData["Title"] = "Edit";
     Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ISession session = HttpContextAccessor.HttpContext.Session;
+    Member member = session.GetObject<Member>("MEMBER");
 }
 
 <h1>Edit</h1>
@@ -41,7 +52,15 @@
             </div>
             <div class="form-group form-check">
                 <label class="form-check-label">
-                    <input class="form-check-input" asp-for="IsAdmin" /> @Html.DisplayNameFor(model => model.IsAdmin)
+                    @if (member.IsAdmin && member.MemberId != Model.MemberId && !Model.IsAdmin)
+                    {
+                        <input class="form-check-input" asp-for="IsAdmin"/> @Html.DisplayNameFor(model => model.IsAdmin)
+                    } 
+                    else
+                    {
+                        <input class="form-check-input" asp-for="IsAdmin" disabled/> @Html.DisplayNameFor(model => model.IsAdmin)
+                    }
+
                 </label>
             </div>
             <div class="form-group">

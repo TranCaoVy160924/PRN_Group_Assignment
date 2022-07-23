@@ -9,7 +9,7 @@ namespace Ass3.Library
     public interface IOrderDetailRepository
     {
         List<Report> GetAll();
-        IEnumerable<OrderDetail> getOrderDetail(int orderID);
+        IEnumerable<OrderDetail> GetOrderDetail(int orderID);
         OrderDetail GetDetailByID(int orderID);
         void InsertDetail(OrderDetail detail);
         void DeleteDetail(int orderID, int productID);

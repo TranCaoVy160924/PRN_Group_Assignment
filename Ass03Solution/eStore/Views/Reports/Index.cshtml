@@ -13,10 +13,12 @@
 <form action="@Url.Action("Index", "Reports")" method="post">
 
     <label for="startDate">Start Date</label>
-    <input id="startDate" type="date" name="startDate" value="@ViewBag.startDate"/>
+    <input id="startDate" type="date" name="startDate" 
+       onchange="setPriceMaxMin()" value="@ViewBag.startDate" />
 
     <label for="endDate">Emd Date</label>
-    <input id="endDate" type="date" name="endDate" value="@ViewBag.endDate"/>
+    <input id="endDate" type="date" name="endDate"
+       onchange="setPriceMaxMin()" value="@ViewBag.endDate"/>
 
     <button type="submit" value="true" name="Generate">Generate report</button>
 </form>
@@ -65,4 +67,13 @@
 }
     </tbody>
 </table>
+<script>
+    function setPriceMaxMin() {
+        var lower = document.getElementById("startDate");
+        var upper = document.getElementById("endDate");
+
+        lower.max = upper.value;
+        upper.min = lower.value;
+    }
+</script>
 

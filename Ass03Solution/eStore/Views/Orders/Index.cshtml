@@ -53,6 +53,8 @@
                 @Html.DisplayFor(modelItem => item.Member.City)
             </td>
             <td>
+                <a asp-route-orderID=@item.OrderId asp-controller="OrderDetail" 
+                    asp-action="Index">View Order</a> |
                 <a asp-action="Edit" asp-route-id="@item.OrderId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.OrderId">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.OrderId">Delete</a>

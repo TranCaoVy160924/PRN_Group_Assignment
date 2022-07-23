@@ -11,7 +11,7 @@ namespace Ass3.Library
         public int Quantity { get; set; }
         public double Discount { get; set; }
 
-        public virtual UserOrder Order { get; set; }
-        public virtual Product Product { get; set; }
+        public virtual UserOrder? Order { get; set; }
+        public virtual Product? Product { get; set; }
     }
 }
