@@ -57,6 +57,14 @@ namespace eStore.Controllers
                 ProductRepository = new ProductRepository();
                 if (ModelState.IsValid)
                 {
+                    if(product.Category <= 0) { TempData["ErrorMessageCat"] = "Category must > 0"; }
+                    if(product.UnitPrice <= 0) { TempData["ErrorMessagepPrice"] = "Price must > 0"; }
+                    if(product.UnitsInStock <= 0) { TempData["ErrorMessageStock"] = "Units must > 0"; }
+                    if(product.Category <= 0 || product.UnitPrice <= 0 || product.UnitsInStock <= 0)
+                    {
+                        return RedirectToAction(nameof(Create));
+                    }
+
                     ProductRepository.AddProduct(product);
                 }
                 return RedirectToAction(nameof(Index));
@@ -86,6 +94,14 @@ namespace eStore.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    if (product.Category <= 0) { TempData["ErrorMessageCat"] = "Category must > 0"; }
+                    if (product.UnitPrice <= 0) { TempData["ErrorMessagepPrice"] = "Price must > 0"; }
+                    if (product.UnitsInStock <= 0) { TempData["ErrorMessageStock"] = "Units must > 0"; }
+                    if (product.Category <= 0 || product.UnitPrice <= 0 || product.UnitsInStock <= 0)
+                    {
+                        return RedirectToAction(nameof(Edit));
+                    }
+
                     ProductRepository.UpdateProduct(product);
                 }
                 return RedirectToAction(nameof(Index));

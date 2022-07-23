@@ -10,9 +10,44 @@ namespace Ass3.Library
     {
         private string ConnectionString;
 
-        public OrderDetailRepository(string connectionString)
+        public OrderDetailRepository()
         {
-            this.ConnectionString = connectionString;
+        }
+        public List<Report> GetAll()
+        {
+            ASS2_DBContext dBContext = new ASS2_DBContext();
+            List<Report> reports = new List<Report>();
+
+            ProductRepository productRepository = new ProductRepository();
+            var products = productRepository.GetProductList();
+
+            foreach (Product product in products)
+            {
+                var orderDetails = dBContext.OrderDetails
+                    .Where(detail => detail.ProductId == product.ProductId);
+
+                double sales = 0;
+                int numberSaled = 0;
+                int numOfOrder = orderDetails.Count();
+
+                foreach (OrderDetail orderDetail in orderDetails)
+                {
+                    sales += orderDetail.Quantity *
+                        (double)orderDetail.UnitPrice * (1 - orderDetail.Discount / 100);
+                    numberSaled += orderDetail.Quantity;
+                }
+
+                reports.Add(new Report
+                {
+                    ProductID = product.ProductId,
+                    ProductName = product.ProductName,
+                    Sales = sales,
+                    NumberSaled = numberSaled,
+                    NumberOfOrders = numOfOrder
+                });
+            }
+
+            return reports;
         }
 
         public IEnumerable<OrderDetail> getOrderDetail(int orderID)
@@ -64,12 +99,43 @@ namespace Ass3.Library
                 = new ASS2_DBContext();
         }
 
-        public List<Report> GetSaleReport(DateTime from, DateTime to)
+        public List<Report> GetSaleReport(DateTime fromDate, DateTime toDate)
         {
-            using ASS2_DBContext dBContext
-                = new ASS2_DBContext();
+            ASS2_DBContext dBContext = new ASS2_DBContext();
+            List<Report> reports = new List<Report>();
 
-            return null;
+            ProductRepository productRepository = new ProductRepository();
+            var products = productRepository.GetProductList();
+
+            foreach (Product product in products)
+            {
+                var orderDetails = dBContext.OrderDetails
+                    .Where(detail => DateTime.Compare((DateTime)detail.Order.ShippedDate, fromDate) >= 0
+                    && DateTime.Compare((DateTime)detail.Order.ShippedDate, toDate) < 0
+                    && detail.ProductId == product.ProductId);
+
+                double sales = 0;
+                int numberSaled = 0;
+                int numOfOrder = orderDetails.Count();
+
+                foreach (OrderDetail orderDetail in orderDetails)
+                {
+                    sales += orderDetail.Quantity *
+                        (double)orderDetail.UnitPrice * (1 - orderDetail.Discount / 100);
+                    numberSaled += orderDetail.Quantity;
+                }
+
+                reports.Add(new Report
+                {
+                    ProductID = product.ProductId,
+                    ProductName = product.ProductName,
+                    Sales = sales,
+                    NumberSaled = numberSaled,
+                    NumberOfOrders = numOfOrder
+                });
+            }
+
+            return reports;
         }
     }
 }

@@ -54,7 +54,15 @@ namespace eStore.Controllers
                 if (ModelState.IsValid)
                 {
                     UserOrder userOrder = orderViewModel.ToDBModel();
-                    OrderRepository.InsertOrder(userOrder);
+                    if(userOrder.Freight > 0)
+                    {
+                        OrderRepository.InsertOrder(userOrder);
+                    }
+                    else
+                    {
+                        TempData["ErrorMessage"] = "Input must > 0";
+                        return RedirectToAction(nameof(Create));
+                    }
                 } 
                 else
                 {
@@ -90,7 +98,15 @@ namespace eStore.Controllers
                 if (ModelState.IsValid)
                 {
                     UserOrder userOrder = orderViewModel.ToDBModel();
-                    OrderRepository.UpdateOrder(userOrder);
+                    if(userOrder.Freight > 0)
+                    {
+                        OrderRepository.UpdateOrder(userOrder);
+                    }
+                    else
+                    {
+                        TempData["ErrorMessage"] = "Input must > 0";
+                        return RedirectToAction(nameof(Edit));
+                    }
                 }
                 return RedirectToAction(nameof(Index));
             }
